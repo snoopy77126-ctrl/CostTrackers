@@ -1,0 +1,83 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2026-04-30;2026-04-30;"Lidl | CARTE 28/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-14,56;;00040998814;BoursoBank;1259.21
+2026-04-30;2026-04-30;"Free Mobile | PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-29,99;;00040998814;BoursoBank;1259.21
+2026-04-29;2026-04-29;"Vir Sepa Free Mobile | VIR SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"virement free mobile";9,99;;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Vir Inst Panouillot Mattheo | VIR INST PANOUILLOT MATTHEO";"Virements émis";"Virements émis";"panouillot mattheo";-15,00;;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-100,00;;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Vir Virement Depuis Livret Bourso+ | VIR Virement depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement depuis livret bourso+";"2 000,00";;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Le Marigny | CARTE 28/04/26 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-26,00;;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Intermarché | CARTE 28/04/26 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-3,70;;00040998814;BoursoBank;1303.76
+2026-04-29;2026-04-29;"Lidl | CARTE 27/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-16,92;;00040998814;BoursoBank;1303.76
+2026-04-28;2026-04-28;"Le Marigny | CARTE 27/04/26 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-14,60;;00040998814;BoursoBank;-544.61
+2026-04-28;2026-04-28;"Vir Sepa Btp Prevoyance Prestations | VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";8,00;;00040998814;BoursoBank;-544.61
+2026-04-27;2026-04-27;"Carré D'as | CARTE 25/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-13,00;;00040998814;BoursoBank;-538.01
+2026-04-27;2026-04-27;"Carré D'as | CARTE 25/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-9,99;;00040998814;BoursoBank;-538.01
+2026-04-27;2026-04-27;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;-538.01
+2026-04-27;2026-04-27;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-250,00;;00040998814;BoursoBank;-538.01
+2026-04-27;2026-04-27;"Vir Virement Depuis Livret Bourso+ | VIR Virement depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement depuis livret bourso+";150,00;;00040998814;BoursoBank;-538.01
+2026-04-27;2026-04-27;"Vir Virement Depuis Livret Bourso+ | VIR Virement depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement depuis livret bourso+";200,00;;00040998814;BoursoBank;-538.01
+2026-04-24;2026-04-24;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-150,00;;00040998814;BoursoBank;-565.02
+2026-04-24;2026-04-24;"Vir Inst Panouillot Mattheo | VIR INST PANOUILLOT MATTHEO";"Virements émis";"Virements émis";"panouillot mattheo";-130,00;;00040998814;BoursoBank;-565.02
+2026-04-24;2026-04-24;"Vir Virement Depuis Boursobank | VIR Virement depuis BoursoBank";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement depuis boursobank";-100,00;;00040998814;BoursoBank;-565.02
+2026-04-23;2026-04-23;"Vendel Julien | CARTE 22/04/26 VENDEL JULIEN CB*8595";"Optique, audition…";Santé;"vendel julien";-8,00;;00040998814;BoursoBank;-185.02
+2026-04-23;2026-04-23;"Hulluch Cantine 2 | CARTE 22/04/26 HULLUCH CANTINE 2 CB*8595";"Etudes (formation, fournitures, cantines…)";"Education & Famille";"hulluch cantine";-73,60;;00040998814;BoursoBank;-185.02
+2026-04-23;2026-04-23;"Garderie Payfip 2 | CARTE 22/04/26 GARDERIE PAYFIP 2 CB*8595";"Crèche, nounou, babysitter…";"Education & Famille";"garderie payfip";-39,60;;00040998814;BoursoBank;-185.02
+2026-04-23;2026-04-23;"Gamm Vert | CARTE 22/04/26 GAMM VERT CB*8595";"Bricolage et jardinage";"Vie quotidienne";"gamm vert";-51,66;;00040998814;BoursoBank;-185.02
+2026-04-23;2026-04-23;"Carrefour | CARTE 22/04/26 CARREFOUR MARKET CB*8595";Alimentation;"Vie quotidienne";carrefour;-36,73;;00040998814;BoursoBank;-185.02
+2026-04-21;2026-04-21;"Lidl | CARTE 20/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-138,93;;00040998814;BoursoBank;24.57
+2026-04-21;2026-04-21;"Carré D'as | CARTE 20/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-30,80;;00040998814;BoursoBank;24.57
+2026-04-21;2026-04-21;"SFR | PRLV SEPA SFR";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";sfr;-25,99;;00040998814;BoursoBank;24.57
+2026-04-20;2026-04-20;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;220.29
+2026-04-20;2026-04-20;"La Meurchinoise | CARTE 19/04/26 LA MEURCHINOISE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"LA MEURCHINOISE";-25,90;;00040998814;BoursoBank;220.29
+2026-04-20;2026-04-20;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";"Dons et Cadeaux";"Cadeaux et solidarité";"saison adeline";-50,00;;00040998814;BoursoBank;220.29
+2026-04-20;2026-04-20;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-200,00;;00040998814;BoursoBank;220.29
+2026-04-20;2026-04-18;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;716.18
+2026-04-20;2026-04-20;"Free Mobile | PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-19,99;;00040998814;BoursoBank;220.29
+2026-04-17;2026-04-17;"Carré D'as | CARTE 16/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-26,00;;00040998814;BoursoBank;716.18
+2026-04-17;2026-04-17;"Vir Epargne Programmee | VIR Epargne programmee";"Dépenses d'épargne - Autres";"Dépenses d'épargne";"virement epargne programmee";-10,00;;00040998814;BoursoBank;716.18
+2026-04-17;2026-04-17;"ENGIE | PRLV SEPA ENGIE S.A.";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-126,38;;00040998814;BoursoBank;716.18
+2026-04-15;2026-04-15;"Lidl | CARTE 14/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-78,38;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Destock Jeans | CARTE 14/04/26 DESTOCK JEANS CB*8595";"Vêtements et accessoires";"Vie quotidienne";"destock jean's";-169,00;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Bertaux  John Alphonse Henri Jacques | CARTE 14/04/26 BERTAUX JOHN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"bertaux john";-8,00;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Bertaux  John Alphonse Henri Jacques | CARTE 14/04/26 BERTAUX JOHN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"bertaux john";-7,50;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Bertaux  John Alphonse Henri Jacques | CARTE 14/04/26 BERTAUX JOHN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"bertaux john";-7,50;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Shop Clop | CARTE 14/04/26 SHOP CLOP CB*8595";Tabac;"Vie quotidienne";"shop clop";-47,80;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"B&M | CARTE 14/04/26 BM LENS CB*8595";"Non catégorisé";"Non catégorisé";"BM LENS";-27,98;;00040998814;BoursoBank;878.56
+2026-04-15;2026-04-15;"Lidl | CARTE 13/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-11,52;;00040998814;BoursoBank;878.56
+2026-04-14;2026-04-14;"Carré D'as | CARTE 13/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-26,00;;00040998814;BoursoBank;1236.24
+2026-04-14;2026-04-14;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-300,00;;00040998814;BoursoBank;1236.24
+2026-04-13;2026-04-13;"Carré D'as | CARTE 10/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-26,00;;00040998814;BoursoBank;1562.24
+2026-04-13;2026-04-13;"Memphis - Restaurant Diner | CARTE 10/04/26 CORA VENDIN CB*8595";Carburant;"Auto & Moto";cora;-113,89;;00040998814;BoursoBank;1562.24
+2026-04-13;2026-04-11;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-90,00;;00040998814;BoursoBank;3712.13
+2026-04-13;2026-04-11;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-220,00;;00040998814;BoursoBank;3712.13
+2026-04-13;2026-04-11;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-200,00;;00040998814;BoursoBank;3712.13
+2026-04-13;2026-04-13;"Vir Virement Depuis Boursobank | VIR Virement depuis BoursoBank";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement depuis boursobank";"-1 500,00";;00040998814;BoursoBank;1562.24
+2026-04-10;2026-04-10;"Vir Sepa L.t.c. | VIR SEPA L.T.C.";"Virements reçus";"Virements reçus";"virement ltc";"3 608,42";;00040998814;BoursoBank;3712.13
+2026-04-10;2026-04-10;"Le Marigny | CARTE 09/04/26 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-14,60;;00040998814;BoursoBank;3712.13
+2026-04-10;2026-04-10;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-150,00;;00040998814;BoursoBank;3712.13
+2026-04-10;2026-04-10;"Prioris | PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-206,61;;00040998814;BoursoBank;3712.13
+2026-04-10;2026-04-10;"Vir Virement Depuis Livret Bourso+ | VIR Virement depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement depuis livret bourso+";"1 000,00";;00040998814;BoursoBank;3712.13
+2026-04-10;2026-04-10;"Securycar | PRLV SEPA SECURYCAR";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;00040998814;BoursoBank;3712.13
+2026-04-09;2026-04-09;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;-507.58
+2026-04-09;2026-04-09;"L'Olivier Assurance | PRLV SEPA LOLIVIER ASSURANCE EUI (France";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"lolivier assurance eui france";-45,18;;00040998814;BoursoBank;-507.58
+2026-04-09;2026-04-09;"Free Mobile | PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-15,84;;00040998814;BoursoBank;-507.58
+2026-04-08;2026-04-08;"Lidl | CARTE 07/04/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-121,68;;00040998814;BoursoBank;-396.56
+2026-04-08;2026-04-08;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-300,00;;00040998814;BoursoBank;-396.56
+2026-04-08;2026-04-08;"Vir Virement Depuis Livret Bourso+ | VIR Virement depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement depuis livret bourso+";500,00;;00040998814;BoursoBank;-396.56
+2026-04-08;2026-04-08;"Free | PRLV SEPA Free Telecom";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-39,99;;00040998814;BoursoBank;-396.56
+2026-04-07;2026-04-07;"Bertaux  John Alphonse Henri Jacques | CARTE 06/04/26 BERTAUX JOHN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"bertaux john";-8,00;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-07;"Bertaux  John Alphonse Henri Jacques | CARTE 06/04/26 BERTAUX JOHN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"bertaux john";-2,50;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-07;"Resto Friterie Wingl | CARTE 06/04/26 RESTO FRITERIE WI CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"resto friterie wingl";-22,70;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-07;"Carré D'as | CARTE 05/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-26,00;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-07;"McDonald's | CARTE 03/04/26 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-64,93;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-07;"Carré D'as | CARTE 02/04/26 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-26,00;;00040998814;BoursoBank;-434.89
+2026-04-07;2026-04-04;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-150,00;;00040998814;BoursoBank;65.24
+2026-04-07;2026-04-03;"Vir Inst Saison Adeline | VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-200,00;;00040998814;BoursoBank;65.24
+2026-04-02;2026-04-02;"FLOA Bank | PRLV SEPA FLOA";"Crédit conso";"Emprunts (hors immobilier)";"banque du groupe casino banque casino";-234,07;;00040998814;BoursoBank;65.24
+2026-04-01;2026-04-01;"Lidl | CARTE 31/03/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-65,42;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Le Marigny | CARTE 31/03/26 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-13,00;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Lidl | CARTE 30/03/26 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-35,96;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-80,00;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Vir Virement Depuis Boursobank | VIR Virement depuis BoursoBank";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement depuis boursobank";-200,00;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Vir Inst Dautriche Catherine | VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-150,00;;00040998814;BoursoBank;299.31
+2026-04-01;2026-04-01;"Vir Sepa Btp Prevoyance Prestations | VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";"1 196,81";;00040998814;BoursoBank;299.31

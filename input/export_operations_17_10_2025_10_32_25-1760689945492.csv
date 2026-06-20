@@ -1,0 +1,69 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-09-30;2025-09-30;"CARTE 29/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,01;;00040998814;BoursoBank;136.1
+2025-09-30;2025-09-30;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-30,00;;00040998814;BoursoBank;136.1
+2025-09-29;2025-09-29;"CARTE 26/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-56,68;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-9,20;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-32,20;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-23,00;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";30,00;;00040998814;BoursoBank;196.11
+2025-09-26;2025-09-26;"CARTE 25/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-9,84;;00040998814;BoursoBank;287.19
+2025-09-26;2025-09-26;"CARTE 25/09/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-29,90;;00040998814;BoursoBank;287.19
+2025-09-25;2025-09-25;"CARTE 23/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-110,68;;00040998814;BoursoBank;326.93
+2025-09-24;2025-09-24;"CARTE 23/09/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-12,50;;00040998814;BoursoBank;437.61
+2025-09-23;2025-09-23;"CARTE 21/09/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-14,50;;00040998814;BoursoBank;450.11
+2025-09-23;2025-09-23;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";9,00;;00040998814;BoursoBank;450.11
+2025-09-23;2025-09-23;"VIR SEPA FLOA";"Virements reçus";"Virements reçus";"virement floa";500,00;;00040998814;BoursoBank;450.11
+2025-09-22;2025-09-22;"CARTE 20/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-27,77;;00040998814;BoursoBank;-44.39
+2025-09-22;2025-09-22;"CARTE 20/09/25 CARTER CASH CB*8595";"Entretien - Réparation";"Auto & Moto";"carter cash";-59,90;;00040998814;BoursoBank;-44.39
+2025-09-22;2025-09-22;"CARTE 20/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-4,80;;00040998814;BoursoBank;-44.39
+2025-09-22;2025-09-22;"CARTE 19/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-7,33;;00040998814;BoursoBank;-44.39
+2025-09-19;2025-09-19;"CARTE 18/09/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-18,25;;00040998814;BoursoBank;55.41
+2025-09-19;2025-09-19;"CARTE 18/09/25 GLK OPTIQUE CB*8595";"Optique, audition…";Santé;"glk optique";-20,80;;00040998814;BoursoBank;55.41
+2025-09-19;2025-09-19;"CARTE 18/09/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-12,50;;00040998814;BoursoBank;55.41
+2025-09-19;2025-09-19;"CARTE 18/09/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-12,00;;00040998814;BoursoBank;55.41
+2025-09-19;2025-09-19;"CARTE 18/09/25 POINT VISION LESQ CB*8595";"Optique, audition…";Santé;"point vision lesqui";-60,00;;00040998814;BoursoBank;55.41
+2025-09-18;2025-09-18;"CARTE 17/09/25 PHARMACIE LEBRUN CB*8595";"Pharmacie et laboratoire";Santé;"PHARMACIE LEBRUN";-8,80;;00040998814;BoursoBank;178.96
+2025-09-18;2025-09-18;"CARTE 17/09/25 DR CHARPENTIER 2 CB*8595";"Médecins et frais médicaux";Santé;"docteur charpentier";-30,00;;00040998814;BoursoBank;178.96
+2025-09-17;2025-09-17;"PRLV SEPA ENGIE S.A.";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-145,58;;00040998814;BoursoBank;217.76
+2025-09-16;2025-09-16;"RETRAIT DAB 15/09/25 GUICHET ANN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"Retrait automate";-20,00;;00040998814;BoursoBank;363.34
+2025-09-16;2025-09-16;"CARTE 15/09/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-31,50;;00040998814;BoursoBank;363.34
+2025-09-15;2025-09-15;"RETRAIT DAB 13/09/25 GUICHET ANN CB*8595";"Loisirs - Autres";"Loisirs et sorties";"Retrait automate";-20,00;;00040998814;BoursoBank;414.84
+2025-09-15;2025-09-15;"CARTE 12/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-51,55;;00040998814;BoursoBank;414.84
+2025-09-12;2025-09-12;"PRELEVEMENT DE FNAC DARTY SERVIC S";"Assurance habitation et RC";Logement;darty;-11,99;;3029135H026;LaBanquePostal;32.38
+2025-09-12;2025-09-12;"CARTE 11/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-11,75;;00040998814;BoursoBank;486.39
+2025-09-12;2025-09-12;"CARTE 11/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-6,48;;00040998814;BoursoBank;486.39
+2025-09-11;2025-09-11;"CARTE 10/09/25 ZEEMAN VENDIN LE CB*8595";"Vêtements et accessoires";"Vie quotidienne";zeeman;-10,15;;00040998814;BoursoBank;504.62
+2025-09-11;2025-09-11;"CARTE 10/09/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-23,75;;00040998814;BoursoBank;504.62
+2025-09-11;2025-09-11;"CARTE 10/09/25 TAO CB*8595";"Vêtements et accessoires";"Vie quotidienne";tao;-28,99;;00040998814;BoursoBank;504.62
+2025-09-11;2025-09-11;"CARTE 10/09/25 4A19 Vendin-le-Vi CB*8595";"Non catégorisé";"Non catégorisé";"4A19 Vendin-le-Vieil";-9,46;;00040998814;BoursoBank;504.62
+2025-09-11;2025-09-11;"CARTE 09/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-26,04;;00040998814;BoursoBank;504.62
+2025-09-10;2025-09-10;"CARTE 09/09/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-15,90;;00040998814;BoursoBank;603.01
+2025-09-10;2025-09-10;"CARTE 08/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-62,69;;00040998814;BoursoBank;603.01
+2025-09-10;2025-09-10;"PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-206,61;;00040998814;BoursoBank;603.01
+2025-09-10;2025-09-10;"PRLV SEPA SECURYCAR";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;00040998814;BoursoBank;603.01
+2025-09-09;2025-09-09;"CARTE 08/09/25 CERTIJURIS CB*8595";"Assurances (Auto/Moto)";"Auto & Moto";CERTIJURIS;-202,53;;00040998814;BoursoBank;905.71
+2025-09-09;2025-09-09;"VIR SEPA AMAZON EU SARL, SUCCURSALE FRAN";"Virements reçus";"Virements reçus";"virement amazon eu succursale fran";9,99;;00040998814;BoursoBank;905.71
+2025-09-09;2025-09-09;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";9,00;;00040998814;BoursoBank;905.71
+2025-09-08;2025-09-06;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";"-1 000,00";;3029135H026;LaBanquePostal;44.37
+2025-09-08;2025-09-08;"CARTE 05/09/25 CENTRE LECLERC CB*8595";Alimentation;"Vie quotidienne";leclerc;-100,93;;00040998814;BoursoBank;1089.25
+2025-09-08;2025-09-08;"CARTE 04/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-73,60;;00040998814;BoursoBank;1089.25
+2025-09-08;2025-09-08;"CARTE 03/09/25 TIGO CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";TIGO;-37,00;;00040998814;BoursoBank;1089.25
+2025-09-08;2025-09-08;"CARTE 07/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-23,85;;00040998814;BoursoBank;1089.25
+2025-09-08;2025-09-08;"CARTE 07/09/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-29,90;;00040998814;BoursoBank;1089.25
+2025-09-08;2025-09-06;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";"1 000,00";;00040998814;BoursoBank;380.51
+2025-09-08;2025-09-08;"PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-25,98;;00040998814;BoursoBank;1089.25
+2025-09-05;2025-09-05;"VIREMENT DE L.T.C. LTC-015559-092025113750-33";"Revenus du travail - Autres";"Revenus du travail";"ltc ltc";"1 037,89";;3029135H026;LaBanquePostal;44.37
+2025-09-05;2025-09-05;"PRLV SEPA Free Telecom";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-39,99;;00040998814;BoursoBank;380.51
+2025-09-05;2025-09-05;"PRLV SEPA CALLEO";Eau;Logement;;-16,17;;00040998814;BoursoBank;380.51
+2025-09-04;2025-09-04;"CARTE 03/09/25 GEMO VENDIN LE V CB*8595";"Vêtements et accessoires";"Vie quotidienne";gemo;-55,96;;00040998814;BoursoBank;436.67
+2025-09-04;2025-09-04;"PRLV SEPA AMAZON EU SARL, SUCCURSALE FRA";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-11,18;;00040998814;BoursoBank;436.67
+2025-09-04;2025-09-04;"PRLV SEPA LOLIVIER ASSURANCE EUI (France";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"lolivier assurance eui france";-45,18;;00040998814;BoursoBank;436.67
+2025-09-03;2025-09-03;"CARTE 02/09/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-29,90;;00040998814;BoursoBank;548.99
+2025-09-03;2025-09-03;"CARTE 02/09/25 PHARMACIE LEBRUN CB*8595";"Pharmacie et laboratoire";Santé;"PHARMACIE LEBRUN";-17,80;;00040998814;BoursoBank;548.99
+2025-09-03;2025-09-03;"CARTE 02/09/25 DR CHARPENTIER 2 CB*8595";"Médecins et frais médicaux";Santé;"docteur charpentier";-30,00;;00040998814;BoursoBank;548.99
+2025-09-03;2025-09-03;"PRLV SEPA FLOA";"Crédit conso";"Emprunts (hors immobilier)";"banque du groupe casino banque casino";-226,08;;00040998814;BoursoBank;548.99
+2025-09-02;2025-09-02;"CARTE 01/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-14,41;;00040998814;BoursoBank;852.77
+2025-09-02;2025-09-02;"CARTE 01/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-3,70;;00040998814;BoursoBank;852.77
+2025-09-02;2025-09-02;"CARTE 01/09/25 Action 4623 CB*8595";"Logement - Autres";Logement;action;-17,23;;00040998814;BoursoBank;852.77
+2025-09-02;2025-09-02;"VIR INST PANOUILLOT MATTHEO";"Virements émis";"Virements émis";"panouillot mattheo";-150,00;;00040998814;BoursoBank;852.77
+2025-09-01;2025-09-01;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";"1 210,33";;00040998814;BoursoBank;1038.11

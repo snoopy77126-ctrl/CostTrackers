@@ -1,0 +1,154 @@
+import tkinter as tk
+
+from _helpers.operation_view_helpers import OperationsViewHelpers
+from interfaces_tabs.tabs_operation_saisie_button import OperationTypeButton
+from interfaces_tabs.tabs_operation_saisie_data import OperationSaisieData
+
+
+class OperationSaisie(tk.Toplevel):
+    def __init__(self, parent, services=None, **context):
+        super().__init__(parent)
+        self.resizable(True, True)
+        self.services = services
+        self.selected_key = context.get("selected_key")
+
+        # 1. Initialisation (Logique métier & Variables Tkinter de contrôle)
+        self.helpers = OperationsViewHelpers(services)
+        self.callbacks = self.menu_callbacks()
+        self.on_save_callback = context.get("on_save_callback")
+
+        # !! TRÈS IMPORTANT : Initialiser la variable AVANT de construire l'UI !!
+        self.selected_type = tk.StringVar(value="Debit")
+
+        # 2. Comportement de la fenêtre (Toplevel)
+        self.title("Éditeur d'opérations")
+        self.transient(parent)  # Liée à la fenêtre parente (se réduit avec elle)
+        self.grab_set()  # Capture tous les événements (bloque la fenêtre principale)
+
+        # 3. Construction de l'interface & Chargement initial
+        self.build_widgets()
+        if hasattr(self, 'initialise'):
+            self.initialise()
+
+    # ------------------- Construction UI -------------------
+    def build_widgets(self):
+        # ==== Boutons Débit / Crédit / Virement ====
+        self.frame_top = OperationTypeButton(self, callbacks=self.callbacks)
+        self.frame_top.pack(pady=5)
+
+        # ==== Formulaire (factorisé dans OperationSaisieData) ====
+        self.form_data = OperationSaisieData(self, callbacks=self.callbacks)
+        self.form_data.pack(fill="both", expand=True)
+
+        # Cet appel fonctionne maintenant car self.selected_type ET self.form_data existent !
+        self.update_type_buttons()
+
+        # ==== Boutons Enregistrer / Annuler ====
+        self.frame_buttons = tk.Frame(self)
+        self.frame_buttons.pack(padx=10, pady=10, anchor="w")
+
+        self.btn_save = tk.Button(
+            self.frame_buttons, text="Enregistrer", width=12, bg="#2f4f7f", fg="white",
+            font=("Arial", 9, "bold"), command=self._on_save
+        )
+        self.btn_save.grid(row=0, column=0, padx=5, pady=5)
+
+        self.btn_cancel = tk.Button(
+            self.frame_buttons, text="Annuler", width=12, bg="#a7c3dc",
+            font=("Arial", 9, "bold"), command=self._on_cancel
+        )
+        self.btn_cancel.grid(row=1, column=0, padx=5, pady=5)
+
+    # ------------------- Callbacks -------------------
+    def menu_callbacks(self):
+        return {
+            "action_save": self._on_save,
+            "action_cancel": self._on_cancel,
+            "action_select_debit": lambda: self.set_type("Debit"),
+            "action_select_credit": lambda: self.set_type("Credit"),
+            "action_select_virement": lambda: self.set_type("Virement"),
+        }
+
+    def set_type(self, type_selected):
+        self.selected_type.set(type_selected)
+        self.update_type_buttons()
+
+    def update_type_buttons(self):
+        # On boucle sur les types pour mettre à jour l'UI
+        types = ["Debit", "Credit", "Virement"]
+        current = self.selected_type.get()
+
+        for t in types:
+            self.frame_top.set_button_style(t, active=(t == current))
+
+        # Adapte le libellé/style du champ montant selon le type sélectionné
+        type_mapping = {'Debit': 'depense', 'Credit': 'revenu', 'Virement': 'virement'}
+        self.form_data.set_montant_label(type_mapping.get(current, 'depense'))
+
+    # ------------------- Initialisation -------------------
+    def initialise(self):
+        """Charge les données dynamiques dans les combobox."""
+        self.helpers.initialise()
+
+        tiers_data = self.helpers.fetch_tiers()
+        comptes_data = self.helpers.fetch_comptes()
+        categories_data = self.helpers.fetch_categories()
+        self.form_data.load_combobox_data(tiers_data, comptes_data, categories_data)
+
+        # Si une clé est sélectionnée, charger les données de l'opération
+        if self.selected_key:
+            data = self.helpers.fetch_data_by_iid(self.selected_key)
+            if data:
+                self._set_form_values(data)
+
+    def _set_form_values(self, data: dict):
+        """Applique le type d'opération puis délègue le remplissage au formulaire."""
+        type_op = data.get('type_operation', 'depense')
+        if type_op == 'depense':
+            self.set_type('Debit')
+        elif type_op == 'revenu':
+            self.set_type('Credit')
+        else:
+            self.set_type('Virement')
+
+        self.form_data.set_values_from_operation(data)
+
+    # ------------------- Actions -------------------
+    def _on_save(self):
+        """Callback pour le bouton Enregistrer."""
+        type_mapping = {'Debit': 'depense', 'Credit': 'revenu', 'Virement': 'virement'}
+        type_operation = type_mapping.get(self.selected_type.get(), 'depense')
+
+        data = self.form_data.get_form_values(type_operation)
+        success = self.helpers.save_operation(data)
+
+        if success:
+            print("Sauvegarde réussie !")
+            if self.on_save_callback:
+                self.on_save_callback()
+            self.destroy()
+        else:
+            print("Erreur lors de la sauvegarde")
+
+    def _on_cancel(self):
+        """Callback pour le bouton Annuler."""
+        self.destroy()
+
+
+# ------------------ Main test ------------------
+if __name__ == '__main__':
+    # Bootstrap simulé pour l'exemple au cas où build_app_services échouerait en local
+    try:
+        from _services._bootstrap_services import build_app_services
+
+        services = build_app_services()
+    except ImportError:
+        services = None
+
+    root = tk.Tk()
+
+    app = OperationSaisie(root, services=services)
+    app.protocol("WM_DELETE_WINDOW", root.destroy)
+
+    root.geometry('10x10+0+0')
+    root.mainloop()

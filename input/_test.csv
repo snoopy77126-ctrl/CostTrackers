@@ -1,0 +1,8 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-09-30;2025-09-30;"CARTE 29/09/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,01;;00040998814;BoursoBank;136.1
+2025-09-30;2025-09-30;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-30,00;;00040998814;BoursoBank;136.1
+2025-09-29;2025-09-29;"CARTE 26/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-56,68;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-9,20;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-32,20;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"CARTE 26/09/25 HULLUCH CANTINE 2 CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"hulluch cantine";-23,00;;00040998814;BoursoBank;196.11
+2025-09-29;2025-09-29;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";30,00;;00040998814;BoursoBank;196.11

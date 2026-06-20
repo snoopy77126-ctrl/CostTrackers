@@ -1,0 +1,64 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-03-17;2025-03-17;"PRLV SEPA ENGIE S.A.";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-145,58;;00040998814;BoursoBank;197.62
+2025-03-17;;"LE MARIGNY HULLUCH FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-14,00;;00040998814;BoursoBank;
+2025-03-14;2025-03-14;"ACHAT CB Action 4623 13.03.25 EUR 17,27 CARTE NO 666";"Logement - Autres";Logement;;-17,27;;3029135H026;"MR PANOUILLOT STEPHANE";895.41
+2025-03-14;2025-03-14;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;"MR PANOUILLOT STEPHANE";895.41
+2025-03-14;2025-03-14;"CARTE 13/03/25 C.G.L CB*8595";Financement;"Auto & Moto";cgl;-206,61;;00040998814;BoursoBank;343.2
+2025-03-14;2025-03-14;"CARTE 13/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-126,76;;00040998814;BoursoBank;343.2
+2025-03-14;;"LE PENALTY VERMELLES FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-12,50;;00040998814;BoursoBank;
+2025-03-14;;"LA BANQUE POSTALE MAZINGARBE FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-100,00;;00040998814;BoursoBank;
+2025-03-14;;"STAND MOTO GRENAY FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-194,90;;00040998814;BoursoBank;
+2025-03-14;;"INTERMARCHE STATION WINGLES FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-29,74;;00040998814;BoursoBank;
+2025-03-13;2025-03-13;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;"MR PANOUILLOT STEPHANE";1012.68
+2025-03-12;2025-03-12;"ACHAT CB CARRE D AS 11.03.25 EUR 25,20 CARTE NO 666";Tabac;"Vie quotidienne";"carre d as";-25,20;;3029135H026;"MR PANOUILLOT STEPHANE";1112.68
+2025-03-12;2025-03-12;"CARTE 11/03/25 Temu CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";temu;-22,22;;00040998814;BoursoBank;676.57
+2025-03-12;2025-03-12;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-24,90;;00040998814;BoursoBank;676.57
+2025-03-11;2025-03-11;"PRELEVEMENT DE FNAC DARTY SERVIC S";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";darty;-11,99;;3029135H026;"MR PANOUILLOT STEPHANE";1137.88
+2025-03-11;2025-03-11;"CARTE 10/03/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-104,95;;00040998814;BoursoBank;723.69
+2025-03-11;2025-03-11;"CARTE 10/03/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-12,50;;00040998814;BoursoBank;723.69
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-13,37;;00040998814;BoursoBank;723.69
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-22,98;;00040998814;BoursoBank;723.69
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-16,98;;00040998814;BoursoBank;723.69
+2025-03-10;2025-03-10;"ACHAT CB MC DONALD'S 09.03.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-57,80;;3029135H026;"MR PANOUILLOT STEPHANE";1149.87
+2025-03-10;2025-03-10;"PRELEVEMENT DE SIA-CEp REF : 10/03/2025-655164";"Loyers, Charges";Logement;sia;-576,51;;3029135H026;"MR PANOUILLOT STEPHANE";1149.87
+2025-03-10;2025-03-10;"VIREMENT INSTANTANE A DAVID MALBRANQUE";Péages;"Auto & Moto";"virement instantane a david malbranque";-410,00;;3029135H026;"MR PANOUILLOT STEPHANE";1149.87
+2025-03-10;2025-03-08;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;"MR PANOUILLOT STEPHANE";2194.18
+2025-03-10;2025-03-08;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-170,00;;3029135H026;"MR PANOUILLOT STEPHANE";2194.18
+2025-03-10;2025-03-08;"VIREMENT INSTANTANE A SAISON ADELINE";Pensions;"Education & Famille";"virement instantane a saison adeline";-517,00;;3029135H026;"MR PANOUILLOT STEPHANE";2194.18
+2025-03-10;2025-03-09;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";"-1 000,00";;3029135H026;"MR PANOUILLOT STEPHANE";2194.18
+2025-03-10;2025-03-10;"CARTE 08/03/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-4,55;;00040998814;BoursoBank;894.47
+2025-03-10;2025-03-10;"CARTE 07/03/25 CAR 6 4 CB*8595";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";cardif;-50,80;;00040998814;BoursoBank;894.47
+2025-03-10;2025-03-10;"CARTE 08/03/25 SHOP CLOP CB*8595";Tabac;"Vie quotidienne";"shop clop";-17,50;;00040998814;BoursoBank;894.47
+2025-03-10;2025-03-09;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";"1 000,00";;00040998814;BoursoBank;208.93
+2025-03-10;2025-03-10;"PRLV SEPA SECURYCAR";"Auto / Moto - Autres";"Auto & Moto";securycar;-35,00;;00040998814;BoursoBank;894.47
+2025-03-10;2025-03-10;"PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-206,61;;00040998814;BoursoBank;894.47
+2025-03-07;2025-03-07;"CARTE 06/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-42,40;;00040998814;BoursoBank;208.93
+2025-03-07;2025-03-07;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;208.93
+2025-03-07;2025-03-07;"PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-29,98;;00040998814;BoursoBank;208.93
+2025-03-06;2025-03-06;"VIREMENT DE L.T.C. LTC-015559-032025090832-35";"Virements reçus";"Virements reçus";"ltc ltc";"3 980,22";;3029135H026;"MR PANOUILLOT STEPHANE";4031.18
+2025-03-06;2025-03-06;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-200,00;;00040998814;BoursoBank;381.31
+2025-03-06;2025-03-06;"CARTE 05/03/25 KFC CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";kfc;-55,20;;00040998814;BoursoBank;381.31
+2025-03-06;2025-03-06;"CARTE 05/03/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-18,75;;00040998814;BoursoBank;381.31
+2025-03-06;2025-03-06;"PRLV SEPA Free Telecom";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-47,49;;00040998814;BoursoBank;381.31
+2025-03-05;2025-03-05;"CARTE 04/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-20,59;;00040998814;BoursoBank;702.75
+2025-03-05;2025-03-05;"CARTE 04/03/25 DECATHLON 4 CB*8595";"Equipements sportifs et artistiques";"Vie quotidienne";decathlon;-62,00;;00040998814;BoursoBank;702.75
+2025-03-05;2025-03-05;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;702.75
+2025-03-04;2025-03-04;"PRELEVEMENT DE FNAC DARTY SERVIC S";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";darty;-11,99;;3029135H026;"MR PANOUILLOT STEPHANE";50.96
+2025-03-04;2025-03-04;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;"MR PANOUILLOT STEPHANE";50.96
+2025-03-04;2025-03-04;"CARTE 03/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-77,14;;00040998814;BoursoBank;805.34
+2025-03-04;2025-03-04;"CARTE 03/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-25,00;;00040998814;BoursoBank;805.34
+2025-03-04;2025-03-04;"CARTE 03/03/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-60,20;;00040998814;BoursoBank;805.34
+2025-03-04;2025-03-04;"CARTE 03/03/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,25;;00040998814;BoursoBank;805.34
+2025-03-03;2025-03-03;"ACHAT CB MC DONALD'S 02.03.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-12,60;;3029135H026;"MR PANOUILLOT STEPHANE";112.95
+2025-03-03;2025-03-03;"ACHAT CB ZC 28.02.25 EUR 63,00 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";zc;-63,00;;3029135H026;"MR PANOUILLOT STEPHANE";112.95
+2025-03-03;2025-03-03;"PRELEVEMENT DE PRIORIS REF : PRS/T007420419/116886818";Financement;"Auto & Moto";prioris;-0,82;;3029135H026;"MR PANOUILLOT STEPHANE";112.95
+2025-03-03;2025-03-03;"PRELEVEMENT DE PRIORIS REF : PRS/T007420419/116886820";Financement;"Auto & Moto";prioris;-16,53;;3029135H026;"MR PANOUILLOT STEPHANE";112.95
+2025-03-03;2025-03-01;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-200,00;;3029135H026;"MR PANOUILLOT STEPHANE";
+2025-03-03;2025-03-01;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;"MR PANOUILLOT STEPHANE";
+2025-03-03;2025-03-02;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-20,00;;3029135H026;"MR PANOUILLOT STEPHANE";
+2025-03-03;2025-03-03;"CARTE 02/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-25,00;;00040998814;BoursoBank;997.93
+2025-03-03;2025-03-03;"CARTE 01/03/25 LES LOUPIOTS CB*8595";"Divertissement - culture (ciné, théâtre, concerts…)";"Loisirs et sorties";"LES LOUPIOTS";-12,90;;00040998814;BoursoBank;997.93
+2025-03-03;2025-03-03;"RETRAIT DAB 01/03/25 BILLY MONTI CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-80,00;;00040998814;BoursoBank;997.93
+2025-03-03;2025-03-03;"CARTE 28/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-39,99;;00040998814;BoursoBank;997.93
+2025-03-03;2025-03-03;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"virement btp prevoyance prestations";"1 188,92";;00040998814;BoursoBank;997.93
+2025-03-03;2025-03-01;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;

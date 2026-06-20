@@ -1,0 +1,29 @@
+{
+    "Acceuil": {
+        "Acceuil": "interfaces.form_acceuil:Dashboard"
+    },
+    "Comptes": {
+        "Comptes": "interfaces.form_compte_editor:CompteEditor",
+        "Operations": "interfaces.form_operations:OperationsView"
+    },
+    "Echéances": {
+        "Synthèse": "interfaces.form_echeances:EcheancesView"
+    },
+    "Etats": {},
+    "Budget": {},
+    "Projet": {},
+    "Gestion": {
+        "Tiers": "interfaces.from_tiers_editor:TiersEditor",
+        "Catégories": "interfaces.from_categories_editor:CategoriesDepensesView"
+
+    },
+    "Paramètre": {
+        "Général": "interfaces.form_parametre:Parametrage",
+        "Import": "interfaces.form_operations_importe:OperationsImport"
+    },
+    "Dev": {
+        "MenuManager": "_dev_tools.ui_menu_editor:UIMenuEditor",
+        "Export Complet": null,
+        "Project Analyseur": "_dev_tools.ui_analyseur_app:UIProjectAnalyzer"
+    }
+}

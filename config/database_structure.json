@@ -1,0 +1,392 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Structure base CostTracker - propre",
+    "generated": "2026-06-10"
+  },
+  "content": {
+    "banques": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_banque",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "label",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "identifiant",
+            "type": "TEXT"
+          },
+          {
+            "name": "description",
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": []
+      }
+    },
+    "type_de_compte": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_type_de_compte",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "designation",
+            "type": "TEXT NOT NULL"
+          }
+        ],
+        "foreign_keys": []
+      }
+    },
+    "tiers": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_tiers",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "titre",
+            "type": "TEXT"
+          },
+          {
+            "name": "nom",
+            "type": "TEXT"
+          },
+          {
+            "name": "prenom",
+            "type": "TEXT"
+          },
+          {
+            "name": "organisation",
+            "type": "TEXT"
+          },
+          {
+            "name": "description",
+            "type": "TEXT"
+          },
+          {
+            "name": "montant_max",
+            "type": "REAL"
+          },
+          {
+            "name": "montant_min",
+            "type": "REAL"
+          }
+        ],
+        "foreign_keys": []
+      }
+    },
+    "categories": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_categorie",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "designation",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "parent_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "nom_complet",
+            "type": "TEXT"
+          },
+          {
+            "name": "nom_cascade",
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "column": "parent_id",
+            "ref_table": "categories",
+            "ref_column": "id_categorie"
+          }
+        ]
+      }
+    },
+    "comptes": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_compte",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "numero",
+            "type": "TEXT"
+          },
+          {
+            "name": "label",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "description",
+            "type": "TEXT"
+          },
+          {
+            "name": "date_ouverture",
+            "type": "TEXT"
+          },
+          {
+            "name": "date_cloture",
+            "type": "TEXT"
+          },
+          {
+            "name": "solde_init",
+            "type": "REAL DEFAULT 0"
+          },
+          {
+            "name": "solde_min",
+            "type": "REAL"
+          },
+          {
+            "name": "solde_max",
+            "type": "REAL"
+          },
+          {
+            "name": "decouvert_autorise",
+            "type": "REAL DEFAULT 0"
+          },
+          {
+            "name": "compte_favori",
+            "type": "INTEGER DEFAULT 0"
+          },
+          {
+            "name": "favori",
+            "type": "INTEGER DEFAULT 0"
+          },
+          {
+            "name": "cache_le_compte",
+            "type": "INTEGER DEFAULT 0"
+          },
+          {
+            "name": "object_epargne",
+            "type": "INTEGER DEFAULT 0"
+          },
+          {
+            "name": "date_der_rapprochement",
+            "type": "TEXT"
+          },
+          {
+            "name": "type_compte_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "banque_id",
+            "type": "INTEGER"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "column": "type_compte_id",
+            "ref_table": "type_de_compte",
+            "ref_column": "id_type_de_compte"
+          },
+          {
+            "column": "banque_id",
+            "ref_table": "banques",
+            "ref_column": "id_banque"
+          }
+        ]
+      }
+    },
+    "imports_bancaires": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_import",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "fichier",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "chemin",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "format",
+            "type": "TEXT NOT NULL"
+          },
+          {
+            "name": "checksum",
+            "type": "TEXT NOT NULL UNIQUE"
+          },
+          {
+            "name": "date_import",
+            "type": "TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP"
+          },
+          {
+            "name": "statut",
+            "type": "TEXT NOT NULL DEFAULT 'importe'"
+          },
+          {
+            "name": "nb_lignes",
+            "type": "INTEGER NOT NULL DEFAULT 0"
+          },
+          {
+            "name": "message",
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": []
+      }
+    },
+    "operations_bancaires_lignes": {
+      "schema": {
+        "columns": [
+          {
+            "name": "id_import_ligne",
+            "type": "INTEGER PRIMARY KEY AUTOINCREMENT",
+            "pk": true
+          },
+          {
+            "name": "id_import",
+            "type": "INTEGER"
+          },
+          {
+            "name": "numero_ligne",
+            "type": "INTEGER NOT NULL DEFAULT 0"
+          },
+          {
+            "name": "date_operation",
+            "type": "TEXT"
+          },
+          {
+            "name": "date_valeur",
+            "type": "TEXT"
+          },
+          {
+            "name": "libelle",
+            "type": "TEXT"
+          },
+          {
+            "name": "montant",
+            "type": "REAL NOT NULL DEFAULT 0"
+          },
+          {
+            "name": "type_operation",
+            "type": "TEXT NOT NULL DEFAULT 'depense'"
+          },
+          {
+            "name": "commentaire",
+            "type": "TEXT"
+          },
+          {
+            "name": "source",
+            "type": "TEXT NOT NULL DEFAULT 'import_bancaire'"
+          },
+          {
+            "name": "compte_num",
+            "type": "TEXT"
+          },
+          {
+            "name": "compte_label",
+            "type": "TEXT"
+          },
+          {
+            "name": "solde_compte",
+            "type": "REAL"
+          },
+          {
+            "name": "tiers",
+            "type": "TEXT"
+          },
+          {
+            "name": "categorie",
+            "type": "TEXT"
+          },
+          {
+            "name": "categorie_parent",
+            "type": "TEXT"
+          },
+          {
+            "name": "fitid",
+            "type": "TEXT"
+          },
+          {
+            "name": "trntype",
+            "type": "TEXT"
+          },
+          {
+            "name": "memo",
+            "type": "TEXT"
+          },
+          {
+            "name": "raw_json",
+            "type": "TEXT"
+          },
+          {
+            "name": "import_key",
+            "type": "TEXT NOT NULL UNIQUE"
+          },
+          {
+            "name": "parent_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "compte_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "tiers_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "categorie_id",
+            "type": "INTEGER"
+          },
+          {
+            "name": "created_at",
+            "type": "TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP"
+          }
+        ],
+        "foreign_keys": [
+          {
+            "column": "id_import",
+            "ref_table": "imports_bancaires",
+            "ref_column": "id_import"
+          },
+          {
+            "column": "parent_id",
+            "ref_table": "operations_bancaires_lignes",
+            "ref_column": "id_import_ligne"
+          },
+          {
+            "column": "compte_id",
+            "ref_table": "comptes",
+            "ref_column": "id_compte"
+          },
+          {
+            "column": "tiers_id",
+            "ref_table": "tiers",
+            "ref_column": "id_tiers"
+          },
+          {
+            "column": "categorie_id",
+            "ref_table": "categories",
+            "ref_column": "id_categorie"
+          }
+        ]
+      }
+    }
+  }
+}

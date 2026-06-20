@@ -1,0 +1,182 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-03-18;2025-03-18;"PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-0,82;;00040998814;BoursoBank;182.7
+2025-03-17;2025-03-17;"CARTE 14/03/25 STAND MOTO CB*8595";"Auto / Moto - Autres";"Auto & Moto";"stand moto";-194,90;;00040998814;BoursoBank;183.52
+2025-03-17;2025-03-17;"CARTE 14/03/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-29,74;;00040998814;BoursoBank;183.52
+2025-03-17;2025-03-17;"RETRAIT DAB 14/03/25 MAZINGARBE CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-100,00;;00040998814;BoursoBank;183.52
+2025-03-17;2025-03-17;"CARTE 14/03/25 LE PENALTY CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le penalty";-12,50;;00040998814;BoursoBank;183.52
+2025-03-17;2025-03-17;"PRLV SEPA ENGIE S.A.";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-145,58;;00040998814;BoursoBank;183.52
+2025-03-17;;"INTERMARCHE WINGLES FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-14,10;;00040998814;BoursoBank;
+2025-03-17;;"LE MARIGNY HULLUCH FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-14,00;;00040998814;BoursoBank;
+2025-03-14;2025-03-14;"CARTE 13/03/25 C.G.L CB*8595";Financement;"Auto & Moto";cgl;-206,61;;00040998814;BoursoBank;666.24
+2025-03-14;2025-03-14;"CARTE 13/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-126,76;;00040998814;BoursoBank;666.24
+2025-03-14;;"LE PENALTY VERMELLES FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-12,50;;00040998814;BoursoBank;
+2025-03-14;;"LA BANQUE POSTALE MAZINGARBE FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-100,00;;00040998814;BoursoBank;
+2025-03-14;;"STAND MOTO GRENAY FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-194,90;;00040998814;BoursoBank;
+2025-03-14;;"INTERMARCHE STATION WINGLES FR";"Autorisation paiement / retrait en cours";"Non catégorisé";;-29,74;;00040998814;BoursoBank;
+2025-03-12;2025-03-12;"CARTE 11/03/25 Temu CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";temu;-22,22;;00040998814;BoursoBank;999.61
+2025-03-12;2025-03-12;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-24,90;;00040998814;BoursoBank;999.61
+2025-03-11;2025-03-11;"CARTE 10/03/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-104,95;;00040998814;BoursoBank;1046.73
+2025-03-11;2025-03-11;"CARTE 10/03/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-12,50;;00040998814;BoursoBank;1046.73
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-13,37;;00040998814;BoursoBank;1046.73
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-22,98;;00040998814;BoursoBank;1046.73
+2025-03-11;2025-03-11;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-16,98;;00040998814;BoursoBank;1046.73
+2025-03-10;2025-03-10;"CARTE 08/03/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-4,55;;00040998814;BoursoBank;1217.51
+2025-03-10;2025-03-10;"CARTE 07/03/25 CAR 6 4 CB*8595";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";cardif;-50,80;;00040998814;BoursoBank;1217.51
+2025-03-10;2025-03-10;"CARTE 08/03/25 SHOP CLOP CB*8595";Tabac;"Vie quotidienne";"shop clop";-17,50;;00040998814;BoursoBank;1217.51
+2025-03-10;2025-03-09;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";"1 000,00";;00040998814;BoursoBank;531.97
+2025-03-10;2025-03-10;"PRLV SEPA SECURYCAR";"Auto / Moto - Autres";"Auto & Moto";securycar;-35,00;;00040998814;BoursoBank;1217.51
+2025-03-10;2025-03-10;"PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-206,61;;00040998814;BoursoBank;1217.51
+2025-03-07;2025-03-07;"CARTE 06/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-42,40;;00040998814;BoursoBank;531.97
+2025-03-07;2025-03-07;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;531.97
+2025-03-07;2025-03-07;"PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-29,98;;00040998814;BoursoBank;531.97
+2025-03-06;2025-03-06;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-200,00;;00040998814;BoursoBank;704.35
+2025-03-06;2025-03-06;"CARTE 05/03/25 KFC CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";kfc;-55,20;;00040998814;BoursoBank;704.35
+2025-03-06;2025-03-06;"CARTE 05/03/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-18,75;;00040998814;BoursoBank;704.35
+2025-03-06;2025-03-06;"PRLV SEPA Free Telecom";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-47,49;;00040998814;BoursoBank;704.35
+2025-03-05;2025-03-05;"CARTE 04/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-20,59;;00040998814;BoursoBank;1025.79
+2025-03-05;2025-03-05;"CARTE 04/03/25 DECATHLON 4 CB*8595";"Equipements sportifs et artistiques";"Vie quotidienne";decathlon;-62,00;;00040998814;BoursoBank;1025.79
+2025-03-05;2025-03-05;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;1025.79
+2025-03-04;2025-03-04;"CARTE 03/03/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-77,14;;00040998814;BoursoBank;1128.38
+2025-03-04;2025-03-04;"CARTE 03/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-25,00;;00040998814;BoursoBank;1128.38
+2025-03-04;2025-03-04;"CARTE 03/03/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-60,20;;00040998814;BoursoBank;1128.38
+2025-03-04;2025-03-04;"CARTE 03/03/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,25;;00040998814;BoursoBank;1128.38
+2025-03-03;2025-03-03;"CARTE 02/03/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-25,00;;00040998814;BoursoBank;1320.97
+2025-03-03;2025-03-03;"CARTE 01/03/25 LES LOUPIOTS CB*8595";"Divertissement - culture (ciné, théâtre, concerts…)";"Loisirs et sorties";"LES LOUPIOTS";-12,90;;00040998814;BoursoBank;1320.97
+2025-03-03;2025-03-03;"RETRAIT DAB 01/03/25 BILLY MONTI CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-80,00;;00040998814;BoursoBank;1320.97
+2025-03-03;2025-03-03;"CARTE 28/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-39,99;;00040998814;BoursoBank;1320.97
+2025-03-03;2025-03-03;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"virement btp prevoyance prestations";"1 188,92";;00040998814;BoursoBank;1320.97
+2025-03-03;2025-03-01;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;89.94
+2025-02-27;2025-02-27;"CARTE 26/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-31,52;;00040998814;BoursoBank;89.94
+2025-02-27;2025-02-27;"Prime mobilite bancaire";"Virements reçus";"Virements reçus";"prime mobilite bancaire";70,00;;00040998814;BoursoBank;89.94
+2025-02-26;2025-02-26;"PRLV SEPA AMAZON EU SARL, SUCCURSALE FRA";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-19,50;;00040998814;BoursoBank;51.46
+2025-02-25;2025-02-25;"CARTE 24/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-18,75;;00040998814;BoursoBank;70.96
+2025-02-25;2025-02-25;"CARTE 24/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-32,40;;00040998814;BoursoBank;70.96
+2025-02-24;2025-02-24;"CARTE 22/02/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-53,79;;00040998814;BoursoBank;122.11
+2025-02-24;2025-02-24;"CARTE 21/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;122.11
+2025-02-24;2025-02-24;"CARTE 21/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-27,23;;00040998814;BoursoBank;122.11
+2025-02-24;2025-02-24;"CARTE 23/02/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,10;;00040998814;BoursoBank;122.11
+2025-02-21;2025-02-21;"CARTE 20/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-28,00;;00040998814;BoursoBank;258.23
+2025-02-21;2025-02-21;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;258.23
+2025-02-20;2025-02-20;"CARTE 19/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,00;;00040998814;BoursoBank;86.23
+2025-02-20;2025-02-20;"CARTE 19/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-6,90;;00040998814;BoursoBank;86.23
+2025-02-20;2025-02-20;"CARTE 19/02/25 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;86.23
+2025-02-19;2025-02-19;"CARTE 18/02/25 SAS KAMA CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";kama;-21,00;;00040998814;BoursoBank;127.48
+2025-02-18;2025-02-18;"CARTE 17/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;148.48
+2025-02-18;2025-02-18;"CARTE 16/02/25 E.LECLERC CB*8595";Carburant;"Auto & Moto";leclerc;-27,62;;00040998814;BoursoBank;148.48
+2025-02-18;2025-02-18;"CARTE 17/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,34;;00040998814;BoursoBank;148.48
+2025-02-17;2025-02-17;"CARTE 15/02/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-35,48;;00040998814;BoursoBank;231.44
+2025-02-17;2025-02-17;"CARTE 14/02/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-25,00;;00040998814;BoursoBank;231.44
+2025-02-17;2025-02-17;"CARTE 14/02/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-37,30;;00040998814;BoursoBank;231.44
+2025-02-17;2025-02-17;"CARTE 14/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-31,69;;00040998814;BoursoBank;231.44
+2025-02-17;2025-02-17;"CARTE 14/02/25 HPY*CABOT FF CB*8595";"Assurance habitation et RC";Logement;"HPY*CABOT FF";-160,72;;00040998814;BoursoBank;231.44
+2025-02-17;2025-02-17;"CARTE 14/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,00;;00040998814;BoursoBank;231.44
+2025-02-14;2025-02-14;"CARTE 13/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-7,00;;00040998814;BoursoBank;551.63
+2025-02-14;2025-02-14;"CARTE 12/02/25 ORA 78 CB*8595";"Hébergement (hôtels, camping…)";"Voyages & Transports";ora;-152,40;;00040998814;BoursoBank;551.63
+2025-02-13;2025-02-13;"CARTE 12/02/25 MARIE BLACHERE CB*8595";Alimentation;"Vie quotidienne";"marie blachere";-9,90;;00040998814;BoursoBank;711.03
+2025-02-12;2025-02-12;"CARTE 11/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;720.93
+2025-02-12;2025-02-12;"CARTE 11/02/25 MOKAMATIC CB*8595";Alimentation;"Vie quotidienne";mokamatic;-1,00;;00040998814;BoursoBank;720.93
+2025-02-12;2025-02-12;"CARTE 11/02/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-5,00;;00040998814;BoursoBank;720.93
+2025-02-11;2025-02-11;"CARTE 10/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,00;;00040998814;BoursoBank;751.93
+2025-02-11;2025-02-11;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-350,00;;00040998814;BoursoBank;751.93
+2025-02-11;2025-02-11;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"virement btp prevoyance prestations";"1 137,70";;00040998814;BoursoBank;751.93
+2025-02-11;2025-02-11;"CHQ. N.2054885";Chèques;Chèques;"cheque n 2054885";-15,22;;00040998814;BoursoBank;751.93
+2025-02-07;2025-02-07;"CARTE 06/02/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-12,50;;00040998814;BoursoBank;-10.55
+2025-02-06;2025-02-06;"CARTE 04/02/25 LE PENALTY CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le penalty";-25,00;;00040998814;BoursoBank;1.95
+2025-02-04;2025-02-04;"CARTE 03/02/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-12,50;;00040998814;BoursoBank;26.95
+2025-02-04;2025-02-04;"CARTE 31/01/25 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;26.95
+2025-02-03;2025-02-03;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;57.45
+2025-02-03;2025-02-03;"CARTE 31/01/25 GOURMET KING CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";king;-66,50;;00040998814;BoursoBank;57.45
+2025-02-03;2025-02-03;"CARTE 31/01/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-1,18;;00040998814;BoursoBank;57.45
+2025-02-03;2025-02-03;"CARTE 31/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,12;;00040998814;BoursoBank;57.45
+2025-02-03;2025-02-03;"CARTE 30/01/25 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;57.45
+2025-02-03;2025-02-03;"CARTE 31/01/25 SHELL 3298 CB*8595";Carburant;"Auto & Moto";shell;-5,50;;00040998814;BoursoBank;57.45
+2025-01-31;2025-01-31;"CARTE 30/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-38,71;;00040998814;BoursoBank;231.55
+2025-01-29;2025-01-29;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;270.26
+2025-01-28;2025-01-28;"CARTE 27/01/25 COTE FRANCE DRAC CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"COTE FRANCE";-41,24;;00040998814;BoursoBank;70.26
+2025-01-28;2025-01-28;"CARTE 27/01/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,84;;00040998814;BoursoBank;70.26
+2025-01-28;2025-01-28;"CARTE 24/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-26,26;;00040998814;BoursoBank;70.26
+2025-01-28;2025-01-28;"CARTE 27/01/25 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-40,12;;00040998814;BoursoBank;70.26
+2025-01-28;2025-01-28;"CARTE 26/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,17;;00040998814;BoursoBank;70.26
+2025-01-27;2025-01-27;"CARTE 25/01/25 LE CH'TI FOURNIL CB*8595";Alimentation;"Vie quotidienne";"le ch ti fournil";-17,45;;00040998814;BoursoBank;219.89
+2025-01-27;2025-01-27;"CARTE 24/01/25 SNC D2L CB*8595";Tabac;"Vie quotidienne";d2l;-26,10;;00040998814;BoursoBank;219.89
+2025-01-27;2025-01-27;"CARTE 24/01/25 BRYSSERYNCKX CB*8595";"Non catégorisé";"Non catégorisé";BRYSSERYNCKX;-2,00;;00040998814;BoursoBank;219.89
+2025-01-27;2025-01-27;"CARTE 24/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-27,25;;00040998814;BoursoBank;219.89
+2025-01-24;2025-01-24;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";300,00;;00040998814;BoursoBank;292.69
+2025-01-22;2025-01-22;"CARTE 21/01/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;00040998814;BoursoBank;-7.31
+2025-01-22;2025-01-22;"CARTE 20/01/25 STATION AVIA 4 CB*8595";Carburant;"Auto & Moto";avia;-41,12;;00040998814;BoursoBank;-7.31
+2025-01-22;2025-01-22;"CARTE 20/01/25 ORA 78 CB*8595";"Hébergement (hôtels, camping…)";"Voyages & Transports";ora;-203,20;;00040998814;BoursoBank;-7.31
+2025-01-22;2025-01-22;"CARTE 20/01/25 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;-7.31
+2025-01-21;2025-01-21;"CARTE 20/01/25 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-15,03;;00040998814;BoursoBank;285.96
+2025-01-20;2025-01-20;"CARTE 18/01/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-83,87;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-20;"CARTE 18/01/25 Temu CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";temu;-12,64;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-20;"CARTE 17/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,00;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-20;"CARTE 17/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-21,29;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-20;"CARTE 19/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,04;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-20;"CARTE 18/01/25 PHARMACIE LEBRUN CB*8595";"Pharmacie et laboratoire";Santé;"PHARMACIE LEBRUN";-5,50;;00040998814;BoursoBank;300.99
+2025-01-20;2025-01-18;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-30,00;;00040998814;BoursoBank;510.33
+2025-01-16;2025-01-16;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";32,71;;00040998814;BoursoBank;510.33
+2025-01-16;2025-01-16;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";300,00;;00040998814;BoursoBank;510.33
+2025-01-14;2025-01-14;"CARTE 13/01/25 MAXICOFFEE GC CB*8595";"Mobilier, électroménager, décoration…";"Vie quotidienne";maxicoffee;-1,90;;00040998814;BoursoBank;177.62
+2025-01-14;2025-01-14;"CARTE 13/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-29,88;;00040998814;BoursoBank;177.62
+2025-01-13;2025-01-13;"RETRAIT DAB 11/01/25 VERMELLES CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-100,00;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"CARTE 11/01/25 AUCHAN DAC CB*8595";Carburant;"Auto & Moto";auchan;-10,02;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"CARTE 10/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-24,95;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"CARTE 10/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,25;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"RETRAIT DAB 12/01/25 GUICHET ANN CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-200,00;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"CARTE 12/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-27,51;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-13;"CARTE 12/01/25 CERTAS ESSOF125 4 CB*8595";Carburant;"Auto & Moto";"CERTAS ESSOF125 4245590";-20,02;;00040998814;BoursoBank;209.4
+2025-01-13;2025-01-12;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;417.15
+2025-01-08;2025-01-08;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement stephane panouillot";400,00;;00040998814;BoursoBank;417.15
+2025-01-07;2025-01-07;"CARTE 06/01/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;00040998814;BoursoBank;17.15
+2025-01-03;2025-01-03;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;41.75
+2024-12-31;2024-12-31;"CARTE 30/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;61.75
+2024-12-31;2024-12-31;"CARTE 30/12/24 LOOS ALIMENTS CB*8595";Alimentation;"Vie quotidienne";"loos aliments brongniart et fils";-59,60;;00040998814;BoursoBank;61.75
+2024-12-31;2024-12-31;"CARTE 30/12/24 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-20,80;;00040998814;BoursoBank;61.75
+2024-12-30;2024-12-30;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;166.15
+2024-12-30;2024-12-30;"CARTE 27/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;166.15
+2024-12-27;2024-12-27;"CARTE 24/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;210.15
+2024-12-27;2024-12-27;"CARTE 24/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-13,17;;00040998814;BoursoBank;210.15
+2024-12-27;2024-12-26;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;297.32
+2024-12-24;2024-12-24;"RETRAIT DAB 23/12/24 MAZINGARBE CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-150,00;;00040998814;BoursoBank;297.32
+2024-12-24;2024-12-24;"CARTE 20/12/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;297.32
+2024-12-24;2024-12-24;"CARTE 20/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;297.32
+2024-12-24;2024-12-24;"CARTE 23/12/24 CARREFOUR DAC VL CB*8595";Carburant;"Auto & Moto";carrefour;-36,99;;00040998814;BoursoBank;297.32
+2024-12-24;2024-12-24;"CARTE 23/12/24 Smyths Toys FR - CB*8595";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";"smyths toys fr";-88,95;;00040998814;BoursoBank;297.32
+2024-12-23;2024-12-23;"CARTE 21/12/24 GIFI VENDIN CB*8595";"Mobilier, électroménager, décoration…";"Vie quotidienne";gifi;-30,59;;00040998814;BoursoBank;641.06
+2024-12-23;2024-12-23;"CARTE 21/12/24 CRF LENS VENDIN CB*8595";Alimentation;"Vie quotidienne";"CRF LENS VENDIN";-66,55;;00040998814;BoursoBank;641.06
+2024-12-23;2024-12-23;"CARTE 21/12/24 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;641.06
+2024-12-23;2024-12-23;"CARTE 20/12/24 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-27,81;;00040998814;BoursoBank;641.06
+2024-12-23;2024-12-23;"CARTE 20/12/24 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,03;;00040998814;BoursoBank;641.06
+2024-12-23;2024-12-23;"CARTE 19/12/24 VIAND O CHWA 2 CB*8595";Alimentation;"Vie quotidienne";"viande o chwa";-13,60;;00040998814;BoursoBank;641.06
+2024-12-19;2024-12-19;"CARTE 18/12/24 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-6,50;;00040998814;BoursoBank;833.99
+2024-12-18;2024-12-18;"CARTE 17/12/24 MARIE BLACHERE CB*8595";Alimentation;"Vie quotidienne";"marie blachere";-8,40;;00040998814;BoursoBank;840.49
+2024-12-17;2024-12-17;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";700,00;;00040998814;BoursoBank;848.89
+2024-12-11;2024-12-11;"CARTE 10/12/24 E LECLERC FUEL CB*8595";Alimentation;"Vie quotidienne";leclerc;-30,50;;00040998814;BoursoBank;148.89
+2024-12-11;2024-12-11;"CARTE 09/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;148.89
+2024-12-10;2024-12-10;"CARTE 06/12/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;197.39
+2024-12-10;2024-12-10;"CARTE 09/12/24 APRR PISTE 4 CB*8595";Péages;"Auto & Moto";"aprr autoroute";-49,80;;00040998814;BoursoBank;197.39
+2024-12-10;2024-12-10;"CARTE 06/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-15,70;;00040998814;BoursoBank;197.39
+2024-12-10;2024-12-10;"CARTE 09/12/24 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-50,01;;00040998814;BoursoBank;197.39
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-2,00;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,66;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-48,84;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 07/12/24 SUMUP *ASSOCIATI CB*8595";"Bricolage et jardinage";"Vie quotidienne";association;-3,50;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 07/12/24 SUMUP *ASSOCIATI CB*8595";"Bricolage et jardinage";"Vie quotidienne";association;-49,50;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 06/12/24 MEMPHIS LENS 2 V CB*8595";"Médecins et frais médicaux";Santé;"memphis lens 2v";-73,20;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 06/12/24 E LECLERC FUEL CB*8595";Alimentation;"Vie quotidienne";leclerc;-27,56;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 06/12/24 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,19;;00040998814;BoursoBank;362.7
+2024-12-09;2024-12-09;"CARTE 05/12/24 ORA 78 CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;00040998814;BoursoBank;362.7
+2024-12-05;2024-12-05;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";350,00;;00040998814;BoursoBank;826.35
+2024-12-05;2024-12-05;"CARTE 04/12/24 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,00;;00040998814;BoursoBank;826.35
+2024-12-05;2024-12-05;"CARTE 04/12/24 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-10,15;;00040998814;BoursoBank;826.35
+2024-12-04;2024-12-04;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";500,00;;00040998814;BoursoBank;510.5
+2024-12-02;2024-12-02;"CARTE 29/11/24 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,00;;00040998814;BoursoBank;10.5
+2024-11-29;2024-11-29;"CHQ. N.2054882";Chèques;Chèques;"cheque n 2054882";-30,00;;00040998814;BoursoBank;34.5
+2024-11-27;2024-11-27;"CARTE 25/11/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;64.5
+2024-11-26;2024-11-26;"CARTE 25/11/24 APRR CB*8595";Péages;"Auto & Moto";APRR;-51,30;;00040998814;BoursoBank;82.5
+2024-11-26;2024-11-26;"CARTE 22/11/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;82.5
+2024-11-26;2024-11-26;"CARTE 22/11/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;82.5
+2024-11-20;2024-11-20;"CARTE 18/11/24 REGIE BPNL 2 CB*8595";Péages;"Auto & Moto";"regie bpnl";-2,50;;00040998814;BoursoBank;201.6
+2024-11-20;2024-11-20;"CARTE 18/11/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;201.6
+2024-11-19;2024-11-19;"CARTE 18/11/24 APRR PISTE 4 CB*8595";Péages;"Auto & Moto";"aprr piste";-49,80;;00040998814;BoursoBank;222.1
+2024-11-05;2024-11-05;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";300,00;;00040998814;BoursoBank;271.9

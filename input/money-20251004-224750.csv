@@ -1,0 +1,81 @@
+Désignation;Groupe de catégories;Type
+Abonnement/factures;Abonnement/factures;Dépenses
+Assurance habitation;Abonnement/factures;Dépenses
+Chauffage;Abonnement/factures;Dépenses
+Eau;Abonnement/factures;Dépenses
+Electricité;Abonnement/factures;Dépenses
+Internet;Abonnement/factures;Dépenses
+Loyer;Abonnement/factures;Dépenses
+Ménage;Abonnement/factures;Dépenses
+Portable;Abonnement/factures;Dépenses
+Service d'entretien;Abonnement/factures;Dépenses
+TV/câble;Abonnement/factures;Dépenses
+Téléphone;Abonnement/factures;Dépenses
+Café/Bar/Tabac;Alimentation;Dépenses
+Restaurant;Alimentation;Dépenses
+Épicerie;Alimentation;Dépenses
+Alimentation;Animaux domestiques;Dépenses
+Fournitures diverses;Animaux domestiques;Dépenses
+Toilletage;Animaux domestiques;Dépenses
+Accessoires   [Auto/moto];Auto/moto;Dépenses
+Achat auto/moto;Auto/moto;Dépenses
+Assurance Auto/moto;Auto/moto;Dépenses
+Carburant   [Auto/moto];Auto/moto;Dépenses
+Entretien/réparations;Auto/moto;Dépenses
+Location de voiture;Auto/moto;Dépenses
+Parking/péage   [Auto/moto];Auto/moto;Dépenses
+Dépenses à catégoriser;Autres dépenses;Dépenses
+Retraits;Autres dépenses;Dépenses
+Dépôts;Autres revenus;Revenus
+Revenus à catégoriser;Autres revenus;Revenus
+Allocations de chômage;Autres revenus;Revenus
+Autres revenus;Autres revenus;Revenus
+Complémentaire Santé;Autres revenus;Revenus
+Pension Invalidité;Autres revenus;Revenus
+Prêt Personel;Autres revenus;Revenus
+Remboursement Divers;Autres revenus;Revenus
+Remboursement Frais Santé;Autres revenus;Revenus
+Cadeaux;Divers;Dépenses
+Divers   [Divers];Divers;Dépenses
+Divers   [Divers];Divers;Dépenses
+Dons caritatifs;Divers;Dépenses
+Responsabilité civile;Divers;Dépenses
+Retrait d'espèces;Divers;Dépenses
+Pension Alimentaire;Enfants;Dépenses
+Alimentation/Restaurant;Frais Profesionnel;Dépenses
+Carburant   [Frais Profesionnel];Frais Profesionnel;Dépenses
+Logement   [Frais Profesionnel];Frais Profesionnel;Dépenses
+Parking/péage   [Frais Profesionnel];Frais Profesionnel;Dépenses
+Frais divers;Frais bancaires;Dépenses
+Services / Abonnement;Frais bancaires;Dépenses
+Accessoires   [Habillement];Habillement;Dépenses
+Chaussures;Habillement;Dépenses
+Travail;Habillement;Dépenses
+Vetements;Habillement;Dépenses
+Cinéma/spectacle;Loisirs/culture/sport;Dépenses
+Loisirs/culture/sport;Loisirs/culture/sport;Dépenses
+Manifestations sportives;Loisirs/culture/sport;Dépenses
+Intérêts;Placements;Revenus
+Remboursés;Prêt Personnelle;Dépenses
+Complémentaire santé;Santé;Dépenses
+Dentiste;Santé;Dépenses
+Médecin;Santé;Dépenses
+Pharmacie;Santé;Dépenses
+Psycologue;Santé;Dépenses
+Coiffeur/esthéticienne;Soins de la personne;Dépenses
+Soins de la personne;Soins de la personne;Dépenses
+Avance sur salaire;Traitements et salaires;Revenus
+Salaire net;Traitements et salaires;Revenus
+Epargne;Transferts;Transfert
+Transfert;Transferts;Transfert
+Metro/Bus/Train;Transports;Dépenses
+Alimentation/restaurant;Vacances;Dépenses
+Logement   [Vacances];Vacances;Dépenses
+Séjours;Vacances;Dépenses
+Ameublement;Équipement du logement;Dépenses
+Bricolage / Outils;Équipement du logement;Dépenses
+Ordinateur et accessoires;Équipement du logement;Dépenses
+Travaux / Décoration;Équipement du logement;Dépenses
+Télévision et accessoires;Équipement du logement;Dépenses
+Électroménager;Équipement du logement;Dépenses
+Équipement du logement;Équipement du logement;Dépenses

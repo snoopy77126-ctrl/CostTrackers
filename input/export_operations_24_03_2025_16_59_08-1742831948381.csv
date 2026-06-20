@@ -1,0 +1,307 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-02-28;2025-02-28;"FRAIS IRREGULARITES ET INCIDENTS DU MOIS DE 01/2025";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-48,00;;3029135H026;LaBanquePostal;205.9
+2025-02-27;2025-02-27;"ACHAT CB LE GALLINE 26.02.25 EUR 25,00 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;3029135H026;LaBanquePostal;523.9
+2025-02-27;2025-02-27;"ACHAT CB MC DONALD'S 26.02.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-11,95;;3029135H026;LaBanquePostal;523.9
+2025-02-27;2025-02-27;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;LaBanquePostal;523.9
+2025-02-27;2025-02-27;"CARTE 26/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-31,52;;00040998814;BoursoBank;52.22
+2025-02-27;2025-02-27;"Prime mobilite bancaire";"Virements reçus";"Virements reçus";"prime mobilite bancaire";70,00;;00040998814;BoursoBank;52.22
+2025-02-26;2025-02-26;"ACHAT CB ORA 78 24.02.25 EUR 203,20 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;3029135H026;LaBanquePostal;660.85
+2025-02-26;2025-02-26;"PRLV SEPA AMAZON EU SARL, SUCCURSALE FRA";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-19,50;;00040998814;BoursoBank;13.74
+2025-02-25;2025-02-25;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;864.05
+2025-02-25;2025-02-25;"CARTE 24/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-18,75;;00040998814;BoursoBank;33.24
+2025-02-25;2025-02-25;"CARTE 24/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-32,40;;00040998814;BoursoBank;33.24
+2025-02-24;2025-02-24;"ACHAT CB Action 4623 22.02.25 EUR 84,24 CARTE NO 666";"Logement - Autres";Logement;action;-84,24;;3029135H026;LaBanquePostal;1014.05
+2025-02-24;2025-02-24;"ACHAT CB Free Mobile 21.02.25 CARTE NUMERO 666";"Abonnements & téléphonie";"Abonnements & téléphonie";"free mobile";-19,98;;3029135H026;LaBanquePostal;1014.05
+2025-02-24;2025-02-24;"ACHAT CB LE CH'TI FOURN 22.02.25 EUR 16,15 CARTE NO 666";Alimentation;"Vie quotidienne";"le ch ti fournil";-16,15;;3029135H026;LaBanquePostal;1014.05
+2025-02-24;2025-02-24;"ACHAT CB LIDL 2888 22.02.25 EUR 8,51 CARTE NO 666";Alimentation;"Vie quotidienne";lidl;-8,51;;3029135H026;LaBanquePostal;1014.05
+2025-02-24;2025-02-22;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;1142.93
+2025-02-24;2025-02-24;"CARTE 22/02/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-53,79;;00040998814;BoursoBank;84.39
+2025-02-24;2025-02-24;"CARTE 21/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;84.39
+2025-02-24;2025-02-24;"CARTE 21/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-27,23;;00040998814;BoursoBank;84.39
+2025-02-24;2025-02-24;"CARTE 23/02/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,10;;00040998814;BoursoBank;84.39
+2025-02-21;2025-02-21;"ACHAT CB HOLDIS E LECLE 20.02.25 EUR 21,59 CARTE NO 666";Alimentation;"Vie quotidienne";"holdis e lecle";-21,59;;3029135H026;LaBanquePostal;1142.93
+2025-02-21;2025-02-21;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;LaBanquePostal;1142.93
+2025-02-21;2025-02-21;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-200,00;;3029135H026;LaBanquePostal;1142.93
+2025-02-21;2025-02-21;"CARTE 20/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-28,00;;00040998814;BoursoBank;220.51
+2025-02-21;2025-02-21;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;220.51
+2025-02-20;2025-02-20;"CARTE 19/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,00;;00040998814;BoursoBank;48.51
+2025-02-20;2025-02-20;"CARTE 19/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-6,90;;00040998814;BoursoBank;48.51
+2025-02-20;2025-02-20;"CARTE 19/02/25 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;48.51
+2025-02-19;2025-02-19;"ACHAT CB ORA 78 17.02.25 EUR 203,20 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;3029135H026;LaBanquePostal;1514.52
+2025-02-19;2025-02-19;"CARTE 18/02/25 SAS KAMA CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";kama;-21,00;;00040998814;BoursoBank;89.76
+2025-02-18;2025-02-18;"ACHAT CB MAXICOFFEE GC 17.02.25 EUR 1,90 CARTE NO 666";"Mobilier, électroménager, décoration…";"Vie quotidienne";maxicoffee;-1,90;;3029135H026;LaBanquePostal;1717.72
+2025-02-18;2025-02-18;"ACHAT CB MC DONALD'S 17.02.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-10,90;;3029135H026;LaBanquePostal;1717.72
+2025-02-18;2025-02-17;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;LaBanquePostal;1730.52
+2025-02-18;2025-02-18;"CARTE 17/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;110.76
+2025-02-18;2025-02-18;"CARTE 16/02/25 E.LECLERC CB*8595";Carburant;"Auto & Moto";leclerc;-27,62;;00040998814;BoursoBank;110.76
+2025-02-18;2025-02-18;"CARTE 17/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,34;;00040998814;BoursoBank;110.76
+2025-02-17;2025-02-17;"ACHAT CB Free SAS 14.02.25 CARTE NUMERO 666";"Abonnements & téléphonie";"Abonnements & téléphonie";free;-39,99;;3029135H026;LaBanquePostal;1730.52
+2025-02-17;2025-02-17;"PRELEVEMENT DE ENGIE S.A. REF : 5229379172630005234749252";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-145,58;;3029135H026;LaBanquePostal;1730.52
+2025-02-17;2025-02-17;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-250,00;;3029135H026;LaBanquePostal;1730.52
+2025-02-17;2025-02-17;"CARTE 15/02/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-35,48;;00040998814;BoursoBank;193.72
+2025-02-17;2025-02-17;"CARTE 14/02/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-25,00;;00040998814;BoursoBank;193.72
+2025-02-17;2025-02-17;"CARTE 14/02/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-37,30;;00040998814;BoursoBank;193.72
+2025-02-17;2025-02-17;"CARTE 14/02/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-31,69;;00040998814;BoursoBank;193.72
+2025-02-17;2025-02-17;"CARTE 14/02/25 HPY*CABOT FF CB*8595";"Assurance habitation et RC";Logement;"HPY*CABOT FF";-160,72;;00040998814;BoursoBank;193.72
+2025-02-17;2025-02-17;"CARTE 14/02/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,00;;00040998814;BoursoBank;193.72
+2025-02-14;2025-02-14;"ACHAT CB AMAZON 13.02.25 CARTE NUMERO 666";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-297,99;;3029135H026;LaBanquePostal;2266.09
+2025-02-14;2025-02-14;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;2266.09
+2025-02-14;2025-02-14;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-175,00;;3029135H026;LaBanquePostal;2266.09
+2025-02-14;2025-02-14;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-534,00;;3029135H026;LaBanquePostal;2266.09
+2025-02-14;2025-02-14;"CARTE 13/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-7,00;;00040998814;BoursoBank;513.91
+2025-02-14;2025-02-14;"CARTE 12/02/25 ORA 78 CB*8595";"Hébergement (hôtels, camping…)";"Voyages & Transports";ora;-152,40;;00040998814;BoursoBank;513.91
+2025-02-13;2025-02-13;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-500,00;;3029135H026;LaBanquePostal;3423.08
+2025-02-13;2025-02-13;"CARTE 12/02/25 MARIE BLACHERE CB*8595";Alimentation;"Vie quotidienne";"marie blachere";-9,90;;00040998814;BoursoBank;673.31
+2025-02-12;2025-02-12;"VIREMENT DE L.T.C. LTC-015559-022025104942-14";"Virements reçus";"Virements reçus";"ltc ltc";"4 143,70";;3029135H026;LaBanquePostal;3923.08
+2025-02-12;2025-02-12;"CARTE 11/02/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-25,00;;00040998814;BoursoBank;683.21
+2025-02-12;2025-02-12;"CARTE 11/02/25 MOKAMATIC CB*8595";Alimentation;"Vie quotidienne";mokamatic;-1,00;;00040998814;BoursoBank;683.21
+2025-02-12;2025-02-12;"CARTE 11/02/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-5,00;;00040998814;BoursoBank;683.21
+2025-02-11;2025-02-11;"CARTE 10/02/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,00;;00040998814;BoursoBank;714.21
+2025-02-11;2025-02-11;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-350,00;;00040998814;BoursoBank;714.21
+2025-02-11;2025-02-11;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"virement btp prevoyance prestations";"1 137,70";;00040998814;BoursoBank;714.21
+2025-02-11;2025-02-11;"CHQ. N.2054885";Chèques;Chèques;"cheque n 2054885";-15,22;;00040998814;BoursoBank;714.21
+2025-02-07;2025-02-07;"CARTE 06/02/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-12,50;;00040998814;BoursoBank;-48.27
+2025-02-06;2025-02-06;"FRAIS IRREGULARITES ET INCIDENTS DU MOIS DE 12/2024";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-155,65;;3029135H026;LaBanquePostal;-220.62
+2025-02-06;2025-02-06;"CARTE 04/02/25 LE PENALTY CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le penalty";-25,00;;00040998814;BoursoBank;-35.77
+2025-02-04;2025-02-04;"CARTE 03/02/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-12,50;;00040998814;BoursoBank;-10.77
+2025-02-04;2025-02-04;"CARTE 31/01/25 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;-10.77
+2025-02-03;2025-02-03;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;19.73
+2025-02-03;2025-02-03;"CARTE 31/01/25 GOURMET KING CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";king;-66,50;;00040998814;BoursoBank;19.73
+2025-02-03;2025-02-03;"CARTE 31/01/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-1,18;;00040998814;BoursoBank;19.73
+2025-02-03;2025-02-03;"CARTE 31/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,12;;00040998814;BoursoBank;19.73
+2025-02-03;2025-02-03;"CARTE 30/01/25 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;19.73
+2025-02-03;2025-02-03;"CARTE 31/01/25 SHELL 3298 CB*8595";Carburant;"Auto & Moto";shell;-5,50;;00040998814;BoursoBank;19.73
+2025-01-31;2025-01-31;"CARTE 30/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-38,71;;00040998814;BoursoBank;193.83
+2025-01-30;2025-01-30;"ACHAT CB BP VILLEURB FA 29.01.25 EUR 7,08 CARTE NO 666";Carburant;"Auto & Moto";bp;-7,08;;3029135H026;LaBanquePostal;-64.97
+2025-01-30;2025-01-30;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-200,00;;3029135H026;LaBanquePostal;-64.97
+2025-01-29;2025-01-29;"ACHAT CB BP VILLEURB FA 28.01.25 EUR 4,51 CARTE NO 666";Carburant;"Auto & Moto";bp;-4,51;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"ACHAT CB LE GALLINE 28.01.25 EUR 24,60 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"ACHAT CB ORA 78 27.01.25 EUR 203,20 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"ACHAT CB Sanef 24.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-16,30;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"ACHAT CB Sanef 24.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-49,80;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"ACHAT CB Sanef 27.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-16,30;;3029135H026;LaBanquePostal;142.11
+2025-01-29;2025-01-29;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;232.54
+2025-01-28;2025-01-28;"ACHAT CB APRR VILLEFRAN 27.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";"aprr villefran";-49,80;;3029135H026;LaBanquePostal;456.82
+2025-01-28;2025-01-28;"ACHAT CB STATION AVIA 27.01.25 EUR 16,10 CARTE NO 666";Carburant;"Auto & Moto";avia;-16,10;;3029135H026;LaBanquePostal;456.82
+2025-01-28;2025-01-28;"CARTE 27/01/25 COTE FRANCE DRAC CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"COTE FRANCE";-41,24;;00040998814;BoursoBank;32.54
+2025-01-28;2025-01-28;"CARTE 27/01/25 BP VILLEURB FACU2 CB*8595";Carburant;"Auto & Moto";bp;-10,84;;00040998814;BoursoBank;32.54
+2025-01-28;2025-01-28;"CARTE 24/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-26,26;;00040998814;BoursoBank;32.54
+2025-01-28;2025-01-28;"CARTE 27/01/25 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-40,12;;00040998814;BoursoBank;32.54
+2025-01-28;2025-01-28;"CARTE 26/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,17;;00040998814;BoursoBank;32.54
+2025-01-27;2025-01-27;"ACHAT CB MC DONALD'S 26.01.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-50,45;;3029135H026;LaBanquePostal;522.72
+2025-01-27;2025-01-27;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;522.72
+2025-01-27;2025-01-27;"CARTE 25/01/25 LE CH'TI FOURNIL CB*8595";Alimentation;"Vie quotidienne";"le ch ti fournil";-17,45;;00040998814;BoursoBank;182.17
+2025-01-27;2025-01-27;"CARTE 24/01/25 SNC D2L CB*8595";Tabac;"Vie quotidienne";d2l;-26,10;;00040998814;BoursoBank;182.17
+2025-01-27;2025-01-27;"CARTE 24/01/25 BRYSSERYNCKX CB*8595";"Non catégorisé";"Non catégorisé";BRYSSERYNCKX;-2,00;;00040998814;BoursoBank;182.17
+2025-01-27;2025-01-27;"CARTE 24/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-27,25;;00040998814;BoursoBank;182.17
+2025-01-24;2025-01-24;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-300,00;;3029135H026;LaBanquePostal;623.17
+2025-01-24;2025-01-24;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";300,00;;00040998814;BoursoBank;254.97
+2025-01-23;2025-01-23;"FRAIS DE REMPLACEMENT DE CARTE VISA PREMIER N0 8236";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-15,00;;3029135H026;LaBanquePostal;923.17
+2025-01-22;2025-01-22;"ACHAT CB STATION AVIA 20.01.25 EUR 16,10 CARTE NO 666";Carburant;"Auto & Moto";avia;-16,10;;3029135H026;LaBanquePostal;938.17
+2025-01-22;2025-01-22;"ACHAT CB Sanef 17.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;938.17
+2025-01-22;2025-01-22;"ACHAT CB Sanef 17.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-49,80;;3029135H026;LaBanquePostal;938.17
+2025-01-22;2025-01-22;"ACHAT CB Sanef 20.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;938.17
+2025-01-22;2025-01-22;"CARTE 21/01/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;00040998814;BoursoBank;-45.03
+2025-01-22;2025-01-22;"CARTE 20/01/25 STATION AVIA 4 CB*8595";Carburant;"Auto & Moto";avia;-41,12;;00040998814;BoursoBank;-45.03
+2025-01-22;2025-01-22;"CARTE 20/01/25 ORA 78 CB*8595";"Hébergement (hôtels, camping…)";"Voyages & Transports";ora;-203,20;;00040998814;BoursoBank;-45.03
+2025-01-22;2025-01-22;"CARTE 20/01/25 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;-45.03
+2025-01-21;2025-01-21;"ACHAT CB APRR AUTOROUTE 20.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";"aprr autoroute";-49,80;;3029135H026;LaBanquePostal;1040.07
+2025-01-21;2025-01-21;"VIREMENT DE L.T.C. LTC-015559-012025120333-1";"Virements reçus";"Virements reçus";"ltc ltc";"1 000,00";;3029135H026;LaBanquePostal;1040.07
+2025-01-21;2025-01-21;"CARTE 20/01/25 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-15,03;;00040998814;BoursoBank;248.24
+2025-01-20;2025-01-20;"ACHAT CB MC DONALD'S 17.01.25 EUR 50,15 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-50,15;;3029135H026;LaBanquePostal;89.87
+2025-01-20;2025-01-20;"ACHAT CB REL.TROYESPLES 17.01.25 EUR 3,30 CARTE NO 666";Carburant;"Auto & Moto";"relais troyesples";-3,30;;3029135H026;LaBanquePostal;89.87
+2025-01-20;2025-01-20;"CARTE 18/01/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-83,87;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-20;"CARTE 18/01/25 Temu CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";temu;-12,64;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-20;"CARTE 17/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,00;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-20;"CARTE 17/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-21,29;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-20;"CARTE 19/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-31,04;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-20;"CARTE 18/01/25 PHARMACIE LEBRUN CB*8595";"Pharmacie et laboratoire";Santé;"PHARMACIE LEBRUN";-5,50;;00040998814;BoursoBank;263.27
+2025-01-20;2025-01-18;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-30,00;;00040998814;BoursoBank;472.61
+2025-01-17;2025-01-17;"ACHAT CB BP VILLEURB FA 16.01.25 EUR 6,65 CARTE NO 666";Carburant;"Auto & Moto";bp;-6,65;;3029135H026;LaBanquePostal;143.32
+2025-01-16;2025-01-16;"ACHAT CB BP VILLEURB FA 15.01.25 EUR 20,00 CARTE NO 666";Carburant;"Auto & Moto";bp;-20,00;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"ACHAT CB BP VILLEURB FA 15.01.25 EUR 8,15 CARTE NO 666";Carburant;"Auto & Moto";bp;-8,15;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"ACHAT CB LE GALLINE 15.01.25 EUR 24,60 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-140,00;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-300,00;;3029135H026;LaBanquePostal;149.97
+2025-01-16;2025-01-16;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";32,71;;00040998814;BoursoBank;472.61
+2025-01-16;2025-01-16;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";300,00;;00040998814;BoursoBank;472.61
+2025-01-15;2025-01-15;"ACHAT CB MC DONALD'S 14.01.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-5,00;;3029135H026;LaBanquePostal;792.72
+2025-01-15;2025-01-15;"ACHAT CB ORA 78 13.01.25 EUR 203,20 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;3029135H026;LaBanquePostal;792.72
+2025-01-15;2025-01-15;"ACHAT CB Sanef 13.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;792.72
+2025-01-15;2025-01-15;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;792.72
+2025-01-14;2025-01-14;"ACHAT CB APRR AUTOROUTE 13.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";"aprr autoroute";-49,80;;3029135H026;LaBanquePostal;1068.92
+2025-01-14;2025-01-14;"ACHAT CB BP VILLEURB FA 13.01.25 CARTE NUMERO 666";Carburant;"Auto & Moto";bp;-6,85;;3029135H026;LaBanquePostal;1068.92
+2025-01-14;2025-01-14;"ACHAT CB Sanef 10.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;1068.92
+2025-01-14;2025-01-14;"ACHAT CB Sanef 10.01.25 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-49,80;;3029135H026;LaBanquePostal;1068.92
+2025-01-14;2025-01-14;"CARTE 13/01/25 MAXICOFFEE GC CB*8595";"Mobilier, électroménager, décoration…";"Vie quotidienne";maxicoffee;-1,90;;00040998814;BoursoBank;139.9
+2025-01-14;2025-01-14;"CARTE 13/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-29,88;;00040998814;BoursoBank;139.9
+2025-01-13;2025-01-13;"ACHAT CB AMAZON 09.01.25 CARTE NUMERO 666";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-298,01;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"ACHAT CB EURL VDGC 11.01.25 EUR 20,00 CARTE NO 666";"Non catégorisé";"Non catégorisé";;-20,00;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"ACHAT CB LE CH'TI FOURN 11.01.25 EUR 21,35 CARTE NO 666";Alimentation;"Vie quotidienne";"le ch ti fournil";-21,35;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"ACHAT CB LE GALLINE 10.01.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"ACHAT CB LE MARIGNY 12.01.25 CARTE NUMERO 666";Tabac;"Vie quotidienne";"le marigny";-24,60;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"ACHAT CB MC DONALD'S 12.01.25 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-60,80;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-200,00;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-150,00;;3029135H026;LaBanquePostal;1193.37
+2025-01-13;2025-01-13;"RETRAIT DAB 11/01/25 VERMELLES CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-100,00;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"CARTE 11/01/25 AUCHAN DAC CB*8595";Carburant;"Auto & Moto";auchan;-10,02;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"CARTE 10/01/25 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-24,95;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"CARTE 10/01/25 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,25;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"RETRAIT DAB 12/01/25 GUICHET ANN CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-200,00;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"CARTE 12/01/25 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-27,51;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-13;"CARTE 12/01/25 CERTAS ESSOF125 4 CB*8595";Carburant;"Auto & Moto";"CERTAS ESSOF125 4245590";-20,02;;00040998814;BoursoBank;171.68
+2025-01-13;2025-01-12;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";200,00;;00040998814;BoursoBank;379.43
+2025-01-10;2025-01-10;"PRELEVEMENT DE PRIORIS REF : PRS/T007420419/115882344";Financement;"Auto & Moto";prioris;-206,61;;3029135H026;LaBanquePostal;1992.73
+2025-01-10;2025-01-10;"PRELEVEMENT DE SECURYCAR REF : P11949855";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;3029135H026;LaBanquePostal;1992.73
+2025-01-10;2025-01-10;"PRELEVEMENT DE SIA-CEp REF : 10/01/2025-655164";"Loyers, Charges";Logement;sia;-534,99;;3029135H026;LaBanquePostal;1992.73
+2025-01-09;2025-01-09;"PRELEVEMENT DE FNAC DARTY SERVIC S";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";darty;-11,99;;3029135H026;LaBanquePostal;2751.83
+2025-01-09;2025-01-09;"PRELEVEMENT DE Free Telecom REF : FHD-1348268158";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-47,49;;3029135H026;LaBanquePostal;2751.83
+2025-01-09;2025-01-09;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a catherine dautriche";-400,00;;3029135H026;LaBanquePostal;2751.83
+2025-01-09;2025-01-09;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-500,00;;3029135H026;LaBanquePostal;2751.83
+2025-01-08;2025-01-08;"PRELEVEMENT DE FREE MOBILE REF : fmpmt-2118219618";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-29,98;;3029135H026;LaBanquePostal;3711.31
+2025-01-08;2025-01-08;"VIREMENT DE L.T.C. LTC-015559-012025122154-30";"Virements reçus";"Virements reçus";"ltc ltc";"3 891,80";;3029135H026;LaBanquePostal;3711.31
+2025-01-08;2025-01-08;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"virement stephane panouillot";400,00;;00040998814;BoursoBank;379.43
+2025-01-07;2025-01-07;"FRAIS IRREGULARITES ET INCIDENTS DU MOIS DE 11/2024";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-44,07;;3029135H026;LaBanquePostal;-150.51
+2025-01-07;2025-01-07;"CARTE 06/01/25 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,60;;00040998814;BoursoBank;-20.57
+2025-01-06;2025-01-06;"AVANTAGE MOBILITE BANCAIRE SUR VOTRE FORMULE DE COMPTE";"Remboursements frais de vie quotidienne";"Vie quotidienne";"avantage mobilite bancaire sur votre formule de compte";11,25;;3029135H026;LaBanquePostal;-106.44
+2025-01-06;2025-01-06;"COTISATION TRIMESTRIELLE DE VOTRE FORMULE DE COMPTE";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-22,50;;3029135H026;LaBanquePostal;-106.44
+2025-01-06;2025-01-06;"MINIMUM FORFAITAIRE TRIMESTRIEL D'UTILISATION DU DECOUVERT";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-3,00;;3029135H026;LaBanquePostal;-106.44
+2025-01-03;2025-01-03;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;4.03
+2024-12-31;2024-12-31;"CARTE 30/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;24.03
+2024-12-31;2024-12-31;"CARTE 30/12/24 LOOS ALIMENTS CB*8595";Alimentation;"Vie quotidienne";"loos aliments brongniart et fils";-59,60;;00040998814;BoursoBank;24.03
+2024-12-31;2024-12-31;"CARTE 30/12/24 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-20,80;;00040998814;BoursoBank;24.03
+2024-12-30;2024-12-30;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;128.43
+2024-12-30;2024-12-30;"CARTE 27/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;128.43
+2024-12-27;2024-12-27;"CARTE 24/12/24 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-24,00;;00040998814;BoursoBank;172.43
+2024-12-27;2024-12-27;"CARTE 24/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-13,17;;00040998814;BoursoBank;172.43
+2024-12-27;2024-12-26;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;259.6
+2024-12-24;2024-12-24;"RETRAIT DAB 23/12/24 MAZINGARBE CB*8595";"Retraits cash";"Retraits cash";"Retrait automate";-150,00;;00040998814;BoursoBank;259.6
+2024-12-24;2024-12-24;"CARTE 20/12/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;259.6
+2024-12-24;2024-12-24;"CARTE 20/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;259.6
+2024-12-24;2024-12-24;"CARTE 23/12/24 CARREFOUR DAC VL CB*8595";Carburant;"Auto & Moto";carrefour;-36,99;;00040998814;BoursoBank;259.6
+2024-12-24;2024-12-24;"CARTE 23/12/24 Smyths Toys FR - CB*8595";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";"smyths toys fr";-88,95;;00040998814;BoursoBank;259.6
+2024-12-23;2024-12-23;"CARTE 21/12/24 GIFI VENDIN CB*8595";"Mobilier, électroménager, décoration…";"Vie quotidienne";gifi;-30,59;;00040998814;BoursoBank;603.34
+2024-12-23;2024-12-23;"CARTE 21/12/24 CRF LENS VENDIN CB*8595";Alimentation;"Vie quotidienne";"CRF LENS VENDIN";-66,55;;00040998814;BoursoBank;603.34
+2024-12-23;2024-12-23;"CARTE 21/12/24 CDISCOUNT 4 CB*8595";"Electronique et informatique";"Vie quotidienne";cdiscount;-24,35;;00040998814;BoursoBank;603.34
+2024-12-23;2024-12-23;"CARTE 20/12/24 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-27,81;;00040998814;BoursoBank;603.34
+2024-12-23;2024-12-23;"CARTE 20/12/24 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-30,03;;00040998814;BoursoBank;603.34
+2024-12-23;2024-12-23;"CARTE 19/12/24 VIAND O CHWA 2 CB*8595";Alimentation;"Vie quotidienne";"viande o chwa";-13,60;;00040998814;BoursoBank;603.34
+2024-12-19;2024-12-19;"CARTE 18/12/24 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-6,50;;00040998814;BoursoBank;796.27
+2024-12-18;2024-12-18;"ACHAT CB Sanef 1012-161 16.12.24 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;-92.19
+2024-12-18;2024-12-18;"CARTE 17/12/24 MARIE BLACHERE CB*8595";Alimentation;"Vie quotidienne";"marie blachere";-8,40;;00040998814;BoursoBank;802.77
+2024-12-17;2024-12-17;"ACHAT CB APRR VILLEFRAN 16.12.24 CARTE NUMERO 666";Péages;"Auto & Moto";"aprr villefran";-49,80;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB BP CHATEAUVILL 16.12.24 CARTE NUMERO 666";Carburant;"Auto & Moto";bp;-15,22;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB E.LECLERC 15.12.24 EUR 25,00 CARTE NO 666";Alimentation;"Vie quotidienne";leclerc;-25,00;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB MC DONALD'S 16.12.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-7,40;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB STATION AVIA 16.12.24 CARTE NUMERO 666";Carburant;"Auto & Moto";avia;-37,40;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB Sanef 13.12.24 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-18,00;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"ACHAT CB Sanef 13.12.24 CARTE NUMERO 666";Péages;"Auto & Moto";sanef;-49,80;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"VIREMENT INSTANTANE A PANOUILLOT STEPHANE";"Virements émis de comptes à comptes";"Mouvements internes débiteurs";"virement instantane a panouillot stephane";-700,00;;3029135H026;LaBanquePostal;-74.19
+2024-12-17;2024-12-17;"VIR INST MR PANOUILLOT STEPHANE";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";"monsieur panouillot stephane";700,00;;00040998814;BoursoBank;811.17
+2024-12-16;2024-12-16;"ACHAT CB Free SAS 14.12.24 CARTE NUMERO 666";"Abonnements & téléphonie";"Abonnements & téléphonie";free;-39,99;;3029135H026;LaBanquePostal;828.43
+2024-12-16;2024-12-16;"ACHAT CB ORA 78 12.12.24 EUR 203,20 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;3029135H026;LaBanquePostal;828.43
+2024-12-16;2024-12-16;"ACHAT CB TIGO 13.12.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";tigo;-36,00;;3029135H026;LaBanquePostal;828.43
+2024-12-16;2024-12-16;"ACHAT CB TOTAL MKT FR 13.12.24 CARTE NUMERO 666";Carburant;"Auto & Moto";"total mkt fr";-20,02;;3029135H026;LaBanquePostal;828.43
+2024-12-16;2024-12-16;"ACHAT CB TOTAL MKT FR 13.12.24 CARTE NUMERO 666";Carburant;"Auto & Moto";"total mkt fr";-30,00;;3029135H026;LaBanquePostal;828.43
+2024-12-11;2024-12-11;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-517,00;;3029135H026;LaBanquePostal;1157.64
+2024-12-11;2024-12-11;"CARTE 10/12/24 E LECLERC FUEL CB*8595";Alimentation;"Vie quotidienne";leclerc;-30,50;;00040998814;BoursoBank;111.17
+2024-12-11;2024-12-11;"CARTE 09/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;111.17
+2024-12-10;2024-12-10;"PRELEVEMENT DE FNAC DARTY SERVIC S";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";darty;-11,99;;3029135H026;LaBanquePostal;1674.64
+2024-12-10;2024-12-10;"PRELEVEMENT DE PRIORIS REF : PRS/T007420419/115232048";Financement;"Auto & Moto";prioris;-206,61;;3029135H026;LaBanquePostal;1674.64
+2024-12-10;2024-12-10;"PRELEVEMENT DE SECURYCAR REF : P11865813";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;3029135H026;LaBanquePostal;1674.64
+2024-12-10;2024-12-10;"PRELEVEMENT DE SIA-CEp REF : 10/12/2024-655164";"Loyers, Charges";Logement;sia;-533,67;;3029135H026;LaBanquePostal;1674.64
+2024-12-10;2024-12-10;"CARTE 06/12/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;159.67
+2024-12-10;2024-12-10;"CARTE 09/12/24 APRR PISTE 4 CB*8595";Péages;"Auto & Moto";"aprr autoroute";-49,80;;00040998814;BoursoBank;159.67
+2024-12-10;2024-12-10;"CARTE 06/12/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-15,70;;00040998814;BoursoBank;159.67
+2024-12-10;2024-12-10;"CARTE 09/12/24 BP CHATEAUVILLAI2 CB*8595";Carburant;"Auto & Moto";bp;-50,01;;00040998814;BoursoBank;159.67
+2024-12-09;2024-12-09;"VIREMENT DE L.T.C. LTC-015559-122024112652-1";"Virements reçus";"Virements reçus";"ltc ltc";"2 585,02";;3029135H026;LaBanquePostal;2444.41
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-2,00;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE STATI CB*8595";Alimentation;"Vie quotidienne";intermarche;-30,66;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 07/12/24 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-48,84;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 07/12/24 SUMUP *ASSOCIATI CB*8595";"Bricolage et jardinage";"Vie quotidienne";association;-3,50;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 07/12/24 SUMUP *ASSOCIATI CB*8595";"Bricolage et jardinage";"Vie quotidienne";association;-49,50;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 06/12/24 MEMPHIS LENS 2 V CB*8595";"Médecins et frais médicaux";Santé;"memphis lens 2v";-73,20;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 06/12/24 E LECLERC FUEL CB*8595";Alimentation;"Vie quotidienne";leclerc;-27,56;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 06/12/24 TOTAL 4 CB*8595";Carburant;"Auto & Moto";total;-25,19;;00040998814;BoursoBank;324.98
+2024-12-09;2024-12-09;"CARTE 05/12/24 ORA 78 CB*8595";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-203,20;;00040998814;BoursoBank;324.98
+2024-12-05;2024-12-05;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";350,00;;00040998814;BoursoBank;788.63
+2024-12-05;2024-12-05;"CARTE 04/12/24 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,00;;00040998814;BoursoBank;788.63
+2024-12-05;2024-12-05;"CARTE 04/12/24 E LECLERC FUEL CB*8595";Carburant;"Auto & Moto";leclerc;-10,15;;00040998814;BoursoBank;788.63
+2024-12-04;2024-12-04;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";500,00;;00040998814;BoursoBank;472.78
+2024-12-02;2024-12-02;"ACHAT CB HOLDIS E LECLE 29.11.24 EUR 13,88 CARTE NO 666";Alimentation;"Vie quotidienne";"holdis e lecle";-13,88;;3029135H026;LaBanquePostal;-140.61
+2024-12-02;2024-12-02;"ACHAT CB ORA 78 29.11.24 EUR 3,30 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-3,30;;3029135H026;LaBanquePostal;-140.61
+2024-12-02;2024-12-02;"CARTE 29/11/24 LE GALLINE CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"le galline";-24,00;;00040998814;BoursoBank;-27.22
+2024-11-29;2024-11-29;"ACHAT CB HOTELCOM729732 28.11.24 EUR 335,30 CARTE NO 666";"Non catégorisé";"Non catégorisé";;-335,30;;3029135H026;LaBanquePostal;-123.43
+2024-11-29;2024-11-29;"FRAIS IRREGULARITES ET INCIDENTS DU MOIS DE 10/2024";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"La Banque Postale";-111,97;;3029135H026;LaBanquePostal;-123.43
+2024-11-29;2024-11-29;"CHQ. N.2054882";Chèques;Chèques;"cheque n 2054882";-30,00;;00040998814;BoursoBank;-3.22
+2024-11-28;2024-11-28;"ACHAT CB HOLDIS E LECLE 27.11.24 CARTE NUMERO 666";Alimentation;"Vie quotidienne";"holdis e lecle";-7,88;;3029135H026;LaBanquePostal;323.84
+2024-11-27;2024-11-27;"ACHAT CB ANPILO 26.11.24 CARTE NUMERO 666";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";anpilo;-24,00;;3029135H026;LaBanquePostal;331.72
+2024-11-27;2024-11-27;"ACHAT CB MC DONALD'S 26.11.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-6,00;;3029135H026;LaBanquePostal;331.72
+2024-11-27;2024-11-27;"CARTE 25/11/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;26.78
+2024-11-26;2024-11-26;"ACHAT CB BP VILLEURB FA 25.11.24 CARTE NUMERO 666";Carburant;"Auto & Moto";bp;-20,00;;3029135H026;LaBanquePostal;361.72
+2024-11-26;2024-11-26;"ACHAT CB ORA 78 25.11.24 CARTE NUMERO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-183,20;;3029135H026;LaBanquePostal;361.72
+2024-11-26;2024-11-26;"ACHAT CB STATION AVIA 25.11.24 CARTE NUMERO 666";Carburant;"Auto & Moto";avia;-30,03;;3029135H026;LaBanquePostal;361.72
+2024-11-26;2024-11-26;"CARTE 25/11/24 APRR CB*8595";Péages;"Auto & Moto";APRR;-51,30;;00040998814;BoursoBank;44.78
+2024-11-26;2024-11-26;"CARTE 22/11/24 SANEF AUTOROUTE CB*8595";Péages;"Auto & Moto";sanef;-49,80;;00040998814;BoursoBank;44.78
+2024-11-26;2024-11-26;"CARTE 22/11/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;44.78
+2024-11-25;2024-11-25;"ACHAT CB E.LECLERC 24.11.24 EUR 29,63 CARTE NO 666";Alimentation;"Vie quotidienne";leclerc;-29,63;;3029135H026;LaBanquePostal;594.95
+2024-11-25;2024-11-25;"ACHAT CB INTERMARCHE 22.11.24 CARTE NUMERO 666";Alimentation;"Vie quotidienne";intermarche;-4,58;;3029135H026;LaBanquePostal;594.95
+2024-11-25;2024-11-25;"ACHAT CB MC DONALD'S 22.11.24 EUR 22,60 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-22,60;;3029135H026;LaBanquePostal;594.95
+2024-11-25;2024-11-25;"ACHAT CB TOTAL MKT FR 22.11.24 CARTE NUMERO 666";Carburant;"Auto & Moto";"total mkt fr";-32,49;;3029135H026;LaBanquePostal;594.95
+2024-11-25;2024-11-25;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;594.95
+2024-11-25;2024-11-25;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;594.95
+2024-11-21;2024-11-21;"ACHAT CB HOLDIS E LECLE 20.11.24 CARTE NUMERO 666";Alimentation;"Vie quotidienne";"holdis e lecle";-12,04;;3029135H026;LaBanquePostal;884.25
+2024-11-21;2024-11-21;"CARTE X8666 20/11/24 A 18H49 RETRAIT DAB BEYNOST";"Retraits cash";"Retraits cash";"Retrait automate";-40,00;;3029135H026;LaBanquePostal;884.25
+2024-11-21;2024-11-21;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;884.25
+2024-11-20;2024-11-20;"ACHAT CB Decathlon Fran 18.11.24 CARTE NUMERO 666";"Equipements sportifs et artistiques";"Vie quotidienne";decathlon;-44,00;;3029135H026;LaBanquePostal;1086.29
+2024-11-20;2024-11-20;"ACHAT CB E LECLERC FUEL 19.11.24 CARTE NUMERO 666";Alimentation;"Vie quotidienne";leclerc;-28,83;;3029135H026;LaBanquePostal;1086.29
+2024-11-20;2024-11-20;"ACHAT CB MC DONALD'S 19.11.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-8,70;;3029135H026;LaBanquePostal;1086.29
+2024-11-20;2024-11-20;"PRELEVEMENT DE AUTOROUTES DU SUD LA FRANCE";Péages;"Auto & Moto";"autoroutes du";-342,60;;3029135H026;LaBanquePostal;1086.29
+2024-11-20;2024-11-20;"CARTE 18/11/24 REGIE BPNL 2 CB*8595";Péages;"Auto & Moto";"regie bpnl";-2,50;;00040998814;BoursoBank;163.88
+2024-11-20;2024-11-20;"CARTE 18/11/24 SANEF 4 CB*8595";Péages;"Auto & Moto";sanef;-18,00;;00040998814;BoursoBank;163.88
+2024-11-19;2024-11-19;"ACHAT CB MC DONALD'S 18.11.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-5,50;;3029135H026;LaBanquePostal;1510.42
+2024-11-19;2024-11-19;"ACHAT CB ORA 78 18.11.24 CARTE NUMERO 666";"Vie Quotidienne - Autres";"Vie quotidienne";ora;-201,20;;3029135H026;LaBanquePostal;1510.42
+2024-11-19;2024-11-19;"ACHAT CB TOTAL MKT FR 18.11.24 CARTE NUMERO 666";Carburant;"Auto & Moto";"total mkt fr";-37,32;;3029135H026;LaBanquePostal;1510.42
+2024-11-19;2024-11-19;"CARTE 18/11/24 APRR PISTE 4 CB*8595";Péages;"Auto & Moto";"aprr piste";-49,80;;00040998814;BoursoBank;184.38
+2024-11-18;2024-11-18;"ACHAT CB GIFI VENDIN 14.11.24 EUR 20,59 CARTE NO 666";"Mobilier, électroménager, décoration…";"Vie quotidienne";gifi;-20,59;;3029135H026;LaBanquePostal;1754.44
+2024-11-18;2024-11-18;"ACHAT CB LIDL 2888 15.11.24 EUR 8,94 CARTE NO 666";Alimentation;"Vie quotidienne";lidl;-8,94;;3029135H026;LaBanquePostal;1754.44
+2024-11-18;2024-11-18;"ACHAT CB MC DONALD'S 15.11.24 EUR 48,30 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-48,30;;3029135H026;LaBanquePostal;1754.44
+2024-11-18;2024-11-18;"PRELEVEMENT DE ENGIE S.A. REF : 5041873785070005234749252";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-145,58;;3029135H026;LaBanquePostal;1754.44
+2024-11-18;2024-11-18;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-150,00;;3029135H026;LaBanquePostal;1754.44
+2024-11-18;2024-11-18;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;1754.44
+2024-11-15;2024-11-15;"ACHAT CB BM LENS 14.11.24 EUR 32,07 CARTE NO 666";"Non catégorisé";"Non catégorisé";;-32,07;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"ACHAT CB GLK OPTIQUE 14.11.24 CARTE NUMERO 666";"Optique, audition…";Santé;"glk optique";-19,20;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"ACHAT CB INTERMARCHE 14.11.24 EUR 53,80 CARTE NO 666";Alimentation;"Vie quotidienne";intermarche;-53,80;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"ACHAT CB KIABI VENDIN 14.11.24 EUR 14,00 CARTE NO 666";"Vêtements et accessoires";"Vie quotidienne";kiabi;-14,00;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"ACHAT CB SOFRATEL DSC 14.11.24 EUR 1,00 CARTE NO 666";"Voyages & Transports - Autres";"Voyages & Transports";"sofratel dsc";-1,00;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"ACHAT CB intersport.fr 13.11.24 CARTE NUMERO 666";"Equipements sportifs et artistiques";"Vie quotidienne";intersport;-79,99;;3029135H026;LaBanquePostal;2177.85
+2024-11-15;2024-11-15;"PRELEVEMENT DE ENGIE S.A. REF : 5146047423550005234749252";"Energie (électricité, gaz, fuel, chauffage…)";Logement;engie;-50,73;;3029135H026;LaBanquePostal;2177.85
+2024-11-14;2024-11-14;"ACHAT CB DARTY 13.11.24 CARTE NUMERO 666";"Electronique et informatique";"Vie quotidienne";darty;-468,99;;3029135H026;LaBanquePostal;2428.64
+2024-11-14;2024-11-14;"ACHAT CB INTERMARCHE CA 13.11.24 CARTE NUMERO 666";Alimentation;"Vie quotidienne";intermarche;-31,18;;3029135H026;LaBanquePostal;2428.64
+2024-11-14;2024-11-14;"ACHAT CB TAO CARVIN 13.11.24 EUR 1,90 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"tao carvin";-1,90;;3029135H026;LaBanquePostal;2428.64
+2024-11-14;2024-11-14;"ACHAT CB TAO CARVIN 13.11.24 EUR 2,90 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"tao carvin";-2,90;;3029135H026;LaBanquePostal;2428.64
+2024-11-14;2024-11-14;"ACHAT CB TAO CARVIN 13.11.24 EUR 31,20 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"tao carvin";-31,20;;3029135H026;LaBanquePostal;2428.64
+2024-11-14;2024-11-14;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-260,00;;3029135H026;LaBanquePostal;2428.64
+2024-11-13;2024-11-13;"VIREMENT DE L.T.C. LTC-015559-112024034940-22";"Virements reçus";"Virements reçus";"ltc ltc";"1 831,50";;3029135H026;LaBanquePostal;3224.81
+2024-11-12;2024-11-12;"ACHAT CB CARRE D AS 08.11.24 CARTE NUMERO 666";Tabac;"Vie quotidienne";"carre d as";-12,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB CENTRE LECLERC 08.11.24 EUR 66,33 CARTE NO 666";Alimentation;"Vie quotidienne";leclerc;-66,33;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB KIABI VENDIN 08.11.24 EUR 36,00 CARTE NO 666";"Vêtements et accessoires";"Vie quotidienne";kiabi;-36,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB MC DONALD'S 11.11.24 CARTE NUMERO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-26,50;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB PHOTOMATON 11.11.24 EUR 3,00 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";photomaton;-3,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB PHOTOMATON 11.11.24 EUR 3,00 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";photomaton;-3,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB PHOTOMATON 11.11.24 EUR 6,00 CARTE NO 666";"Vie Quotidienne - Autres";"Vie quotidienne";photomaton;-6,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"ACHAT CB TACOS KING 08.11.24 EUR 25,00 CARTE NO 666";"Restaurants, bars, discothèques…";"Loisirs et sorties";tacos;-25,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"CARTE X8666 11/11/24 A 18H32 RETRAIT DAB LA BANQUE POSTALE";"Retraits cash";"Retraits cash";"Retrait automate";-150,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"PRELEVEMENT DE PRIORIS REF : PRS/T007420419/114571129";Financement;"Auto & Moto";prioris;-206,61;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"PRELEVEMENT DE SECURYCAR REF : P11768546";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"PRELEVEMENT DE SIA-CEp REF : 10/11/2024-655164";"Loyers, Charges";Logement;sia;-533,67;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-100,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-12;2024-11-12;"VIREMENT INSTANTANE A CATHERINE DAUTRICHE";"Virements émis";"Virements émis";"virement instantane a catherine dautriche";-50,00;;3029135H026;LaBanquePostal;1393.31
+2024-11-08;2024-11-08;"ACHAT CB CARTER CASH 07.11.24 CARTE NUMERO 666";"Entretien - Réparation";"Auto & Moto";"carter cash";-68,40;;3029135H026;LaBanquePostal;2628.92
+2024-11-08;2024-11-08;"ACHAT CB LIDL 2888 07.11.24 EUR 75,64 CARTE NO 666";Alimentation;"Vie quotidienne";lidl;-75,64;;3029135H026;LaBanquePostal;2628.92
+2024-11-07;2024-11-07;"PRELEVEMENT DE FREE MOBILE REF : fmpmt-2074352117";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-19,98;;3029135H026;LaBanquePostal;2772.96
+2024-11-07;2024-11-07;"PRELEVEMENT DE Free Telecom REF : FHD-1335269099";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-47,49;;3029135H026;LaBanquePostal;2772.96
+2024-11-07;2024-11-07;"PRELEVEMENT DE LOLIVIER ASSURANC UI (France) Limi";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"lolivier assuranc";-70,36;;3029135H026;LaBanquePostal;2772.96
+2024-11-07;2024-11-07;"VIREMENT INSTANTANE A SAISON ADELINE";"Education & Famille - Autres";"Education & Famille";"virement instantane a saison adeline";-500,00;;3029135H026;LaBanquePostal;2772.96
+2024-11-05;2024-11-05;"VIR SEPA STEPHANE PANOUILLOT";"Virements reçus";"Virements reçus";"virement stephane panouillot";300,00;;00040998814;BoursoBank;234.18

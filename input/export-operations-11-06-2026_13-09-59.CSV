@@ -1,0 +1,66 @@
+﻿dateOp;dateVal;label;suggestedLabel;category;categoryParent;amount;comment;accountNum;accountLabel;accountbalance;mark
+2026-05-29;2026-05-29;"CARTE 28/05/26 PHARMA DU BOURG CB*8595";"Pharma Du Bourg";"Pharmacie et laboratoire";Santé;-27,70;;00040998814;BoursoBank;37.52;Non
+2026-05-29;2026-05-29;"CARTE 28/05/26 LE MARIGNY CB*8595";"Le Marigny";Tabac;"Vie quotidienne";-13,00;;00040998814;BoursoBank;37.52;Non
+2026-05-29;2026-05-29;"VIR Virement depuis Livret Bourso+";"Vir Virement Depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";500,00;;00040998814;BoursoBank;37.52;Non
+2026-05-28;2026-05-28;"CARTE 27/05/26 PIXFIRST CB*8595";Pixfirst;"Non catégorisé";"Non catégorisé";-64,00;;00040998814;BoursoBank;-421.78;Non
+2026-05-28;2026-05-28;"CARTE 27/05/26 INTERMARCHE CB*8595";Intermarché;Alimentation;"Vie quotidienne";-12,92;;00040998814;BoursoBank;-421.78;Non
+2026-05-28;2026-05-28;"CARTE 26/05/26 LE MARIGNY CB*8595";"Le Marigny";Tabac;"Vie quotidienne";-14,60;;00040998814;BoursoBank;-421.78;Non
+2026-05-28;2026-05-28;"VIR Virement depuis Livret Bourso+";"Vir Virement Depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";100,00;;00040998814;BoursoBank;-421.78;Non
+2026-05-28;2026-05-28;"VIR SEPA SOCIETE FRANCAISE DU RADIOTELEP";"Vir Sepa Societe Francaise Du Radiotelep";"Virements reçus";"Virements reçus";14,92;;00040998814;BoursoBank;-421.78;Non
+2026-05-26;2026-05-26;"CARTE 22/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-126,82;;00040998814;BoursoBank;-445.18;Non
+2026-05-26;2026-05-26;"CARTE 22/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;-445.18;Non
+2026-05-26;2026-05-26;"CARTE 22/05/26 INTERMARCHE CB*8595";Intermarché;Alimentation;"Vie quotidienne";-90,12;;00040998814;BoursoBank;-445.18;Non
+2026-05-26;2026-05-26;"VIR Virement depuis Livret Bourso+";"Vir Virement Depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";100,00;;00040998814;BoursoBank;-445.18;Non
+2026-05-26;2026-05-26;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-34,99;;00040998814;BoursoBank;-445.18;Non
+2026-05-26;2026-05-26;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-19,99;;00040998814;BoursoBank;-445.18;Non
+2026-05-22;2026-05-22;"CARTE 21/05/26 LE MARIGNY CB*8595";"Le Marigny";Tabac;"Vie quotidienne";-13,00;;00040998814;BoursoBank;-247.26;Non
+2026-05-22;2026-05-22;"VIR INST PANOUILLOT MATTHEO";"Vir Inst Panouillot Mattheo";"Virements émis";"Virements émis";-50,00;;00040998814;BoursoBank;-247.26;Non
+2026-05-22;2026-05-22;"VIR INST PANOUILLOT MATTHEO";"Vir Inst Panouillot Mattheo";"Virements émis";"Virements émis";-150,00;;00040998814;BoursoBank;-247.26;Non
+2026-05-22;2026-05-22;"VIR Virement depuis Livret Bourso+";"Vir Virement Depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";500,00;;00040998814;BoursoBank;-247.26;Non
+2026-05-21;2026-05-21;"CARTE 20/05/26 NORIANCE CB*8595";"Noriance Douai";Péages;"Auto & Moto";-215,00;;00040998814;BoursoBank;-534.26;Non
+2026-05-21;2026-05-21;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-150,00;;00040998814;BoursoBank;-534.26;Non
+2026-05-20;2026-05-20;"AVOIR 19/05/26 AMAZON PAYMENTS 2 CB*8595";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";10,00;;00040998814;BoursoBank;-169.26;Non
+2026-05-20;2026-05-20;"CARTE 19/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-59,92;;00040998814;BoursoBank;-169.26;Non
+2026-05-20;2026-05-20;"CARTE 19/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-1,11;;00040998814;BoursoBank;-169.26;Non
+2026-05-19;2026-05-19;"PRLV SEPA ENGIE S.A.";ENGIE;"Energie (électricité, gaz, fuel, chauffage…)";Logement;-165,80;;00040998814;BoursoBank;-118.23;Non
+2026-05-18;2026-05-18;"CARTE 17/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-26,34;;00040998814;BoursoBank;47.57;Non
+2026-05-18;2026-05-18;"CARTE 17/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;47.57;Non
+2026-05-18;2026-05-18;"CARTE 15/05/26 BUFFALO GRILL CB*8595";"Buffalo Grill";"Restaurants, bars, discothèques…";"Loisirs et sorties";-80,03;;00040998814;BoursoBank;47.57;Non
+2026-05-18;2026-05-18;"VIR Epargne programmee";"Vir Epargne Programmee";"Dépenses d'épargne - Autres";"Dépenses d'épargne";-10,00;;00040998814;BoursoBank;47.57;Non
+2026-05-15;2026-05-15;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-200,00;;00040998814;BoursoBank;189.94;Non
+2026-05-15;2026-05-15;"VIR Virement depuis Livret Bourso+";"Vir Virement Depuis Livret Bourso+";"Virements reçus de comptes à comptes";"Mouvements internes créditeurs";500,00;;00040998814;BoursoBank;189.94;Non
+2026-05-15;2026-05-15;"CARTE 12/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-18,04;;00040998814;BoursoBank;189.94;Non
+2026-05-13;2026-05-13;"VIR SEPA FREE MOBILE";"Vir Sepa Free Mobile";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";3,80;;00040998814;BoursoBank;-92.02;Non
+2026-05-13;2026-05-13;"CARTE 12/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;-92.02;Non
+2026-05-13;2026-05-13;"VIR INST SAISON ADELINE";"Vir Inst Saison Adeline";Pensions;"Education & Famille";-90,00;;00040998814;BoursoBank;-92.02;Non
+2026-05-12;2026-05-12;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-21,10;;00040998814;BoursoBank;20.18;Non
+2026-05-11;2026-05-11;"CARTE 09/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-25,64;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"CARTE 08/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-13,00;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"CARTE 09/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"CARTE 08/05/26 TIGO CB*8595";Tigo;"Restaurants, bars, discothèques…";"Loisirs et sorties";-37,00;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"CARTE 07/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-12,76;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-400,00;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-09;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-100,00;;00040998814;BoursoBank;1076.33;Non
+2026-05-11;2026-05-11;"PRLV SEPA SECURYCAR";Securycar;"Auto / Moto - Autres";"Auto & Moto";-17,50;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"PRLV SEPA PRIORIS";Prioris;Financement;"Auto & Moto";-206,61;;00040998814;BoursoBank;41.28;Non
+2026-05-11;2026-05-11;"PRLV SEPA EAU DE LA CALL";"Eau De La Call";Eau;Logement;-196,54;;00040998814;BoursoBank;41.28;Non
+2026-05-07;2026-05-07;"CARTE 05/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-42,08;;00040998814;BoursoBank;1076.33;Non
+2026-05-07;2026-05-07;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-100,00;;00040998814;BoursoBank;1076.33;Non
+2026-05-07;2026-05-07;"PRLV SEPA Free Telecom";Free;"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";-39,99;;00040998814;BoursoBank;1076.33;Non
+2026-05-06;2026-05-06;"CARTE 05/05/26 INTERMARCHE CB*8595";Intermarché;Alimentation;"Vie quotidienne";-30,16;;00040998814;BoursoBank;1258.4;Non
+2026-05-06;2026-05-06;"CARTE 02/05/26 AMAZON PAYMENTS 2 CB*8595";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-75,99;;00040998814;BoursoBank;1258.4;Non
+2026-05-06;2026-05-06;"CARTE 05/05/26 LA CIVETTE CB*8595";"La Civette";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;1258.4;Non
+2026-05-06;2026-05-06;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-250,00;;00040998814;BoursoBank;1258.4;Non
+2026-05-05;2026-05-05;"VIR INST DAUTRICHE CATHERINE";"Vir Inst Dautriche Catherine";"Virements émis";"Virements émis";-50,00;;00040998814;BoursoBank;1640.55;Non
+2026-05-05;2026-05-05;"CARTE 04/05/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-1,84;;00040998814;BoursoBank;1640.55;Non
+2026-05-05;2026-05-05;"CARTE 04/05/26 Temu CB*8595";Temu;"Vie Quotidienne - Autres";"Vie quotidienne";-13,99;;00040998814;BoursoBank;1640.55;Non
+2026-05-05;2026-05-05;"PRLV SEPA AMAZON EU SARL, SUCCURSALE FRA";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-5,45;;00040998814;BoursoBank;1640.55;Non
+2026-05-05;2026-05-05;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";Amazon;"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";-12,98;;00040998814;BoursoBank;1640.55;Non
+2026-05-04;2026-05-04;"VIR INST SAISON ADELINE";"Vir Inst Saison Adeline";Pensions;"Education & Famille";-420,00;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"CARTE 30/04/26 LIDL 2888 CB*8595";Lidl;Alimentation;"Vie quotidienne";-121,64;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"CARTE 01/05/26 RESTO ZC CB*8595";"Resto Zc";"Restaurants, bars, discothèques…";"Loisirs et sorties";-71,82;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"CARTE 02/05/26 CARRE D AS CB*8595";"Carré D'as";Tabac;"Vie quotidienne";-26,00;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"CARTE 02/05/26 Temu CB*8595";Temu;"Vie Quotidienne - Autres";"Vie quotidienne";-35,90;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Vir Sepa Btp Prevoyance Prestations";"Remboursements frais de santé";Santé;"1 196,81";;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"PRLV SEPA LOLIVIER ASSURANCE EUI (France";"L'Olivier Assurance";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";-57,23;;00040998814;BoursoBank;1724.81;Non
+2026-05-04;2026-05-04;"PRLV SEPA FLOA";"FLOA Bank";"Crédit conso";"Emprunts (hors immobilier)";-64,00;;00040998814;BoursoBank;1724.81;Non

@@ -1,4 +1,5 @@
 from typing import Dict
+from datetime import datetime
 
 from databases.database import db
 
@@ -81,6 +82,16 @@ class GenericManager:
         """Override dans chaque manager"""
         raise NotImplementedError
 
+    def _from_row_new(self, row):
+        """
+        Vous pouvez maintenant appeler ceci dans vos sous-classes,
+        ou directement ici si vous surchargez la logique.
+        """
+        if row is None:
+            return None
+        row_dict = dict(row)
+        return self._convert_dates_in_row(row_dict)
+
     def _to_dict(self, obj):
         """Override si besoin"""
         if hasattr(obj, "to_sql_dict"):
@@ -143,3 +154,19 @@ class GenericManager:
         # On initialise avec les champs connus si vous en avez,
         # sinon on retourne un objet vide mais instancié
         return GenericPlaceholder(**kwargs)
+
+    def _convert_dates_in_row(self, row_dict: Dict) -> Dict:
+        """
+        Parcourt tous les champs du dictionnaire.
+        Si la clé commence par 'date_' et que la valeur est une chaîne,
+        on tente une conversion en objet date.
+        """
+        for key, value in row_dict.items():
+            if key.startswith("date_") and isinstance(value, str) and value:
+                try:
+                    # On ne garde que la partie YYYY-MM-DD
+                    date_str = value.split(" ")[0]
+                    row_dict[key] = datetime.strptime(date_str, "%Y-%m-%d").date()
+                except (ValueError, TypeError):
+                    continue
+        return row_dict

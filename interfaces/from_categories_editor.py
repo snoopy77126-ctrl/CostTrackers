@@ -5,7 +5,7 @@ from _helpers.categorie_editor_helpers import CategorieEditorHelpers
 from interfaces_mod.mod_categorie_editor import CategorieEditor
 from interfaces_tabs.tabs_categorie_editor_button import EditorButton
 from interfaces_tabs.tabs_categorie_editor_tree import CategoryTree
-from interfaces_tabs.tabs_operation_tree import FilesTree
+from interfaces_tabs.tabs_operation_view_tree import OperationTree
 
 GRID = dict(sticky="nsew", padx=2, pady=2)
 
@@ -132,7 +132,7 @@ class CategoriesDepensesView(tk.Frame):
 
         # ------------------- OPERATIONS TREE -------------------
 
-        self.operation_tree = FilesTree(
+        self.operation_tree = OperationTree(
             self.operation_panel,
             callbacks=self.callbacks
         )

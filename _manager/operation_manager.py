@@ -1,5 +1,6 @@
 import inspect
 from typing import Optional
+from datetime import datetime
 
 from _manager._generique_manager import GenericManager
 from databases.database import db
@@ -25,6 +26,16 @@ class OperationManager(GenericManager):
             return None
         row_dict = dict(row)
 
+        # --- NOUVEAU : Conversion des dates ---
+        for date_field in ["date_operation", "date_valeur"]:
+            val = row_dict.get(date_field)
+            if isinstance(val, str):
+                try:
+                    # Conversion ISO vers objet date Python
+                    row_dict[date_field] = datetime.strptime(val.split(" ")[0], "%Y-%m-%d").date()
+                except ValueError:
+                    row_dict[date_field] = None
+
         # Résolution des objets liés via trackers
         categorie_obj = None
         if row_dict.get("categorie_id"):
@@ -48,8 +59,22 @@ class OperationManager(GenericManager):
 
         return OperationSaisie(**final_kwargs)
 
+    def get_filtered(self, compte_id=None, date_debut=None, date_fin=None):
+        sql = f"SELECT * FROM {self.SQL_TABLE} WHERE 1=1"
+        params = []
 
+        if compte_id and compte_id != "tlc":
+            sql += " AND compte_id = ?"
+            params.append(compte_id)
 
+        if date_debut and date_fin:
+            sql += " AND date_operation BETWEEN ? AND ?"
+            params.extend([date_debut, date_fin])
+
+        with db.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(sql, params)
+            return [self._from_row(row) for row in cursor.fetchall()]
     def migrer_liaisons_compte(self, ids_doublons: list, id_maitre: int) -> int:
         """Réaffecte toutes les opérations des comptes doublons vers le compte maître.
         Retourne le nombre de lignes mises à jour."""

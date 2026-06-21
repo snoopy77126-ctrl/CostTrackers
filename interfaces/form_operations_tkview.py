@@ -6,7 +6,7 @@ from _helpers.operation_view_helpers import OperationsViewHelpers
 from interfaces_mod.mod_operation_saisie import OperationSaisie
 from interfaces_tabs._tabs_graf import TabsGraf
 from interfaces_tabs.tabs_operation_view_data import CompteFiltreData
-from interfaces_tabs.tabs_operation_view_tree import OperationTree
+from interfaces_tabs.tabs_operation_view_tksheet import OperationTree
 
 
 
@@ -58,7 +58,7 @@ class OperationsView(tk.Frame):
     def menu_callback(self):
         """Aiguille l'action demandée par les boutons vers la bonne méthode interne."""
         return {
-            "on_operation_selected": "self._on_operation_selected",
+            "on_operation_selected": self._on_operation_selected,
             "on_operation_opened": self._on_operation_opened,
             "on_compte_change": self.refresh,
             "on_periode_change": self.refresh,
@@ -82,8 +82,7 @@ class OperationsView(tk.Frame):
         self.refresh()
 
     def refresh(self, row=None):
-        # 1. Utiliser un nom de variable explicite et différent
-        if not hasattr(self, "_filtres_initialises"):
+        if not hasattr(self, "_filtres_init"):
             self._init_filtres()
 
         filtre = self.filtre_frame.get_values()
@@ -91,10 +90,12 @@ class OperationsView(tk.Frame):
         periode_data = filtre.get("periode", {})
 
         selected_compte_key = compte_data.get("iid_key") if isinstance(compte_data, dict) else "tlc"
+        selected_compte_value = compte_data.get("value") if isinstance(compte_data, dict) else "Tous les comptes"
         selected_periode_key = periode_data.get("iid_key") if isinstance(periode_data, dict) else "mois_courant"
 
         rows_objets = self.helpers.get_filtered_rows(
             compte_key=selected_compte_key,
+            compte_value=selected_compte_value,
             periode_key=selected_periode_key
         )
         rows_dicts = []
@@ -136,7 +137,8 @@ class OperationsView(tk.Frame):
         self.filtre_frame.set_values({"compte": comptes, "periode": periodes})
         self.filtre_frame.select_combobox_by_key("compte", "tlc")
         self.filtre_frame.select_combobox_by_key("periode", "mois_courant")
-        self._filtres_initialises = True
+        self._filtres_init = True
 
     def _on_operation_selected(self, row):
-        pass
+        print(f'[DEBUG]OperationView:_on_operation_selected')
+        print(f'[DEBUG]row: {row}')

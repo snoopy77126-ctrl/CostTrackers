@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 
-from _helpers.comptes_editor_helpers import BanqueEditorHelpers
+from _helpers.comptes_editor_helpers import CompteEditorHelpers
 from interfaces_mod.mod_banque_editor import BanqueEditor
 from interfaces_tabs.tabs_compte_editor_button import BanqueEditorButton
 from interfaces_tabs.tabs_compte_editor_data import BanqueoptionData, BanquesoldeData, CompteGeneralData
@@ -17,7 +17,7 @@ class CompteEditor(tk.Frame):
         fenetre_principale.title("CompteEditor - Gestion Financière")
 
         self.services = services
-        self.helpers = BanqueEditorHelpers(self.services)
+        self.helpers = CompteEditorHelpers(self.services)
 
         self.callbacks = self._build_callbacks()
 
@@ -109,9 +109,18 @@ class CompteEditor(tk.Frame):
 
     def action_new(self):
         self.helpers.new_compte()
-        self.general_data_frame._clear()
-        self.solde_data_frame._clear()
-        self.option_data_frame._clear()
+
+        # Utilisez une méthode reset dédiée au lieu de _clear()
+        # qui ne vide pas le contexte des dictionnaires internes
+        for frame in [self.general_data_frame, self.solde_data_frame, self.option_data_frame]:
+            if hasattr(frame, 'reset_form'):
+                frame.reset_form()
+            else:
+                frame._clear()
+
+        # IMPORTANT : Forcez la suppression de l'ID en cours pour éviter
+        # que le prochain enregistrement ne fasse un UPDATE au lieu d'un INSERT
+        self.current_key = None
 
     def action_delete(self):
         if not self.helpers.current_compte:

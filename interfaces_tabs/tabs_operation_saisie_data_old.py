@@ -4,27 +4,31 @@ import tkinter as tk
 
 
 class OperationSaisieData(BaseFormFrame):
-    """Formulaire de saisie s'appuyant sur les génériques."""
+    """ Formulaire de saisie/édition d'une opération optimisé. """
 
     def __init__(self, parent, callbacks=None):
-        super().__init__(parent, title="Détails de l'opération", callbacks=callbacks)
+        super().__init__(parent, title="Saisie Opération", callbacks=callbacks)
         self.build_widgets()
 
     def build_widgets(self):
-        # Utilisation des méthodes héritées du générique (BaseFormFrame)
-        self.add_combobox("libelle", "Libellé")
-        self.add_combobox("tiers_id", "Tiers")
-        self.add_combobox("compte_id", "Compte")
-        self.add_entry("commentaire", "Note")
-        self.add_combobox("categorie_id", "Catégorie")
-        self.add_entry("montant", "Montant")
-        self.add_date("date_operation", "Date")
-        self.add_checkbox("periodique", "Opération périodique")
+        # Utilisation des méthodes de BaseFormFrame pour construire le formulaire
+        # Cela remplace tout votre code manuel avec grid()
 
-    def set_montant_style(self, type_operation: str):
-        """Adaptation visuelle spécifique au type d'opération."""
-        colors = {'depense': 'red', 'revenu': 'green', 'virement': '#2f4f7f'}
-        self.entries["montant"].config(foreground=colors.get(type_operation, 'black'))
+        self.add_combobox("libelle", "OperationBase")
+
+        # Exemple de ligne avec deux colonnes (si vous voulez personnaliser, 
+        # utilisez un conteneur comme défini dans add_combobox)
+        self.add_combobox("tiers_id", "Tiers")
+        self.add_combobox("compte_id", "Account")
+
+        self.add_entry("commentaire", "Note")
+        self.add_combobox("categorie_id", "Categories")
+
+        self.add_entry("montant", "Débit/Crédit")
+        self.add_entry("solde", "Solde")
+        self.add_date("date_operation", "Date")
+
+        self.add_checkbox("periodique", "OperationBase Periodique")
 
     def load_combobox_data(self, tiers_data, comptes_data, categories_data):
         """

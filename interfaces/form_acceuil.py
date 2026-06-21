@@ -3,7 +3,7 @@ from tkinter import ttk
 
 from _helpers.acceuil_helpers import AcceuilHelpers
 from interfaces_tabs._tabs_graf import TabsGraf
-from interfaces_tabs.tabs_operation_tree import FilesTree
+from interfaces_tabs.tabs_operation_view_tree import OperationTree
 
 
 class Dashboard(tk.Frame):
@@ -44,7 +44,7 @@ class Dashboard(tk.Frame):
         self.tresorerie_graph = TabsGraf(left, title="Prevision de tresorerie")
         self.tresorerie_graph.grid(row=0, column=0, sticky="nsew", padx=(0, 8), pady=(0, 8))
 
-        self.operation_tree = FilesTree(left)
+        self.operation_tree = OperationTree(left)
         self.operation_tree.grid(row=1, column=0, sticky="nsew", padx=(0, 8))
 
         right.rowconfigure(0, weight=1)

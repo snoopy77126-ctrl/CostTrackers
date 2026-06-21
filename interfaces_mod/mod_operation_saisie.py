@@ -1,7 +1,7 @@
 import tkinter as tk
 
 from _helpers.operation_view_helpers import OperationsViewHelpers
-from interfaces_tabs.tabs_operation_saisie_button import OperationTypeButton
+from interfaces_tabs.tabs_operation_saisie_button import OperationTypeButton, EditorButton
 from interfaces_tabs.tabs_operation_saisie_data import OperationSaisieData
 
 
@@ -44,20 +44,10 @@ class OperationSaisie(tk.Toplevel):
         self.update_type_buttons()
 
         # ==== Boutons Enregistrer / Annuler ====
-        self.frame_buttons = tk.Frame(self)
-        self.frame_buttons.pack(padx=10, pady=10, anchor="w")
-
-        self.btn_save = tk.Button(
-            self.frame_buttons, text="Enregistrer", width=12, bg="#2f4f7f", fg="white",
-            font=("Arial", 9, "bold"), command=self._on_save
-        )
-        self.btn_save.grid(row=0, column=0, padx=5, pady=5)
-
-        self.btn_cancel = tk.Button(
-            self.frame_buttons, text="Annuler", width=12, bg="#a7c3dc",
-            font=("Arial", 9, "bold"), command=self._on_cancel
-        )
-        self.btn_cancel.grid(row=1, column=0, padx=5, pady=5)
+        self.frame_buttons = EditorButton(self, callbacks=self.callbacks)
+        self.frame_buttons.pack(side="bottom", fill="x")
+        print(self.frame_buttons.winfo_manager())
+        print(self.frame_buttons.winfo_children())
 
     # ------------------- Callbacks -------------------
     def menu_callbacks(self):
@@ -83,7 +73,7 @@ class OperationSaisie(tk.Toplevel):
 
         # Adapte le libellé/style du champ montant selon le type sélectionné
         type_mapping = {'Debit': 'depense', 'Credit': 'revenu', 'Virement': 'virement'}
-        self.form_data.set_montant_label(type_mapping.get(current, 'depense'))
+        self.form_data.set_montant_style(type_mapping.get(current, 'depense'))
 
     # ------------------- Initialisation -------------------
     def initialise(self):

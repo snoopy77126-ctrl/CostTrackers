@@ -66,6 +66,12 @@ class BaseFormFrame(ttk.Frame):
 
         return "break"
 
+    def reset_form(self):
+        """Méthode explicite pour vider totalement le formulaire."""
+        self._form_data = {}
+        self._snapshot = {}  # Vider le snapshot !
+        self._clear()  # Appelle la méthode de la classe parente
+
     def add_entry(self, key, label, row=None):
         if row is None: row = self.next_row()
         ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)

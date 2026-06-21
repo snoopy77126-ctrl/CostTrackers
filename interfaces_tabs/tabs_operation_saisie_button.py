@@ -39,3 +39,23 @@ class OperationTypeButton(EditeurActions):
                 btn.config(bg="#2f4f7f", fg="white", relief="sunken")
             else:
                 btn.config(bg="#d7e4f0", fg="black", relief="raised")
+
+class EditorButton(EditeurActions):
+    """
+    Spécialisation de EditeurActions pour la gestion de fichiers (Ajouter, Modifier, Supprimer).
+    """
+
+    def __init__(self, parent, callbacks: Optional[Dict[str, Callable]] = None):
+        # Initialisation via ttk.Frame
+        super().__init__(parent)
+        self.callbacks = callbacks or {}
+
+        # Le conteneur interne pour les boutons (requis par EditeurActions)
+        self.container = ttk.Frame(self, padding=5)
+        self.container.pack(fill="x")
+
+        self._build_widgets()
+
+    def _build_widgets(self):
+        self._add_btn_left("🗑️ Supprimer", "action_cancel")
+        self._add_btn_end("💾 Sauvegarder", "action_save")

@@ -4,7 +4,8 @@
     },
     "Comptes": {
 
-        "Operations": "interfaces.form_operations_view:OperationsView"
+        "Operations": "interfaces.form_operations_view:OperationsView",
+        "OperationsTK": "interfaces.form_operations_tkview:OperationsView"
     },
     "Echéances": {
         "Synthèse": "interfaces.form_echeances:EcheancesView"

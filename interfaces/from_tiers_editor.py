@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 
-from interfaces_mod.mod_tiers_editor import TiersEditorHelpers
-from interfaces_tabs._tabs_graf import TabsGraf
+from _helpers.tiers_editor_helpers import TiersEditorHelpers
+from interfaces_mod.mod_tiers_editor import EmetteurEditor
+from interfaces_tabs._tabs_graf import TabsGraf, TabsGrafBaton
 from interfaces_tabs.tabs_operation_view_tree import OperationTree
 from interfaces_tabs.tabs_tiers_editor_button import EditorButton
 from interfaces_tabs.tabs_tiers_editor_tree import EmetteurTree
@@ -72,7 +73,7 @@ class TiersEditor(tk.Frame):
         self.right_frame.columnconfigure(0, weight=1)  # Colonne Tiers
         self.right_frame.columnconfigure(1, weight=1)  # Colonne Opérations
 
-        self.graph_view = TabsGraf(self.right_frame, title="Activite du tiers")
+        self.graph_view = TabsGrafBaton(self.right_frame, title="Activite du tiers")
         self.graph_view.grid(row=0, column=1, sticky="nsew", padx=2, pady=2)
 
         self.ops_tree = OperationTree(self.right_frame, callbacks=self.callbacks)
@@ -82,9 +83,9 @@ class TiersEditor(tk.Frame):
     def _build_callbacks(self):
         return {
             "on_emetteur_selected": self._on_tiers_selected,
-            "action_add": self._open_tiers_editor,
-            "action_edit": self._open_tiers_editor,
-            "action_delete": self._open_tiers_editor,
+            "action_add_emetteur": self._open_tiers_editor,
+            "on_emetteur_opened": self._open_tiers_editor,
+            "action_delete_emetteur": self._open_tiers_editor,
             "action_view_categorie": self._open_categories_editor,
             "action_fusionner": self._action_fusionner,
         }
@@ -106,7 +107,8 @@ class TiersEditor(tk.Frame):
         self.graph_view.set_points(self._operation_points())
 
     def _open_tiers_editor(self):
-        editor = TiersEditorHelpers(self, services=self.services)
+        print(f'[DEBUG]TiersEditor:_open_tiers_editor')
+        editor = EmetteurEditor(self, services=self.services)
         editor.protocol("WM_DELETE_WINDOW", lambda: self._close_editor(editor))
 
     def _close_editor(self, editor):
@@ -120,16 +122,33 @@ class TiersEditor(tk.Frame):
         editor.protocol("WM_DELETE_WINDOW", lambda: self._close_editor(editor))
 
     def _operation_points(self):
-        rows = list(reversed(self.tiers_helpers.fetch_row_operations(self.selected_tiers_id)[-30:]))
-        total = 0.0
-        points = []
+        if not self.selected_tiers_id:
+            return []
+
+        rows = self.tiers_helpers.fetch_row_operations(self.selected_tiers_id)
+
+        from collections import defaultdict
+
+        monthly_data = defaultdict(float)
+
         for row in rows:
-            total += float(row["objet"].montant or 0)
-            points.append((row["date_operation"], total))
-        return points
+            op = row["objet"]
+            # Plus besoin de parse_date !
+            # Si op.date_operation est déjà un objet date :
+            date_obj = op.date_operation
+
+            # Extraction directe
+            month_key = date_obj.strftime("%m/%y")
+            monthly_data[month_key] += float(op.montant or 0)
+
+        # Tri chronologique (on trie les clés "MM/YY" en recréant un objet date temporaire)
+        # On utilise une année fictive "2000" pour le tri si besoin,
+        # ou simplement un split pour trier par année puis mois.
+        sorted_keys = sorted(monthly_data.keys(), key=lambda d: (d.split('/')[1], d.split('/')[0]))
+
+        return [(k, monthly_data[k]) for k in sorted_keys]
 
     def _action_fusionner(self):
-        print(f'[DEBUG]TierEditor:_action_fusionner')
         data_list = self.tiers_tree._get_all_selected()
         if len(data_list) < 2:
             print("[Avertissement] Il faut au moins 2 tiers pour fusionner.")
@@ -139,13 +158,12 @@ class TiersEditor(tk.Frame):
         from interfaces_mod.mod_tiers_fusion import TiersFusionEditor
         editor = TiersFusionEditor(self, services=self.services, selected_tiers=data_list)
 
-        # On définit le protocole pour rafraîchir à la fermeture
-        editor.protocol("WM_DELETE_WINDOW", lambda: self._close_fusion_editor(editor))
+        self.wait_window(editor)
+        self._close_fusion_editor(editor)
 
     def _close_fusion_editor(self, editor):
         """Rafraîchit l'interface principale après la fusion."""
         editor.destroy()
-        print("[DEBUG] Rafraîchissement de l'interface après fusion.")
 
         # 1. On réinitialise les helpers pour vider les caches (Tiers + Operations)
         self.tiers_helpers.initialise()

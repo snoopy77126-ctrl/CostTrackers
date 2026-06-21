@@ -13,15 +13,15 @@ from interfaces_tabs._tabs_menu_bar import MenuBar
 # =========================
 # BOOTSTRAP GLOBAL HELPERS
 # =========================
+
 def save_last_form(cfg, form_path: str):
-    # Si vous voulez bloquer complètement l'écriture automatique du dernier formulaire :
-    # pass
     try:
+        cfg.enable_writes() # <--- Ajoutez cette ligne pour déverrouiller
         cfg.set("LAST_FORM", form_path)
         cfg.save()
-    except Exception:
-        pass # Évite de faire planter l'UI ou de spammer la console
-
+        cfg.disable_writes() # <--- Re-verrouillez après pour la sécurité
+    except Exception as e:
+        print(f"Erreur lors de la sauvegarde : {e}")
 
 def load_last_form(cfg) -> str:
     try:
@@ -41,32 +41,30 @@ class MainApp(tk.Tk):
         super().__init__()
         self.services = services
 
-        self.title("CostTrackers - Compte&Budget")														   
+        self.title("CostTrackers - Compte&Budget")
         self.geometry("900x400")
         self.protocol("WM_DELETE_WINDOW", self.on_close)
 
-        # Menu
         self.menu_bar = MenuBar(self, services)
 
-        # Container UI
         self.container = tk.Frame(self)
         self.container.pack(fill="both", expand=True)
         self.frame = None
 
-        # Splash : utilise splash.png si présent, sinon fallback nordeos_splash.png
+        # Splash... (votre code actuel)
         _splash_dir = os.path.join(cfg.get("RACINE_DIRECTORY"), "assets", "backgrounds")
         _splash_name = "splash.png" if os.path.exists(os.path.join(_splash_dir, "splash.png")) else "nordeos_splash.png"
         splash_path = os.path.join(_splash_dir, _splash_name)
-
         self.show_splash_screen(splash_path)
 
-        # Restore last form
-        last_form = load_last_form(cfg)
+        # Restauration du dernier formulaire (Code unique et propre)
         self.hide_var = tk.BooleanVar(value=cfg.get("HIDE_ON_START", False))
 
+        last_form = load_last_form(cfg)
         success = False
         if last_form:
             try:
+                # IMPORTANT: Vérifiez que votre MenuBar sait interpréter 'last_form'
                 self.menu_bar.menu_callback(last_form)
                 success = True
             except Exception as e:

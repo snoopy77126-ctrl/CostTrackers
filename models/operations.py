@@ -7,7 +7,8 @@
 ####################################
 
 from dataclasses import dataclass, field, asdict
-from typing import Optional, ClassVar, List
+from typing import Optional, ClassVar, List, Any
+from datetime import date
 
 from models._model_base import ModelBase, WithLinkedObjects
 
@@ -35,7 +36,7 @@ class OperationBase(ModelBase, WithLinkedObjects):
     # ---- Champs persistés communs ----------------------------------- #
     id_import_ligne: Optional[int] = None
     libelle:         str           = ""
-    date_operation:  str           = ""
+    date_operation:  Optional[date]           = ""
     montant:         float         = 0.0
     commentaire:     str           = ""
     type_operation:  str           = "depense"
@@ -51,12 +52,12 @@ class OperationBase(ModelBase, WithLinkedObjects):
     @property
     def debit(self) -> float:
         """Montant négatif en valeur absolue (0 si crédit)."""
-        return abs(self.montant) if self.montant < 0 else 0.0
+        return abs(self.montant) if self.montant < 0 else ""
 
     @property
     def credit(self) -> float:
         """Montant positif (0 si débit)."""
-        return self.montant if self.montant > 0 else 0.0
+        return self.montant if self.montant > 0 else ""
 
     # Note : compte_label, tiers_label, categorie_label
     # sont fournis par le mixin WithLinkedObjects.
@@ -98,12 +99,13 @@ class OperationImport(OperationBase):
         "compte_id",
         "tiers_id",
         "categorie_id",
+        "compte_virement_id",
     ]
 
     # ---- Champs supplémentaires ------------------------------------- #
     id_import:        Optional[int]   = None
     numero_ligne:     int             = 0
-    date_valeur:      str             = ""
+    date_valeur:      Optional[date]             = ""
     compte_num:       str             = ""
     compte_label:     str             = ""
     solde_compte:     Optional[float] = None
@@ -118,6 +120,10 @@ class OperationImport(OperationBase):
     compte_id:        Optional[int]   = None
     tiers_id:         Optional[int]   = None
     categorie_id:     Optional[int]   = None
+
+    compte_obj: Optional[Any] = field(default=None, repr=False)
+    tiers_obj: Optional[Any] = field(default=None, repr=False)
+    categorie_obj: Optional[Any] = field(default=None, repr=False)
 
     # ---- Sérialisation ---------------------------------------------- #
 
@@ -165,10 +171,15 @@ class OperationSaisie(OperationBase):
     ]
 
     # ---- Champs supplémentaires ------------------------------------- #
-    date_valeur:  str           = ""
+    date_valeur:  Optional[date]           = ""
     compte_id:    Optional[int] = None
     tiers_id:     Optional[int] = None
     categorie_id: Optional[int] = None
+
+    # OperationSaisie(**row_dict) les accepte !
+    compte_obj: Optional[Any] = field(default=None, repr=False)
+    tiers_obj: Optional[Any] = field(default=None, repr=False)
+    categorie_obj: Optional[Any] = field(default=None, repr=False)
 
     # ---- Sérialisation ---------------------------------------------- #
 

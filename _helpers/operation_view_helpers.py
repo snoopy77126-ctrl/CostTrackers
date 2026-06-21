@@ -19,17 +19,6 @@ class OperationsViewHelpers(BaseHelper):
         self.compte_tracker = services.get('compte')
         self.categorie_tracker = services.get('categorie')
 
-    def initialise(self):
-        """Initialise les trackers et charge les données."""
-        if self.operation_tracker:
-            self.operation_tracker.load_all()
-        if self.tiers_tracker:
-            self.tiers_tracker.load_all()
-        if self.compte_tracker:
-            self.compte_tracker.load_all()
-        if self.categorie_tracker:
-            self.categorie_tracker.load_all()
-
     def fetch_tiers(self) -> List[Dict[str, Any]]:
         """Récupère la liste des tiers pour la combobox."""
         if not self.tiers_tracker:
@@ -122,43 +111,10 @@ class OperationsViewHelpers(BaseHelper):
         
         return data
 
-    def get_filtered_rows(self, compte_key, compte_value, periode_key):
-        print(f'[DEBUG]OperationsViewHelpers:get_filtered_rows')
+    def get_filtered_rows(self, compte_key, periode_key):
         """Logique métier de filtrage centralisée."""
-        rows = self.operation_tracker.get_all()  # Récupération des données via le tracker
-        print(f'[DEBUG]rows: {rows}')
-        # 1. Filtrage par compte
-        if compte_key != "tlc":
-            print(f'[DEBUG]compte_key= {compte_key}')
-            rows = [r for r in rows if getattr(r, "compte_id", "") == compte_value]
+        return self.operation_tracker.get_filtered(compte_key, periode_key)
 
-        # 2. Filtrage par période
-        return self._apply_periode_filter(rows, periode_key)
-
-    def _apply_periode_filter(self, rows, periode_key):
-        if periode_key == "toutesdates": return rows
-
-        today = date.today()
-        # Calculs de dates (mois précédent, etc.)
-        mois_prec = (today.month - 2) % 12 + 1
-        annee_prec_mois = today.year if today.month > 1 else today.year - 1
-
-        filtres = {
-            "mois_courant": lambda d: d.year == today.year and d.month == today.month,
-            "mois_precedent": lambda d: d.year == annee_prec_mois and d.month == mois_prec,
-            "3_mois": lambda d: (today.year - d.year) * 12 + (today.month - d.month) < 3,
-            "annee_courante": lambda d: d.year == today.year,
-            "annee_precedente": lambda d: d.year == today.year - 1,
-        }
-
-        filtre_fn = filtres.get(periode_key)
-        if not filtre_fn: return rows
-
-        # Utilisation d'une méthode de parsing de date (assurez-vous qu'elle existe dans BaseHelper ou ajoutez-la ici)
-        return [
-            r for r in rows
-            if (op_date := self.parse_date(r.date_operation)) and filtre_fn(op_date)
-        ]
     def get_total_mouvement(self, rows):
         return sum(float(r.objet.montant or 0) for r in rows)
 
@@ -204,13 +160,11 @@ class OperationsViewHelpers(BaseHelper):
             for label, total in sorted(labels.items())
         ]
 
-
     def initialise(self):
         """Demande au tiers_trackers de rafraîchir ses données."""
-        self.compte_tracker.get_all()
-        self.operation_tracker.get_all()
-        self.categorie_tracker.get_all()
 
+        self.compte_tracker.get_all()
+        self.categorie_tracker.get_all()
 
     def operations(self, limit=250):
         if not self.operation_tracker:
@@ -314,6 +268,19 @@ class OperationsViewHelpers(BaseHelper):
                 "objet": op,
             })
         return sorted(rows, key=lambda row: row["retard"], reverse=True)
+
+    def get_monthly_balance(self, rows):
+        """Agrège les montants par mois pour le graphique."""
+        monthly = defaultdict(float)
+        for row in rows:
+            op = row["objet"]
+            date_obj = self.parse_date(op.date_operation)
+            if date_obj:
+                month_key = date_obj.strftime("%m/%y")
+                monthly[month_key] += float(op.montant or 0)
+
+        # Retourne une liste de tuples (label, valeur) triée
+        return sorted(monthly.items())
 
     def tresorerie_points(self, rows=None, limit=120):
         by_date = defaultdict(float)

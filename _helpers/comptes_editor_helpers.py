@@ -4,7 +4,7 @@ from _helpers._generique_helpers import BaseHelper
 from models.banques import CompteCourant, Banque  # On cible le Compte courant
 
 
-class BanqueEditorHelpers(BaseHelper):
+class CompteEditorHelpers(BaseHelper):
     def __init__(self, services=None):
         services_dict = services or {}
         super().__init__(trackers=services_dict)

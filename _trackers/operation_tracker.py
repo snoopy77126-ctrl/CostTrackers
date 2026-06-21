@@ -1,9 +1,8 @@
 
 # Fichier : _trackers\operation_tracker.py
 
-from _manager.operation_manager import OperationManager
 from _trackers._generic_tracker import GenericTracker
-
+from _services.dates_services import DatesManager
 
 class OperationTracker(GenericTracker):
     def __init__(self, manager, id_field="id_import_ligne"):
@@ -14,6 +13,14 @@ class OperationTracker(GenericTracker):
             self.load_all()
         return self.get_all()[:limit]
 
+    # Dans OperationTracker
+    def get_filtered(self, compte_id, periode_key):
+        # Calcul des dates via votre DatesManager
+        d_debut, d_fin = DatesManager.get_date_bounds(periode_key)
+
+        # Appel au manager qui interroge la base de données
+        return self.manager.get_filtered(compte_id=compte_id, date_debut=d_debut, date_fin=d_fin)
+
     def migrer_liaisons_compte(self, ids_doublons: list, id_maitre: int) -> int:
         """Délègue la migration des compte_id au manager et vide le cache."""
         nb = self.manager.migrer_liaisons_compte(ids_doublons, id_maitre)
@@ -21,7 +28,7 @@ class OperationTracker(GenericTracker):
         print(f"[DEBUG] OperationTracker.migrer_liaisons_compte : {nb} ligne(s) migrée(s)")
         return nb
 
-    def migrer_liaisons_compte(self, ids_doublons: list, id_maitre: int) -> int:
+    def migrer_liaisons_tiers(self, ids_doublons: list, id_maitre: int) -> int:
         """Délègue la migration des compte_id au manager et vide le cache."""
         nb = self.manager.migrer_liaisons_tiers(ids_doublons, id_maitre)
         self.clear_cache()

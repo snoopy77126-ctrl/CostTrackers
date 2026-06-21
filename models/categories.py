@@ -6,7 +6,7 @@
 # Date : 13/06/2026     Etat : Stable
 ####################################
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import Optional, ClassVar
 
 from models._model_base import ModelBase
@@ -24,8 +24,7 @@ class Categorie(ModelBase):
     """
 
     SQL_ID:     ClassVar[str]       = "id_categorie"
-    SQL_FIELDS: ClassVar[list[str]] = ["id_categorie", "designation", "parent_id"]
-
+    SQL_FIELDS: ClassVar[list[str]] = ["id_categorie", "designation", "parent_id", "test"]
     id_categorie: Optional[int] = None
     designation:  str           = ""
 
@@ -57,17 +56,24 @@ class Categorie(ModelBase):
     # ---- Sérialisation ---------------------------------------------- #
 
     def to_dict(self) -> dict:
-        return {
-            "id_categorie": self.id_categorie,
-            "designation":  self.designation,
-        }
+        """Retourne le dictionnaire pour l'interface incluant les propriétés calculées."""
+        # On récupère les champs de la dataclass
+        d = asdict(self)
+        return d
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Categorie":
+        import inspect
+        valid = set(inspect.signature(cls).parameters.keys())
+        return cls(**{k: v for k, v in data.items() if k in valid})
 
     def to_sql_dict(self) -> dict:
-        return {
-            "id_categorie": self.id_categorie,
-            "designation":  self.designation,
-            "parent_id":    None,               # toujours NULL pour une racine
-        }
+        """Colonnes persistées — exclut les objets liés transients."""
+        d = asdict(self)
+        for key in self._TRANSIENT_FIELDS:
+            d.pop(key, None)
+        # Ne garder que les colonnes déclarées dans SQL_FIELDS
+        return {k: d[k] for k in self.SQL_FIELDS if k in d}
 
 
 # ══════════════════════════════════════════════════════════════════════ #

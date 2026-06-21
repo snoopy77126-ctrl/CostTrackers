@@ -7,7 +7,9 @@
 ####################################
 
 import dataclasses
-from typing import ClassVar, Optional, get_type_hints
+from dataclasses import asdict, fields
+from typing import ClassVar, Optional
+from typing import get_type_hints
 
 
 # ══════════════════════════════════════════════════════════════════════ #
@@ -193,6 +195,18 @@ class ModelBase:
         import inspect
         valid = set(inspect.signature(cls).parameters.keys())
         return cls(**{k: v for k, v in data.items() if k in valid})
+
+    def to_dict(self) -> dict:
+        """
+        Dictionnaire complet de l'objet (tous les champs dataclass).
+        Les champs transients (objets liés, non picklables) sont inclus
+        sous forme de None — les surcharges peuvent les exclure.
+        """
+        try:
+            return asdict(self)
+        except Exception:
+            # Fallback si asdict échoue (champs non-dataclass imbriqués)
+            return {f.name: getattr(self, f.name, None) for f in fields(self)}
 
     @property
     def display_name(self) -> str:

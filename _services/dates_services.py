@@ -69,3 +69,19 @@ class DatesManager:
         }
 
 
+    @staticmethod
+    def get_date_bounds(periode_key):
+        """Retourne un tuple (date_debut, date_fin) au format ISO YYYY-MM-DD."""
+        today = date.today()
+
+        if periode_key == "mois_courant":
+            debut = today.replace(day=1)
+            return debut.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d")
+
+        elif periode_key == "annee_courante":
+            debut = date(today.year, 1, 1)
+            return debut.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d")
+
+        # Ajoutez les autres périodes (mois_precedent, 3_mois, etc.) ici...
+
+        return None, None

@@ -18,27 +18,28 @@ class OperationsViewHelpers(BaseHelper):
         self.tiers_tracker = services.get('tiers')
         self.compte_tracker = services.get('compte')
         self.categorie_tracker = services.get('categorie')
+        self.operation_current = None
 
     def fetch_tiers(self) -> List[Dict[str, Any]]:
         """Récupère la liste des tiers pour la combobox."""
         if not self.tiers_tracker:
             return []
         tiers = self.tiers_tracker.get_all()
-        return [{"id": t.id_tiers, "value": t.display_name if hasattr(t, 'display_name') else str(t)} for t in tiers]
+        return [{"iid_key": t.id_tiers, "value": t.display_name if hasattr(t, 'display_name') else str(t)} for t in tiers]
 
     def fetch_comptes(self) -> List[Dict[str, Any]]:
         """Récupère la liste des comptes pour la combobox."""
         if not self.compte_tracker:
             return []
         comptes = self.compte_tracker.get_all()
-        return [{"id": c.id_compte, "value": c.display_name if hasattr(c, 'display_name') else str(c)} for c in comptes]
+        return [{"iid_key": c.id_compte, "value": c.display_name if hasattr(c, 'display_name') else str(c)} for c in comptes]
 
     def fetch_categories(self) -> List[Dict[str, Any]]:
         """Récupère la liste des catégories pour la combobox."""
         if not self.categorie_tracker:
             return []
         categories = self.categorie_tracker.get_all()
-        return [{"id": c.id_categorie, "value": c.designation if hasattr(c, 'designation') else str(c)} for c in categories]
+        return [{"iid_key": c.id_categorie, "value": c.designation if hasattr(c, 'designation') else str(c)} for c in categories]
 
     def fetch_data_by_iid(self, operation_id: int) -> Optional[Dict[str, Any]]:
         """Récupère les données d'une opération par son ID."""
@@ -47,7 +48,6 @@ class OperationsViewHelpers(BaseHelper):
         operation = self.operation_tracker.get_by_id(operation_id)
         if not operation:
             return None
-        self.operation_current = operation
         return operation.to_dict() if hasattr(operation, 'to_dict') else operation.__dict__
 
     def save_operation(self, data: Dict[str, Any]) -> bool:
@@ -55,28 +55,23 @@ class OperationsViewHelpers(BaseHelper):
             return False
 
         data = self._fill_labels_from_associations(data)
-        data['source'] = 'saisie'  # ← toujours forcer la source
-
+        data['source'] = 'saisie'
         data.pop('compte_label', None)
         data.pop('categorie_label', None)
         data.pop('tiers_label', None)
-        # ------------------------------
-        current_id = getattr(self.operation_current, 'id_import_ligne', None) \
-            if self.operation_current else None
+
+        current_id = data.get('id_import_ligne')
 
         if current_id:
-            operation = self.operation_current
+            operation = self.operation_tracker.get_by_id(current_id)
+            if not operation:
+                return False
             self.apply_form_to_object(operation, data, fk_fields=['tiers_id', 'compte_id', 'categorie_id'])
-            success = self.operation_tracker.update(operation)
+            return self.operation_tracker.update(operation)
         else:
             operation = self.operation_tracker.create()
             self.apply_form_to_object(operation, data, fk_fields=['tiers_id', 'compte_id', 'categorie_id'])
-            new_operation = self.operation_tracker.add(operation)
-            success = new_operation is not None
-            if success:
-                self.operation_current = new_operation
-
-        return success
+            return self.operation_tracker.add(operation) is not None
 
     def _fill_labels_from_associations(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Remplit les champs label depuis les tables associées."""
@@ -162,9 +157,10 @@ class OperationsViewHelpers(BaseHelper):
 
     def initialise(self):
         """Demande au tiers_trackers de rafraîchir ses données."""
-
         self.compte_tracker.get_all()
         self.categorie_tracker.get_all()
+        if self.tiers_tracker:
+            self.tiers_tracker.get_all()
 
     def operations(self, limit=250):
         if not self.operation_tracker:
@@ -257,7 +253,7 @@ class OperationsViewHelpers(BaseHelper):
             if not op_date or op_date < min_day or op_date > max_day:
                 continue
             rows.append({
-                "iid_key": op.id_saisie,
+                "iid_key": op.id_import_ligne,
                 "tiers": op.tiers_label or op.libelle,
                 "montant": self.money(op.montant),
                 "prochaine": self.format_date(op.date_operation),

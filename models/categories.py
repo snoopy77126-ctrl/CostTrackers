@@ -17,16 +17,17 @@ from models._model_base import ModelBase
 # ══════════════════════════════════════════════════════════════════════ #
 
 @dataclass(kw_only=True)
-class Categorie(ModelBase):
+class CategorieParent(ModelBase):
     """
     Catégorie racine.
     Correspond aux lignes de la table `categories` avec parent_id IS NULL.
     """
 
     SQL_ID:     ClassVar[str]       = "id_categorie"
-    SQL_FIELDS: ClassVar[list[str]] = ["id_categorie", "designation", "parent_id", "test"]
+    SQL_FIELDS: ClassVar[list[str]] = ["id_categorie", "designation"]
     id_categorie: Optional[int] = None
     designation:  str           = ""
+    SORT_KEY = "display_tree"
 
     # ---- Identification --------------------------------------------- #
 
@@ -51,7 +52,7 @@ class Categorie(ModelBase):
         return f"{self.designation}:"
 
     def __repr__(self) -> str:
-        return f"Categorie({self.id_categorie} => {self.designation})"
+        return f"CategorieParent({self.id_categorie} => {self.designation})"
 
     # ---- Sérialisation ---------------------------------------------- #
 
@@ -62,7 +63,7 @@ class Categorie(ModelBase):
         return d
 
     @classmethod
-    def from_dict(cls, data: dict) -> "Categorie":
+    def from_dict(cls, data: dict) -> "CategorieParent":
         import inspect
         valid = set(inspect.signature(cls).parameters.keys())
         return cls(**{k: v for k, v in data.items() if k in valid})
@@ -81,11 +82,11 @@ class Categorie(ModelBase):
 # ══════════════════════════════════════════════════════════════════════ #
 
 @dataclass(kw_only=True)
-class SSCategorie(ModelBase):
+class Categorie(ModelBase):
     """
     Sous-catégorie.
     Correspond aux lignes de la table `categories` avec parent_id NOT NULL.
-    Porte une référence vers l'objet Categorie parent (non persisté directement).
+    Porte une référence vers l'objet CategorieParent parent (non persisté directement).
     """
 
     SQL_ID:     ClassVar[str]       = "id_categorie"
@@ -93,7 +94,7 @@ class SSCategorie(ModelBase):
 
     id_categorie: Optional[int]            = None
     designation:  str                      = ""
-    categorie:    Optional["Categorie"]    = field(default=None, repr=False)
+    categorie:    Optional["CategorieParent"]    = field(default=None, repr=False)
 
     # ---- Identification --------------------------------------------- #
 
@@ -124,7 +125,7 @@ class SSCategorie(ModelBase):
         return f"        {self.designation}"
 
     def __repr__(self) -> str:
-        return f"SSCategorie({self.id_categorie} => {self.display_name})"
+        return f"Categorie({self.id_categorie} => {self.display_name})"
 
     def __str__(self) -> str:
         return f"{self.id_categorie} => {self.display_name}"

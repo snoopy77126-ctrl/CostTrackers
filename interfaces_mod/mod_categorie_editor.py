@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from _helpers.categorie_editor_helpers import CategorieEditorHelpers
-from interfaces_tabs.tabs_categorie_editor_button import EditorButton
+from interfaces_tabs.tabs_categorie_editor_button import EditorButton2
 from interfaces_tabs.tabs_categorie_editor_data import CategorieData
 from interfaces_tabs.tabs_categorie_editor_tree import CategoryTree
 
@@ -49,20 +49,7 @@ class CategorieEditor(tk.Toplevel):
         self.container.columnconfigure(1, weight=2)  # Pour la zone Fichiers
 
         # Appels des méthodes de construction segmentées
-        self._build_left_frame()
         self._build_right_frame()
-
-    def _build_left_frame(self):
-        """Zone gauche : Arbre hiérarchique des catégories."""
-        self.left_frame = ttk.Frame(self.container, padding=5)
-        self.left_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
-
-        self.left_frame.rowconfigure(0, weight=1)
-        self.left_frame.columnconfigure(0, weight=1)
-
-        # Initialisation de l'arbre avec ses callbacks
-        self.tree_category = CategoryTree(self.left_frame, callbacks=self.callbacks)
-        self.tree_category.grid(row=0, column=0, sticky="nsew")
 
     def _build_right_frame(self):
         """Zone droite : Liste des fichiers et boutons d'action."""
@@ -80,7 +67,7 @@ class CategorieEditor(tk.Toplevel):
         self.classeur_panel.grid(row=0, column=0, sticky="ew", pady=5)
 
         # 2. Barre de boutons
-        self.button_panel = EditorButton(self.right_frame, callbacks=self.callbacks)
+        self.button_panel = EditorButton2(self.right_frame, callbacks=self.callbacks)
         self.button_panel.grid(row=1, column=0, sticky="ew", pady=5)
 
     # ------------------- Callbacks -------------------
@@ -119,7 +106,7 @@ class CategorieEditor(tk.Toplevel):
 
     def _action_delete_file(self, event=None):
         obj = self.helpers.categorie_current
-        if obj and self.helpers.tracker.delete(obj):
+        if obj and self.helpers.cat_trackers.delete(obj):
             self.initialise()
             self.classeur_panel._clear()
             self.helpers.categorie_current = None
@@ -152,13 +139,7 @@ class CategorieEditor(tk.Toplevel):
     def initialise(self):
         """Chargement initial au lancement du formulaire."""
         self.helpers.initialise()
-        self.refresh_category_tree()
         self._add_categorie_combobox()
-
-    def refresh_category_tree(self):
-        """Récupère et insère les catégories via le helper."""
-        rows = self.helpers.fetch_row_complet()
-        self.tree_category.insert_rows(rows)
 
     def _add_categorie_combobox(self):
         """Remplis la combo catégorie"""

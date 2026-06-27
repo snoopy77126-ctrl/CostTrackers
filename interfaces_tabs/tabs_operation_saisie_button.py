@@ -57,5 +57,6 @@ class EditorButton(EditeurActions):
         self._build_widgets()
 
     def _build_widgets(self):
-        self._add_btn_left("🗑️ Supprimer", "action_cancel")
+        self._add_btn_left("🗑️ Supprimer", "action_delete")
+        self._add_btn_end("❌ Annuler", "action_cancel")
         self._add_btn_end("💾 Sauvegarder", "action_save")

@@ -6,44 +6,50 @@ class OperationImportData(BaseFormFrame):
     def __init__(self, parent, callbacks=None, target_columns=None):
         super().__init__(parent, title="Affectation des colonnes", callbacks=callbacks)
         self.target_columns = target_columns or {}
-        # Dictionnaire pour stocker les références aux widgets Combobox
         self.combo_widgets = {}
+        self._all_columns = []  # ← initialisé vide
         self._build_fields()
 
-
     def _build_fields(self):
-        # 1. On crée les deux frames
         left_frame = ttk.Frame(self.form)
         left_frame.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
 
         right_frame = ttk.Frame(self.form)
         right_frame.grid(row=0, column=1, sticky="nsew", padx=5, pady=5)
 
-        # 2. Découpage
         items = list(self.target_columns.items())
         midpoint = (len(items) + 1) // 2
 
-        # 3. Remplissage gauche
-        # On force le compteur à 0 avant de commencer
         self._row_counter = 0
         for target, label in items[:midpoint]:
-            # On utilise votre méthode existante, mais on doit ruser
-            # pour que le widget s'ajoute dans 'left_frame' au lieu de 'self.form'.
-            # Comme vous ne voulez pas modifier add_combobox,
-            # on change temporairement la cible de création :
             original_form = self.form
             self.form = left_frame
-            self.add_combobox(target, f"{label} :")
+            # ← on_select branché ici
+            self.add_combobox(target, f"{label} :", on_select=lambda _: self._refresh_available_columns())
             self.form = original_form
 
-        # 4. Remplissage droite
-        # On remet le compteur à 0 pour que la colonne de droite commence en haut
         self._row_counter = 0
         for target, label in items[midpoint:]:
             original_form = self.form
             self.form = right_frame
-            self.add_combobox(target, f"{label} :")
+            self.add_combobox(target, f"{label} :", on_select=lambda _: self._refresh_available_columns())
             self.form = original_form
+
+    def _refresh_available_columns(self):
+        """Retire des listes les colonnes déjà affectées dans une autre combobox."""
+        # 1. Collecter toutes les valeurs actuellement sélectionnées
+        selected = {var.get() for var in self.vars.values() if var.get()}
+
+        # 2. Pour chaque combobox, reconstruire sa liste sans les valeurs
+        #    prises par les autres (sauf la sienne propre)
+        for key, widget in self.entries.items():
+            if not (hasattr(widget, "widgetName") and "combobox" in widget.widgetName):
+                continue
+
+            current_val = self.vars[key].get()
+            # Valeurs disponibles = toutes les colonnes - celles prises par les autres
+            available = [c for c in self._all_columns if c == "" or c not in selected or c == current_val]
+            widget["values"] = available
 
     def get_mapping(self):
         """Récupère l'état actuel du mapping pour le parent."""

@@ -42,7 +42,7 @@ class MainApp(tk.Tk):
         self.services = services
 
         self.title("CostTrackers - Compte&Budget")
-        self.geometry("900x400")
+        self.geometry("1100x400")
         self.protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.menu_bar = MenuBar(self, services)

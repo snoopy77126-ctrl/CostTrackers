@@ -59,7 +59,7 @@ class MenuBar(Menu):
 
                 self.add_cascade(label=category, menu=cat_menu)
 
-            logger.info("Menu construit avec succ�s")
+            logger.info("Menu construit avec succés")
 
         except Exception as e:
             logger.error("Erreur build_menu", exc_info=True)

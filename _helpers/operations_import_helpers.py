@@ -225,6 +225,7 @@ class OperationsImportHelpers(BaseHelper):
         except Exception:
             return False
 
+    # DANS OperationsImportHelpers
     def _process_rows(self, parent_window, raw_rows, mapping, import_id):
         processor = RowProcessor(self.compte_tracker, self.category_tracker,
                                  self.tiers_tracker, self.operation_tracker)
@@ -233,19 +234,31 @@ class OperationsImportHelpers(BaseHelper):
 
         for index, raw_row in enumerate(raw_rows, start=1):
             op = processor.process_row(parent_window, index, raw_row, mapping, import_id)
-            if op is None: return None
+            if op is None: return None  # Annulation par l'utilisateur
 
-            # VÉRIFICATION DOUBLON par date + montant
+            # VÉRIFICATION DOUBLON (assure la cohérence BDD)
             if self._check_doublon(op.date_operation, op.montant):
                 ignored += 1
                 continue
 
             validated.append(op)
 
-        return validated, ignored  # ← retourner aussi le nb d'ignorés
+        return validated, ignored  # <--- Retourne bien les deux valeurs
 
-    def list_files(self):
-        return self.import_service.list_input_files()
+    def list_files(self) -> list[dict]:
+        """
+        Orchestre : récupère les statuts connus via le cat_trackers,
+        puis délègue la lecture des fichiers au service.
+        """
+        # 1. Tracker → statuts connus (seul chemin légal vers la BDD)
+        known_checksums = {
+            imp.checksum: imp.statut
+            for imp in (self.file_import_trackers.get_all() or [])
+            if imp.checksum
+        }
+
+        # 2. Service → fichiers du dossier (aucun SQL ici)
+        return self.import_service.list_input_files(known_checksums)
 
     def preview_file(self, path):
         return self.import_service.preview_file(path)
@@ -254,75 +267,34 @@ class OperationsImportHelpers(BaseHelper):
     # IMPORT D'UN FICHIER (Méthode refactorisée)
     # ------------------------------------------------------------------
 
-    def import_file(self, parent_window, path: str, mapping: dict) -> dict:
-
-        # 1. Préparation des données
-        raw_rows = self.import_service._read_file(Path(path))
-        if not raw_rows:
-            return {"success": True, "rows": 0, "ignored": 0, "details": {}}
-
-        # 2. Création de l'entité Fichier (Séparé)
-        import_id = self._initialize_file_import(path)
-        if not import_id:
-            return {"success": False, "message": "Échec de création de l'enregistrement d'import.", "rows": 0,
-                    "ignored": 0}
-
-        # 3. Traitement des lignes
-        # CORRECTION : On retire le ", ignored" car _process_rows ne renvoie qu'une liste
-        validated_ops = self._process_rows(parent_window, raw_rows, mapping, import_id)
-
-        if validated_ops is None:  # Cas d'annulation
-            return {"success": False, "message": "Import annulé.", "rows": 0, "ignored": 0}
-
-        # Calcul automatique des lignes ignorées
-        ignored = len(raw_rows) - len(validated_ops)
-
-        # 4. Sauvegarde finale
-        result = self.operation_tracker.save_all(validated_ops)
-
-        # Mise à jour du statut du fichier pour le verrouiller et le mettre en vert
-        self._update_file_import(import_id, "deja_importe")
-
-        return {"success": True, "rows": len(validated_ops), "ignored": ignored, "details": result}
-    def _initialize_file_import(self, path: str):
+    def _initialize_file_import(self, path: str) -> int | None:
+        """Crée ou récupère l'entrée d'import via le cat_trackers (jamais de SQL direct)."""
         p = Path(path)
-
-        # 1. Récupération des données brutes via le service
         raw_rows = self.import_service._read_file(p)
+        checksum = self.import_service._checksum(p)
 
-        # On calcule le checksum tout de suite pour faire notre vérification
-        checksum_calcule = self.import_service._checksum(p)
-
-        # --- CORRECTION : VÉRIFICATION D'EXISTENCE ---
-        # On récupère tous les imports connus pour chercher notre checksum
+        # Chercher un import existant avec ce checksum
         imports_existants = self.file_import_trackers.get_all()
-        import_existant = next((imp for imp in imports_existants if imp.checksum == checksum_calcule), None)
+        import_existant = next((imp for imp in imports_existants if imp.checksum == checksum), None)
 
         if import_existant:
-            # Si le fichier est bloqué à l'état "nouveau" ou "erreur" suite à un plantage précédent
-            if import_existant.statut in ['nouveau', 'erreur']:
-                # On retourne l'ID existant pour reprendre le processus là où il a planté
-                return import_existant.id_import
+            if import_existant.statut in ("nouveau", "erreur"):
+                return import_existant.id_import  # Reprise après plantage
             else:
-                # Si le statut est "deja_importe" ou autre statut de succès, on bloque pour de bon
                 raise ValueError(f"Le fichier '{p.name}' a déjà été importé avec succès.")
-        # --------------------------------------------
 
-        # 2. Initialisation de l'objet via le tiers_trackers (si nouveau fichier)
+        # Nouveau fichier → création via cat_trackers
         nouvel_import = self.file_import_trackers.get_new()
-
-        # 3. Remplissage complet grâce au service
         nouvel_import.fichier = p.name
         nouvel_import.chemin = str(p)
-        nouvel_import.format_fichier = p.suffix.lstrip('.').lower()
+        nouvel_import.format_fichier = p.suffix.lstrip(".").lower()
         nouvel_import.nb_lignes = len(raw_rows)
-        nouvel_import.checksum = checksum_calcule
+        nouvel_import.checksum = checksum
         nouvel_import.statut = "nouveau"
 
-        # 4. Sauvegarde
         import_enregistre = self.file_import_trackers.add(nouvel_import)
 
-        if import_enregistre and hasattr(import_enregistre, 'id_import'):
+        if import_enregistre and hasattr(import_enregistre, "id_import"):
             return import_enregistre.id_import
 
         return None
@@ -342,15 +314,31 @@ class OperationsImportHelpers(BaseHelper):
             # ou self.file_import_trackers.save(import_obj)
             self.file_import_trackers.update(import_obj)
 
-    def _process_rows(self, parent_window, raw_rows, mapping, import_id):
-        """Sépare la logique de traitement des lignes."""
-        processor = RowProcessor(self.compte_tracker, self.category_tracker,
-                                 self.tiers_tracker, self.operation_tracker)
-        validated = []
+    def import_file(self, parent_window, path: str, mapping: dict) -> dict:
+        """Orchestre l'import complet d'un fichier bancaire."""
+        p = Path(path)
 
-        for index, raw_row in enumerate(raw_rows, start=1):
-            op = processor.process_row(parent_window, index, raw_row, mapping, import_id)
-            if op is None: return None
-            validated.append(op)
+        # 1. Lecture des lignes brutes via le service
+        raw_rows = self.import_service._read_file(p)
+        if not raw_rows:
+            return {"success": True, "rows": 0, "ignored": 0, "details": {}}
 
-        return validated
+        # 2. Initialisation de l'entrée d'import (via cat_trackers uniquement)
+        import_id = self._initialize_file_import(path)
+        if not import_id:
+            return {"success": False, "message": "Échec init import.", "rows": 0, "ignored": 0}
+
+        # 3. Traitement ligne par ligne
+        result_process = self._process_rows(parent_window, raw_rows, mapping, import_id)
+        if result_process is None:
+            return {"success": False, "message": "Import annulé.", "rows": 0, "ignored": 0}
+
+        validated_ops, ignored = result_process
+
+        # 4. Sauvegarde en BDD via le cat_trackers
+        result = self.operation_tracker.save_all(validated_ops)
+
+        # 5. Mise à jour du statut du fichier
+        self._update_file_import(import_id, "deja_importe")
+
+        return {"success": True, "rows": len(validated_ops), "ignored": ignored, "details": result}

@@ -64,8 +64,8 @@ class OperationManager(GenericManager):
         params = []
 
         if compte_id and compte_id != "tlc":
-            sql += " AND compte_id = ?"
-            params.append(compte_id)
+            sql += " AND (compte_id = ? OR compte_dest_id = ?)"
+            params.extend([compte_id, compte_id])
 
         if date_debut and date_fin:
             sql += " AND date_operation BETWEEN ? AND ?"
@@ -108,3 +108,20 @@ class OperationManager(GenericManager):
             cur.execute(sql, [id_maitre] + ids_doublons)
             conn.commit()
             return cur.rowcount
+
+    def migrer_liaisons_categorie(self, ids_doublons: list, id_maitre: int) -> int:
+        """Réaffecte toutes les opérations des catégories doublons vers la catégorie maître."""
+        if not ids_doublons:
+            return 0
+        placeholders = ",".join("?" * len(ids_doublons))
+        sql = f"""
+            UPDATE {self.SQL_TABLE}
+            SET categorie_id = ?
+            WHERE categorie_id IN ({placeholders})
+        """
+        with db.get_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(sql, [id_maitre] + ids_doublons)
+            conn.commit()
+            return cur.rowcount
+

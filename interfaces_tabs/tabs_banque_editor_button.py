@@ -24,6 +24,5 @@ class BanqueButton(EditeurActions):
     def _build_widgets(self):
         self._add_btn_left("➕ Nouveau", "action_add_banque")
         self._add_btn_left("🗑️ Supprimer", "action_delete_banque")
-        # self._add_btn_end("✏️ Modifier", "action_edit_file")
         self._add_btn_end("💾 Sauvegarder", "action_save_banque")
 

@@ -99,7 +99,7 @@ class OperationImport(OperationBase):
         "compte_id",
         "tiers_id",
         "categorie_id",
-        "compte_virement_id",
+        "compte_dest_id ",
     ]
 
     # ---- Champs supplémentaires ------------------------------------- #
@@ -120,10 +120,12 @@ class OperationImport(OperationBase):
     compte_id:        Optional[int]   = None
     tiers_id:         Optional[int]   = None
     categorie_id:     Optional[int]   = None
+    compte_dest_id: Optional[int] = None
 
     compte_obj: Optional[Any] = field(default=None, repr=False)
     tiers_obj: Optional[Any] = field(default=None, repr=False)
     categorie_obj: Optional[Any] = field(default=None, repr=False)
+    cmpt_dest_obj: Optional[Any] = field(default=None, repr=False)
 
     # ---- Sérialisation ---------------------------------------------- #
 
@@ -168,6 +170,7 @@ class OperationSaisie(OperationBase):
         "compte_id",
         "tiers_id",
         "categorie_id",
+        "compte_dest_id",
     ]
 
     # ---- Champs supplémentaires ------------------------------------- #
@@ -175,11 +178,13 @@ class OperationSaisie(OperationBase):
     compte_id:    Optional[int] = None
     tiers_id:     Optional[int] = None
     categorie_id: Optional[int] = None
+    compte_dest_id: Optional[int] = None
 
-    # OperationSaisie(**row_dict) les accepte !
+    # ModOperationSaisie(**row_dict) les accepte !
     compte_obj: Optional[Any] = field(default=None, repr=False)
     tiers_obj: Optional[Any] = field(default=None, repr=False)
     categorie_obj: Optional[Any] = field(default=None, repr=False)
+    cmpt_dest_obj: Optional[Any] = field(default=None, repr=False)
 
     # ---- Sérialisation ---------------------------------------------- #
 
@@ -191,7 +196,7 @@ class OperationSaisie(OperationBase):
         return {k: d[k] for k in self.SQL_FIELDS if k in d}
 
     @classmethod
-    def from_dict(cls, data: dict) -> "OperationSaisie":
+    def from_dict(cls, data: dict) -> "ModOperationSaisie":
         import inspect
         valid = set(inspect.signature(cls).parameters.keys())
         return cls(**{k: v for k, v in data.items() if k in valid})

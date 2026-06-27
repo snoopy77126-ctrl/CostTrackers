@@ -37,6 +37,13 @@ class GenericTracker:
 
     def load_all(self) -> List[object]:
         items = self.manager.load_all()
+
+        # Lecture du SORT_KEY depuis MODEL_CLASS du manager
+        model_class = getattr(self.manager, 'MODEL_CLASS', None)
+        sort_key = getattr(model_class, 'SORT_KEY', None)
+        if sort_key:
+            items.sort(key=lambda obj: (getattr(obj, sort_key, None) or "").lower())
+
         self._cache = [
             {"id": self._cache_key(item), "objet": item}
             for item in items
@@ -51,7 +58,14 @@ class GenericTracker:
     def get_all(self) -> List[object]:
         if not self._is_initialized:
             return self.load_all()
-        return self._cache_values()
+
+        # Réappliquer le tri si nécessaire avant de retourner la liste
+        items = self._cache_values()
+        model_class = getattr(self.manager, 'MODEL_CLASS', None)
+        sort_key = getattr(model_class, 'SORT_KEY', None)
+        if sort_key:
+            items.sort(key=lambda obj: (getattr(obj, sort_key, None) or "").lower())
+        return items
 
     def get_by_id(self, obj_id: any) -> Optional[object]:
         if not self._is_initialized:

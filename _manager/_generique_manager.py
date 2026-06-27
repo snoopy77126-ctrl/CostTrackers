@@ -78,11 +78,11 @@ class GenericManager:
     # HOOKS (à surcharger)
     # -------------------
 
-    def _from_row(self, row):
+    def _from_row_old(self, row):
         """Override dans chaque manager"""
         raise NotImplementedError
 
-    def _from_row_new(self, row):
+    def _from_row(self, row):
         """
         Vous pouvez maintenant appeler ceci dans vos sous-classes,
         ou directement ici si vous surchargez la logique.
@@ -170,3 +170,12 @@ class GenericManager:
                 except (ValueError, TypeError):
                     continue
         return row_dict
+
+    def _execute_custom_select(self, sql: str, params: tuple = ()):
+        with db.get_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(sql, params)
+            rows = cur.fetchall()
+
+            # Conversion des dates pour chaque ligne récupérée
+            return [self._convert_dates_in_row(dict(row)) for row in rows]

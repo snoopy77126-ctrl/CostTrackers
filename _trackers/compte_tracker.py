@@ -34,52 +34,44 @@ class CompteTracker(GenericTracker):
         self.type_compte_tracker = None
 
     def from_dict(self, data: dict):
-        if not data:
-            return None
+        if not data: return None
+        raw_data = self._clean_data(data.copy())
 
-        raw_data = data.copy()
+        # Résolutions
+        type_val = raw_data.pop("type_compte", None) or raw_data.get("type_compte_id", "generale")
+        compte_class = self._resolve_compte_class(type_val)
 
-        # Récupération et traitement du type de compte
-        type_compte = raw_data.pop("type_compte", None) or raw_data.get("type_compte_id", "generale")
-        raw_data.pop("type_compte_id", None)
+        raw_data["banque"] = self._resolve_banque(raw_data.get("banque") or raw_data.get("banque_id"))
+        raw_data["type_compte"] = self._resolve_type_compte(type_val, compte_class)
 
-        # Alignement des clés dictionnaire d'interface -> champs de la Dataclass
-        if "label" in raw_data and "nom_du_compte" not in raw_data:
-            raw_data["nom_du_compte"] = raw_data.pop("label")
-        if "numero" in raw_data and "identifiant" not in raw_data:
-            raw_data["identifiant"] = raw_data.pop("numero")
-
-        # Résolution de la banque associée
-        banque_info = raw_data.get("banque") or raw_data.get("banque_id")
-        raw_data["banque"] = self._resolve_banque(banque_info)
-
-        # Nettoyage et typage des variables numériques
-        if "solde_mini" in raw_data and "solde_min" not in raw_data:
-            raw_data["solde_min"] = raw_data.pop("solde_mini")
-
-        for key in ("solde_init", "solde_min", "solde_max", "decouvert_autorise",
-                    "taux_interet", "duree_value", "montant", "montant_max",
-                    "remboursement_mini"):
-            if key in raw_data:
-                raw_data[key] = float(raw_data[key] or 0.0)
-
-        # Typage des booléens
-        for key in ("compte_favori", "cache_le_compte", "object_epargne"):
-            if key in raw_data:
-                raw_data[key] = bool(raw_data[key])
-
-        # Détermination de la bonne sous-classe
-        compte_class = self._resolve_compte_class(type_compte)
-
-        # Résolution de l'objet TypeCompte associé (utilisé par le manager pour
-        # déduire type_compte_id lors de la persistance SQL)
-        raw_data["type_compte"] = self._resolve_type_compte(type_compte, compte_class)
-
-        # Filtrage strict par rapport à la signature de la dataclass cible
+        # Filtrage automatique via signature (la méthode la plus propre)
         valid_keys = inspect.signature(compte_class).parameters.keys()
-        filtered_data = {key: value for key, value in raw_data.items() if key in valid_keys}
+        return compte_class(**{k: v for k, v in raw_data.items() if k in valid_keys})
 
-        return compte_class(**filtered_data)
+    def _clean_data(self, raw_data: dict):
+        """Standardise les clés et types avant instantiation."""
+        mapping = {
+            "label": "nom_du_compte",
+            "numero": "identifiant",
+            "solde_mini": "solde_min"
+        }
+        for old, new in mapping.items():
+            if old in raw_data and new not in raw_data:
+                raw_data[new] = raw_data.pop(old)
+
+        # Nettoyage types numériques
+        numeric_fields = ["solde_init", "solde_min", "solde_max", "decouvert_autorise",
+                          "taux_interet", "duree_value", "montant", "montant_max", "remboursement_mini"]
+        for field in numeric_fields:
+            if field in raw_data:
+                raw_data[field] = float(raw_data[field] or 0.0)
+
+        # Nettoyage booléens
+        for field in ("compte_favori", "cache_le_compte", "object_epargne"):
+            if field in raw_data:
+                raw_data[field] = bool(raw_data[field])
+
+        return raw_data
 
     def _resolve_compte_class(self, type_compte):
         if isinstance(type_compte, dict):
@@ -218,6 +210,20 @@ class CompteTracker(GenericTracker):
             if f"{compte.nom_du_compte} [{compte.identifiant}]" == display_string:
                 return compte
         return None
+
+    def get_affected_paiement(self):
+        """Retourne la liste des comptes affectés au paiement."""
+        return self.get_all()
+
+    def get_all_filtered(self, actif: bool = True) -> list:
+        """Retourne la liste des tiers filtrée ou l'intégralité de la liste."""
+        tous_les_comptes = self.get_all()
+
+        # Si actif est True, on filtre. Si actif est False, on retourne tout.
+        if actif:
+            return [compte for compte in tous_les_comptes if compte.est_actif]
+
+        return tous_les_comptes
 
     def create(self, name: str, number: str):
         """Crée un nouveau compte en base de données via le manager et l'ajoute au tiers_trackers."""

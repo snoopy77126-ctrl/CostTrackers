@@ -176,23 +176,20 @@ class OperationsImport(tk.Frame):
     def _set_mapping_columns(self, columns, mapping):
         values = [""] + list(columns)
 
-        # 1. Mettre à jour les listes déroulantes (via les widgets stockés dans self.entries)
-        # 'self.entries' est l'attribut standard dans BaseFormFrame pour accéder aux widgets
+        # Stocker la liste complète pour que _refresh_available_columns puisse y accéder
+        self.mapping_form._all_columns = values
+
         if hasattr(self.mapping_form, 'entries'):
             for target, widget in self.mapping_form.entries.items():
-                # On vérifie si c'est bien une combobox avant de mettre à jour
                 if hasattr(widget, "widgetName") and "combobox" in widget.widgetName:
                     widget["values"] = values
 
-        # 2. Mettre à jour les variables (self.vars) pour afficher la sélection
-        # C'est cette étape qui force l'affichage du texte dans le champ
         for target, var in self.mapping_form.vars.items():
             selected = mapping.get(target, "")
-            # On ne met à jour que si la valeur fait partie des colonnes détectées
-            if selected in columns:
-                var.set(selected)
-            else:
-                var.set("")
+            var.set(selected if selected in columns else "")
+
+        # Appliquer le filtre immédiatement avec le mapping initial
+        self.mapping_form._refresh_available_columns()
 
     def _clear_mapping(self):
         for var in self.mapping_form.vars.values():
@@ -303,14 +300,24 @@ class OperationsImport(tk.Frame):
 
     def _mark_file_error(self, path, message):
         self.file_errors[path] = message
+
+        # 1. Mise à jour du cache de données pour que le prochain reload() soit cohérent
+        if path in self.file_rows:
+            self.file_rows[path]["label"] = "Erreur"
+            self.file_rows[path]["tags"] = ("error",)
+
+        # 2. Mise à jour visuelle du widget TreeView
         if self.files_tree.tree.exists(path):
-            # 1. On récupère les valeurs actuelles
-            current_values = list(self.files_tree.tree.item(path, "values"))
+            # On récupère les valeurs actuelles
+            values = list(self.files_tree.tree.item(path, "values"))
 
-            # 2. On met à jour uniquement l'index 1 (colonne 'status')
-            # On suppose que current_values a 4 éléments basés sur self.COLUMNS
-            if len(current_values) >= 2:
-                current_values[1] = "Erreur test"
+            # Index 1 correspond à la colonne 'label' selon votre structure _load_files
+            if len(values) >= 2:
+                values[1] = "Erreur"
 
-                # 3. On applique la mise à jour et le tag d'erreur
-                self.files_tree.tree.item(path, values=tuple(current_values), tags=("error",))
+                # Application des nouvelles valeurs et du TAG 'error'
+            self.files_tree.tree.item(path, values=tuple(values), tags=("error",))
+
+            # 3. CRUCIAL : Forcer la mise à jour des couleurs liées aux tags
+            # Si votre classe OperationTree ne le fait pas, le tag reste ignoré
+            self.files_tree.tree.tag_configure("error", foreground="red")

@@ -2,7 +2,7 @@ from typing import List
 
 from _manager.categorie_manager import CategorieManager
 from _trackers._generic_tracker import GenericTracker
-from models.categories import SSCategorie, Categorie
+from models.categories import Categorie, CategorieParent
 
 
 class CategoryTracker(GenericTracker):
@@ -23,6 +23,9 @@ class CategoryTracker(GenericTracker):
 
         # 2. On recupere explicitement les deux familles reconstruites par le manager.
         categories_list, ss_categories_list = self.manager.load_all_sorted()
+
+        categories_list.sort(key=lambda obj: (getattr(obj, "display_name", None) or "").lower())
+        ss_categories_list.sort(key=lambda obj: (getattr(obj, "display_name", None) or "").lower())
 
         # 3. Rangement immédiat de toutes les Catégories
         for item in categories_list:
@@ -49,9 +52,9 @@ class CategoryTracker(GenericTracker):
         # En utilisant getattr(obj, self.id_field) si nécessaire, ou plus simplement :
         self._cache_set(obj.id_categorie, obj)
 
-        if isinstance(obj, Categorie):
+        if isinstance(obj, CategorieParent):
             self._set_special_cache(self._categories, f"a_{obj.id_categorie}", obj)
-        elif isinstance(obj, SSCategorie):
+        elif isinstance(obj, Categorie):
             self._set_special_cache(self._ss_categories, f"c_{obj.id_categorie}", obj)
 
     @staticmethod
@@ -79,7 +82,7 @@ class CategoryTracker(GenericTracker):
         designation = data.get("designation")
         categorie_info = data.get("categorie")
         if not categorie_info:
-            return Categorie(designation=designation, id_categorie=id_cat)
+            return CategorieParent(designation=designation, id_categorie=id_cat)
 
         # On récupère l'ID (numérique ou iid_key)
         p_id = categorie_info.get("id_categorie") or categorie_info.get("iid_key")
@@ -89,19 +92,19 @@ class CategoryTracker(GenericTracker):
         # RÉSOLUTION : On transforme l'ID en objet categorie via le cache du parent
         obj_categorie = self.get_by_id(p_id)
 
-        return SSCategorie(
+        return Categorie(
             id_categorie=id_cat,
             designation=designation,
             categorie=obj_categorie  # On passe l'objet, pas l'ID
         )
 
-    def get_categories(self) -> List[Categorie]:
+    def get_categories(self) -> List[CategorieParent]:
         # Si le parent dit que ce n'est pas initialisé, on lance le chargement
         if not self._is_initialized:
             self.load_all()
         return self._special_values(self._categories)
 
-    def get_ss_categories(self) -> List[SSCategorie]:
+    def get_ss_categories(self) -> List[Categorie]:
         if not self._is_initialized:
             self.load_all()
         return self._special_values(self._ss_categories)
@@ -158,7 +161,7 @@ class CategoryTracker(GenericTracker):
 
     def get_by_display_string(self, display_string: str):
         """
-        Retrouve l'objet Categorie ou SSCategorie à partir de la chaîne affichée dans le Combobox.
+        Retrouve l'objet CategorieParent ou Categorie à partir de la chaîne affichée dans le Combobox.
         Formats gérés : "Nom" ou "Nom de la Catégorie Mère: Sous-Catégorie"
         """
         # 1. On cherche d'abord dans les sous-catégories en comparant avec votre propriété .display_name
@@ -175,7 +178,7 @@ class CategoryTracker(GenericTracker):
         return None
 
     def create(self, name: str, parent_name: str):
-        """ Crée une nouvelle Catégorie ou SSCategorie en fonction de la présence d'un parent. """
+        """ Crée une nouvelle Catégorie ou Categorie en fonction de la présence d'un parent. """
 
         if parent_name:
             # On cherche si le parent existe déjà pour lier la sous-catégorie
@@ -210,4 +213,10 @@ class CategoryTracker(GenericTracker):
         # Enregistrement en BDD + mise en cache via la méthode add() de GenericTracker
         # add() retourne l'objet si succès, None sinon (contrairement à save() qui retourne un booléen)
         return self.add(new_obj)
+
+    def migrer_liaisons_categorie(self, ids_doublons: list, id_maitre: int) -> int:
+        """Délègue la migration des categorie_id au manager et vide le cache."""
+        nb = self.manager.migrer_liaisons_categorie(ids_doublons, id_maitre)
+        self.clear_cache()
+        return nb
 

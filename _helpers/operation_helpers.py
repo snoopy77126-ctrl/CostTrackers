@@ -116,7 +116,7 @@ class OperationHelpers(BaseHelper):
             if not op_date or op_date < min_day or op_date > max_day:
                 continue
             rows.append({
-                "iid_key": op.id_saisie,
+                "iid_key": op.id_import_ligne,
                 "tiers": op.tiers_label or op.libelle,
                 "montant": self.money(op.montant),
                 "prochaine": self.format_date(op.date_operation),

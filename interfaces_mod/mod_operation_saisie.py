@@ -5,7 +5,7 @@ from interfaces_tabs.tabs_operation_saisie_button import OperationTypeButton, Ed
 from interfaces_tabs.tabs_operation_saisie_data import OperationSaisieData
 
 
-class OperationSaisie(tk.Toplevel):
+class ModOperationSaisie(tk.Toplevel):
     def __init__(self, parent, services=None, **context):
         super().__init__(parent)
         self.resizable(True, True)
@@ -30,6 +30,29 @@ class OperationSaisie(tk.Toplevel):
         if hasattr(self, 'initialise'):
             self.initialise()
 
+            # Centrage automatique au moment de l'initialisation
+            self.after(50, lambda: self._center_on_parent(parent))
+
+    def _center_on_parent(self, parent):
+        # Force le calcul de la taille réelle de la fenêtre
+        self.update_idletasks()
+
+        # Dimensions de la modale
+        w = self.winfo_width()
+        h = self.winfo_height()
+
+        # Position du parent
+        px = parent.winfo_x()
+        py = parent.winfo_y()
+        pw = parent.winfo_width()
+        ph = parent.winfo_height()
+
+        # Calcul du centre
+        x = px + (pw // 2) - (w // 2)
+        y = py + (ph // 2) - (h // 2)
+
+        self.geometry(f"+{x}+{y}")
+
     # ------------------- Construction UI -------------------
     def build_widgets(self):
         # ==== Boutons Débit / Crédit / Virement ====
@@ -48,6 +71,8 @@ class OperationSaisie(tk.Toplevel):
         self.frame_buttons.pack(side="bottom", fill="x")
         print(self.frame_buttons.winfo_manager())
         print(self.frame_buttons.winfo_children())
+
+
 
     # ------------------- Callbacks -------------------
     def menu_callbacks(self):
@@ -75,6 +100,11 @@ class OperationSaisie(tk.Toplevel):
         type_mapping = {'Debit': 'depense', 'Credit': 'revenu', 'Virement': 'virement'}
         self.form_data.set_montant_style(type_mapping.get(current, 'depense'))
 
+        current = self.selected_type.get()
+
+        # Appel de la nouvelle méthode pour afficher/masquer le champ Virement
+        if hasattr(self.form_data, 'toggle_virement_fields'):
+            self.form_data.toggle_virement_fields(current)
     # ------------------- Initialisation -------------------
     def initialise(self):
         """Charge les données dynamiques dans les combobox."""
@@ -109,7 +139,8 @@ class OperationSaisie(tk.Toplevel):
         type_mapping = {'Debit': 'depense', 'Credit': 'revenu', 'Virement': 'virement'}
         type_operation = type_mapping.get(self.selected_type.get(), 'depense')
 
-        data = self.form_data.get_form_values(type_operation)
+        data = self.form_data.get_form_values()
+        data['type_operation'] = type_operation
         success = self.helpers.save_operation(data)
 
         if success:
@@ -127,7 +158,21 @@ class OperationSaisie(tk.Toplevel):
 
 # ------------------ Main test ------------------
 if __name__ == '__main__':
-    # Bootstrap simulé pour l'exemple au cas où build_app_services échouerait en local
+    # Initialisation du parent (root)
+    root = tk.Tk()
+    root.title("Application Principale")
+    # Taille fixe pour le parent
+    w, h = 200, 200
+    # 2. Calcul du centre de l'écran
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    x = (screen_width // 2) - (w // 2)
+    y = (screen_height // 2) - (h // 2)
+
+    # 3. Application de la géométrie au centre
+    root.geometry(f'{w}x{h}+{x}+{y}')
+
+    # Simulation des services
     try:
         from _services._bootstrap_services import build_app_services
 
@@ -135,10 +180,9 @@ if __name__ == '__main__':
     except ImportError:
         services = None
 
-    root = tk.Tk()
-
-    app = OperationSaisie(root, services=services)
+    # Lancement de la modale liée au parent
+    # On utilise root.after pour garantir que root est bien positionné
+    app = ModOperationSaisie(root, services=services)
+    # Force la fermeture de root quand on ferme la fenêtre
     app.protocol("WM_DELETE_WINDOW", root.destroy)
-
-    root.geometry('10x10+0+0')
     root.mainloop()

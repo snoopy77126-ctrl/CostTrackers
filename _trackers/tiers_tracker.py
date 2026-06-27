@@ -12,13 +12,19 @@ class TiersTracker(GenericTracker):
         self._tiers = {}
 
     def load_all(self) -> List[object]:
-        """Charge depuis la DB et remplit le cache."""
-        # On appelle la méthode via l'instance self.manager pour éviter le TypeError
         items = self.manager.load_all()
-        # Correction : utilisation de id_tiers
-        self._tiers = {item.id_tiers: item for item in items if item}
+
+        # Tri alphabétique si SORT_KEY est défini sur le cat_trackers ou le manager
+        sort_key = getattr(self, 'SORT_KEY', None) or getattr(self.manager, 'SORT_KEY', None)
+        if sort_key:
+            items.sort(key=lambda obj: (getattr(obj, sort_key, None) or "").lower())
+
+        self._cache = [
+            {"id": self._cache_key(item), "objet": item}
+            for item in items
+        ]
         self._is_initialized = True
-        return list(self._tiers.values())
+        return self._cache_values()
 
     def get_all(self):
         if not self._is_initialized:

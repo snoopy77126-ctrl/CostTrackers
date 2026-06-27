@@ -1,0 +1,56 @@
+﻿dateOp;dateVal;label;category;categoryParent;supplierFound;amount;comment;accountNum;accountLabel;accountbalance
+2025-10-31;2025-10-31;"CARTE 30/10/25 E.LECLERC CB*8595";Carburant;"Auto & Moto";leclerc;-27,50;;00040998814;BoursoBank;184.49
+2025-10-30;2025-10-30;"CARTE 29/10/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-14,75;;00040998814;BoursoBank;211.99
+2025-10-29;2025-10-29;"CARTE 28/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-40,47;;00040998814;BoursoBank;226.74
+2025-10-29;2025-10-29;"CARTE 28/10/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-27,10;;00040998814;BoursoBank;226.74
+2025-10-29;2025-10-29;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-20,00;;00040998814;BoursoBank;226.74
+2025-10-28;2025-10-28;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;314.31
+2025-10-27;2025-10-27;"CARTE 24/10/25 E.LECLERC CB*8595";Carburant;"Auto & Moto";leclerc;-30,06;;00040998814;BoursoBank;364.31
+2025-10-27;2025-10-27;"CARTE 25/10/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-30,20;;00040998814;BoursoBank;364.31
+2025-10-27;2025-10-27;"CARTE 25/10/25 INTERMARCHE CARVI CB*8595";Alimentation;"Vie quotidienne";intermarche;-29,50;;00040998814;BoursoBank;364.31
+2025-10-27;2025-10-27;"CARTE 24/10/25 CENTRE LECLERC CB*8595";Alimentation;"Vie quotidienne";leclerc;-68,26;;00040998814;BoursoBank;364.31
+2025-10-27;2025-10-27;"CARTE 25/10/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-13,60;;00040998814;BoursoBank;364.31
+2025-10-27;2025-10-26;"VIR INST SAISON ADELINE";Pensions;"Education & Famille";"saison adeline";-300,00;;00040998814;BoursoBank;1005.93
+2025-10-27;2025-10-25;"VIR INST PANOUILLOT MANON";"Virements émis";"Virements émis";"panouillot manon";-120,00;;00040998814;BoursoBank;1005.93
+2025-10-27;2025-10-25;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;1005.93
+2025-10-24;2025-10-24;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-10,00;;00040998814;BoursoBank;1005.93
+2025-10-24;2025-10-24;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-10,00;;00040998814;BoursoBank;1005.93
+2025-10-23;2025-10-23;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-30,00;;00040998814;BoursoBank;1025.93
+2025-10-23;2025-10-23;"PRLV SEPA AMAZON PAYMENTS EUROPE S C A";"Livres, CD/DVD, bijoux, jouets…";"Vie quotidienne";amazon;-67,80;;00040998814;BoursoBank;1025.93
+2025-10-22;2025-10-22;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;1123.73
+2025-10-20;2025-10-20;"CARTE 17/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-22,41;;00040998814;BoursoBank;1223.73
+2025-10-20;2025-10-20;"CARTE 16/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-9,49;;00040998814;BoursoBank;1223.73
+2025-10-20;2025-10-20;"CARTE 19/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-101,86;;00040998814;BoursoBank;1223.73
+2025-10-20;2025-10-20;"CARTE 19/10/25 CARRE D AS CB*8595";Tabac;"Vie quotidienne";"carre d as";-29,90;;00040998814;BoursoBank;1223.73
+2025-10-20;2025-10-20;"CARTE 19/10/25 AWARIZTALCADO.FR CB*8595";"Dons et Cadeaux";"Cadeaux et solidarité";AWARIZTALCADO.FR;-19,98;;00040998814;BoursoBank;1223.73
+2025-10-20;2025-10-18;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;1457.37
+2025-10-17;2025-10-17;"CARTE 16/10/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-14,10;;00040998814;BoursoBank;1457.37
+2025-10-17;2025-10-17;"CARTE 16/10/25 RESERVATOO CB*8595";"Non catégorisé";"Non catégorisé";RESERVATOO;-54,00;;00040998814;BoursoBank;1457.37
+2025-10-16;2025-10-16;"CARTE 15/10/25 E.LECLERC CB*8595";Carburant;"Auto & Moto";leclerc;-22,38;;00040998814;BoursoBank;1525.47
+2025-10-15;2025-10-15;"CARTE 13/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-16,42;;00040998814;BoursoBank;1547.85
+2025-10-15;2025-10-15;"VIR SEPA CPAM ARTOIS";"Remboursements frais de santé";Santé;"virement cpam artois";"1 500,00";;00040998814;BoursoBank;1547.85
+2025-10-14;2025-10-14;"CHQ. N.2054891";Chèques;Chèques;"cheque n 2054891";-45,00;;00040998814;BoursoBank;64.27
+2025-10-13;2025-10-13;"CARTE 10/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-35,75;;00040998814;BoursoBank;109.27
+2025-10-13;2025-10-13;"CARTE 10/10/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-33,30;;00040998814;BoursoBank;109.27
+2025-10-13;2025-10-11;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-100,00;;00040998814;BoursoBank;295.82
+2025-10-13;2025-10-13;"PRLV SEPA SECURYCAR";"Auto / Moto - Autres";"Auto & Moto";securycar;-17,50;;00040998814;BoursoBank;109.27
+2025-10-10;2025-10-10;"PRLV SEPA PRIORIS";Financement;"Auto & Moto";prioris;-206,61;;00040998814;BoursoBank;295.82
+2025-10-10;2025-10-10;"CHQ. N.2054894";Chèques;Chèques;"cheque n 2054894";-20,00;;00040998814;BoursoBank;295.82
+2025-10-08;2025-10-08;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-50,00;;00040998814;BoursoBank;522.43
+2025-10-08;2025-10-08;"CARTE 07/10/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-15,90;;00040998814;BoursoBank;522.43
+2025-10-08;2025-10-08;"PRLV SEPA FREE MOBILE";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free mobile";-25,98;;00040998814;BoursoBank;522.43
+2025-10-07;2025-09-30;"*INTERETS DEBITEURS AU 30/09/25";"Frais bancaires et de gestion (dont agios)";"Services financiers & professionnels";"Boursorama Banque";-0,11;;00040998814;BoursoBank;
+2025-10-07;2025-10-07;"PRLV SEPA CALLEO";Eau;Logement;;-16,17;;00040998814;BoursoBank;614.31
+2025-10-06;2025-10-06;"CARTE 03/10/25 MC DONALD'S CB*8595";"Restaurants, bars, discothèques…";"Loisirs et sorties";"mc donald's";-27,45;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-06;"CARTE 03/10/25 INTERMARCHE CB*8595";Alimentation;"Vie quotidienne";intermarche;-24,77;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-06;"CARTE 03/10/25 HENRI BOUCHER CB*8595";Alimentation;"Vie quotidienne";"henri boucher";-22,70;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-06;"CARTE 03/10/25 LA CIVETTE CB*8595";Tabac;"Vie quotidienne";"la civette";-12,50;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-06;"CARTE 02/10/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-87,96;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-05;"VIR INST DAUTRICHE CATHERINE";"Virements émis";"Virements émis";"dautriche catherine";-150,00;;00040998814;BoursoBank;1041.14
+2025-10-06;2025-10-06;"PRLV SEPA Free Telecom";"Téléphonie (fixe et mobile)";"Abonnements & téléphonie";"free telecom";-39,99;;00040998814;BoursoBank;630.59
+2025-10-06;2025-10-06;"PRLV SEPA LOLIVIER ASSURANCE EUI (France";"Epargne financière (retraite, prévoyance, PEA, assurance-vie…)";"Dépenses d'épargne";"lolivier assurance eui france";-45,18;;00040998814;BoursoBank;630.59
+2025-10-03;2025-10-03;"CARTE 02/10/25 LE MARIGNY CB*8595";Tabac;"Vie quotidienne";"le marigny";-31,50;;00040998814;BoursoBank;1041.14
+2025-10-02;2025-10-02;"PRLV SEPA FLOA";"Crédit conso";"Emprunts (hors immobilier)";"banque du groupe casino banque casino";-236,08;;00040998814;BoursoBank;1072.64
+2025-10-01;2025-10-01;"CARTE 29/09/25 LIDL 2888 CB*8595";Alimentation;"Vie quotidienne";lidl;-12,10;;00040998814;BoursoBank;1308.72
+2025-10-01;2025-10-01;"VIR SEPA BTP PREVOYANCE PRESTATIONS";"Remboursements frais de santé";Santé;"virement btp prevoyance prestations";"1 210,33";;00040998814;BoursoBank;1308.72
+2025-10-01;2025-10-01;"CHQ. N.2054892";Chèques;Chèques;"cheque n 2054892";-35,00;;00040998814;BoursoBank;1308.72

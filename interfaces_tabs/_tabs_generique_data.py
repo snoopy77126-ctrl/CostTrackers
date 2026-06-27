@@ -72,25 +72,39 @@ class BaseFormFrame(ttk.Frame):
         self._snapshot = {}  # Vider le snapshot !
         self._clear()  # Appelle la méthode de la classe parente
 
-    def add_entry(self, key, label, row=None):
+    def add_entry(self, key, label, row=None, grid_options=None):
         if row is None: row = self.next_row()
         ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
+
         var = tk.StringVar()
         entry = ttk.Entry(self.form, textvariable=var)
-        entry.grid(row=row, column=1, sticky="ew", padx=5, pady=2)
+
+        # Application du grid par défaut ou personnalisé
+        default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
+        if grid_options:
+            default_opts.update(grid_options)
+
+        entry.grid(**default_opts)
+
         self.vars[key] = var
         self.entries[key] = entry
         self._bind_clear_key(key, entry)
         return entry
 
-    def add_combobox(self, key, label, row=None, on_select: Callable = None, container=None):
+    def add_combobox(self, key, label, row=None, on_select: Callable = None, container=None, grid_options=None):
         target_parent = container if container is not None else self.form
 
         if row is None: row = self.next_row()
         ttk.Label(target_parent, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
         var = tk.StringVar()
         combo = ttk.Combobox(target_parent, textvariable=var, state="readonly")
-        combo.grid(row=row, column=1, sticky="ew", padx=5, pady=2)
+
+        # Application du grid par défaut ou personnalisé
+        default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
+        if grid_options:
+            default_opts.update(grid_options)
+
+        combo.grid(**default_opts)
         combo.bind("<<ComboboxSelected>>", lambda e: self._on_combobox_selected(key, on_select))
         self.vars[key] = var
         self.entries[key] = combo
@@ -124,12 +138,17 @@ class BaseFormFrame(ttk.Frame):
 
         return check
 
-    def add_date(self, key, label, row=None):
+    def add_date(self, key, label, row=None, grid_options=None):
         if row is None: row = self.next_row()
         ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
         var = tk.StringVar()
         date_ent = DateEntry(self.form, textvariable=var, date_pattern="dd/MM/yyyy", locale="fr_FR")
-        date_ent.grid(row=row, column=1, sticky="ew", padx=5, pady=2)
+        # Application du grid par défaut ou personnalisé
+        default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
+        if grid_options:
+            default_opts.update(grid_options)
+
+        date_ent.grid(**default_opts)
         self.vars[key] = var
         self.entries[key] = date_ent
         self._bind_clear_key(key, date_ent)
@@ -173,6 +192,50 @@ class BaseFormFrame(ttk.Frame):
 
         if on_select:
             on_select(selected_row)
+
+    def add_numeric(self, key, label, row=None, from_=0, to=100, increment=1, grid_options=None):
+        """Ajoute un champ numérique avec des flèches de sélection."""
+        if row is None: row = self.next_row()
+        ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
+
+        var = tk.DoubleVar(value=from_)
+        # Création de la Spinbox
+        spin = ttk.Spinbox(self.form, from_=from_, to=to, increment=increment, textvariable=var)
+
+        # Application du grid
+        default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
+        if grid_options:
+            default_opts.update(grid_options)
+
+        spin.grid(**default_opts)
+
+        self.vars[key] = var
+        self.entries[key] = spin
+        self._bind_clear_key(key, spin)
+        return spin
+
+    def add_numeric_calc(self, key, label, row=None, grid_options=None):
+        if row is None: row = self.next_row()
+        ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
+
+        var = tk.StringVar()
+        frame = ttk.Frame(self.form)
+
+        entry = ttk.Entry(frame, textvariable=var)
+        entry.pack(side="left", fill="x", expand=True)
+
+        # Le bouton "Calc" ouvre la calculatrice
+        btn = ttk.Button(frame, text="Σ", width=3,
+                         command=lambda: CalculatorPopup(self, var))
+        btn.pack(side="right", padx=(2, 0))
+
+        default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
+        if grid_options: default_opts.update(grid_options)
+        frame.grid(**default_opts)
+
+        self.vars[key] = var
+        self.entries[key] = entry
+        return entry
 
     @staticmethod
     def _format_date_for_display(value):
@@ -393,4 +456,49 @@ class BaseFormFrame(ttk.Frame):
             self.vars[key].set("")
 
         return "break"
+
+
+import tkinter as tk
+from tkinter import ttk
+
+
+class CalculatorPopup(tk.Toplevel):
+    def __init__(self, parent, target_var):
+        super().__init__(parent)
+        self.title("Calculatrice")
+        self.target_var = target_var
+        self.resizable(False, False)
+
+        self.display = ttk.Entry(self, justify='right')
+        self.display.grid(row=0, column=0, columnspan=4, sticky="ew", padx=5, pady=5)
+
+        buttons = [
+            '7', '8', '9', '/',
+            '4', '5', '6', '*',
+            '1', '2', '3', '-',
+            'C', '0', '=', '+'
+        ]
+
+        row, col = 1, 0
+        for btn in buttons:
+            ttk.Button(self, text=btn, width=5,
+                       command=lambda b=btn: self.on_click(b)).grid(row=row, column=col, padx=2, pady=2)
+            col += 1
+            if col > 3:
+                col = 0
+                row += 1
+
+    def on_click(self, char):
+        if char == '=':
+            try:
+                result = eval(self.display.get())
+                self.target_var.set(str(result))
+                self.destroy()
+            except:
+                self.display.delete(0, 'end')
+                self.display.insert(0, "Erreur")
+        elif char == 'C':
+            self.display.delete(0, 'end')
+        else:
+            self.display.insert('end', char)
 

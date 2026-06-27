@@ -3,26 +3,29 @@
         "Acceuil": "interfaces.form_acceuil:Dashboard"
     },
     "Comptes": {
-
         "Operations": "interfaces.form_operations_view:OperationsView",
         "OperationsTK": "interfaces.form_operations_tkview:OperationsView"
     },
     "Echéances": {
-        "Synthèse": "interfaces.form_echeances:EcheancesView"
+        "Synthèse": "interfaces.form_echeances:EcheancesView",
+        "Périodiques": "interfaces.form_periodiques:PeriodiquesView"
     },
     "Etats": {},
-    "Budget": {},
+    "Budget": {
+        "Vue mensuelle": "interfaces.form_budget:BudgetView"
+    },
     "Projet": {},
     "Gestion": {
         "Comptes": "interfaces.form_compte_editor:CompteEditor",
-        "Tiers": "interfaces.from_tiers_editor:TiersEditor",
-        "Catégories": "interfaces.from_categories_editor:CategoriesDepensesView"
+        "Tiers": "interfaces.form_tiers_editor:TiersViewEditor",
+        "Catégories": "interfaces.form_categories_editor:CategoriesViewEditor"
     },
     "Paramètre": {
         "Général": "interfaces.form_parametre:Parametrage",
         "Import": "interfaces.form_operations_importe:OperationsImport"
     },
     "Dev": {
+		"Dev. Tools": "_dev_tools._run_dev_tool",
         "MenuManager": "_dev_tools.ui_menu_editor:UIMenuEditor",
         "Export Complet": null,
         "Project Analyseur": "_dev_tools.ui_analyseur_app:UIProjectAnalyzer"

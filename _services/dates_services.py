@@ -71,17 +71,49 @@ class DatesManager:
 
     @staticmethod
     def get_date_bounds(periode_key):
-        """Retourne un tuple (date_debut, date_fin) au format ISO YYYY-MM-DD."""
+        """Retourne un tuple (date_debut, date_fin) au format ISO YYYY-MM-DD.
+        Retourne (None, None) pour 'toutesdates' ou clé inconnue (pas de filtre date)."""
         today = date.today()
+
+        def iso(d):
+            return d.strftime("%Y-%m-%d")
+
+        if periode_key in ("toutesdates", "tous", None):
+            return None, None
 
         if periode_key == "mois_courant":
             debut = today.replace(day=1)
-            return debut.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d")
+            return iso(debut), iso(today)
 
-        elif periode_key == "annee_courante":
+        if periode_key == "mois_precedent":
+            # Premier jour du mois précédent
+            if today.month == 1:
+                debut = date(today.year - 1, 12, 1)
+                fin   = date(today.year - 1, 12, 31)
+            else:
+                import calendar
+                debut = date(today.year, today.month - 1, 1)
+                last  = calendar.monthrange(today.year, today.month - 1)[1]
+                fin   = date(today.year, today.month - 1, last)
+            return iso(debut), iso(fin)
+
+        if periode_key == "3_mois":
+            # Les 3 derniers mois glissants
+            month = today.month - 3
+            year  = today.year
+            if month <= 0:
+                month += 12
+                year  -= 1
+            debut = date(year, month, 1)
+            return iso(debut), iso(today)
+
+        if periode_key == "annee_courante":
             debut = date(today.year, 1, 1)
-            return debut.strftime("%Y-%m-%d"), today.strftime("%Y-%m-%d")
+            return iso(debut), iso(today)
 
-        # Ajoutez les autres périodes (mois_precedent, 3_mois, etc.) ici...
+        if periode_key == "annee_precedente":
+            debut = date(today.year - 1, 1, 1)
+            fin   = date(today.year - 1, 12, 31)
+            return iso(debut), iso(fin)
 
         return None, None

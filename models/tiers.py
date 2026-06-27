@@ -22,7 +22,7 @@ class Tier(ModelBase):
     Représente un tiers : personne physique, entreprise ou organisme.
     Correspond à une ligne de la table `tiers`.
     """
-
+    SORT_KEY = "display_name"
     SQL_ID:     ClassVar[str]       = "id_tiers"
     SQL_FIELDS: ClassVar[list[str]] = [
         "id_tiers", "titre", "nom", "prenom",

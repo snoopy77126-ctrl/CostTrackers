@@ -14,7 +14,6 @@ class EditorButton(EditeurActions):
         # Initialisation via ttk.Frame
         super().__init__(parent)
         self.callbacks = callbacks or {}
-
         # Le conteneur interne pour les boutons (requis par EditeurActions)
         self.container = ttk.Frame(self, padding=5)
         self.container.pack(fill="x")
@@ -22,10 +21,29 @@ class EditorButton(EditeurActions):
         self._build_widgets()
 
     def _build_widgets(self):
-        # self._add_btn_left("📁 ⚙️ + Armoire", "add_armoire")
-        # self._add_btn_left("📄 + Classeur", "add_classeur")
-        self._add_btn_left("➕ Nouveau", "action_add_category")
+        self._add_btn_left("➕ Ajouter", "action_add_category")
         self._add_btn_left("🗑️ Supprimer", "action_delete_category")
-        self._add_btn_end("✏️ Modifier", "action_edit_category")
-        self._add_btn_end("💾 Sauvegarder", "action_save_category")
+        self._add_btn_end("💾 Editer", "action_edit_category")
+        self._add_btn_end("✏️ Fusionner", "action_fusionner_category")
+
+class EditorButton2(EditeurActions):
+    """
+    Spécialisation de EditeurActions pour la gestion de fichiers (Ajouter, Modifier, Supprimer).
+    """
+
+    def __init__(self, parent, callbacks: Optional[Dict[str, Callable]] = None):
+        # Initialisation via ttk.Frame
+        super().__init__(parent)
+        self.callbacks = callbacks or {}
+        # Le conteneur interne pour les boutons (requis par EditeurActions)
+        self.container = ttk.Frame(self, padding=5)
+        self.container.pack(fill="x")
+
+        self._build_widgets()
+
+    def _build_widgets(self):
+        self._add_btn_left("➕ Ajouter", "action_add_category")
+        self._add_btn_left("🗑️ Supprimer", "action_delete_category")
+        self._add_btn_end("💾 Enregistrer", "action_edit_category")
+        self._add_btn_end("✏️ Fusionner", "action_fusionner_category")
 

@@ -13,6 +13,7 @@ class CompteEditorHelpers(BaseHelper):
         self.compte_tracker = self.trackers.get('compte')
         self.banque_tracker = self.trackers.get('banque')
         self.type_compte_tracker = self.trackers.get('type_compte')
+        self.moyen_paiement_tracker = self.trackers.get('mode_de_paiement')
 
         # Injection des dépendances croisées nécessaires au CompteTracker
         # pour résoudre les objets Banque / TypeCompte complets lors du from_dict.
@@ -35,13 +36,15 @@ class CompteEditorHelpers(BaseHelper):
         """Formatage des lignes de COMPTES pour l'arbre visuel."""
         if not self.compte_tracker:
             return []
+        list_compte = self.compte_tracker.get_all_filtered()
+        print(f'list_compte : {list_compte[0]}')
         return [
             {
                 "iid_key": compte.id_compte,
                 "id": compte.id_compte,
                 "value": compte.display_name,  # Affiche le nom du compte
-                "actif": True,
-            } for compte in self.compte_tracker.load_all()
+                "actif": compte.est_actif,
+            } for compte in self.compte_tracker.get_all_filtered()
         ]
 
     def fetch_liste_banques(self):
@@ -88,9 +91,6 @@ class CompteEditorHelpers(BaseHelper):
         # On ne touche pas aux attributs de l'objet.
         # Le CompteManager saura extraire les ID depuis l'objet via to_sql_dict().
 
-        # DEBUG : vérifiez que l'objet a bien ses attributs avant sauvegarde
-        print(f"[DEBUG] Banque attachée : {obj.banque}")
-
         # 3. Sauvegarde directe
         return self.compte_tracker.save(obj)
     def delete_compte(self) -> bool:
@@ -105,4 +105,22 @@ class CompteEditorHelpers(BaseHelper):
         return [
             {"iid_key": f"type_{b.id_type_de_compte}", "id": b.id_type_de_compte, "value": b.display_name}
             for b in self.type_compte_tracker.get_all()
+        ]
+
+    def fetch_row_source_paiement(self):
+        """Retourne la liste des banques pour remplir la Combobox de l'UI."""
+        if not self.moyen_paiement_tracker:
+            return []
+        return [
+            {"iid_key": f"_mode_paiement_{b.id_mode_paiement}", "id": b.id_mode_paiement, "values": b.designation}
+            for b in self.moyen_paiement_tracker.get_all()
+        ]
+
+    def fetch_row_affected_paiement(self, compte_id):
+        """Retourne la liste des banques pour remplir la Combobox de l'UI."""
+        if not self.moyen_paiement_tracker:
+            return []
+        return [
+            {"iid_key": f"_mode_paiement_{b.id_mode_paiement}", "id": b.id_mode_paiement, "values": b.designation}
+            for b in self.moyen_paiement_tracker.get_affected_paiement(compte_id)
         ]

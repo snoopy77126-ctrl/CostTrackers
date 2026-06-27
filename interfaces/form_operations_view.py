@@ -3,11 +3,11 @@ from datetime import date
 from tkinter import ttk
 
 from _helpers.operation_view_helpers import OperationsViewHelpers
-from interfaces_mod.mod_operation_saisie import OperationSaisie
+from interfaces_mod.mod_operation_saisie import ModOperationSaisie
 from interfaces_tabs._tabs_graf import TabsGraf
 from interfaces_tabs.tabs_operation_view_data import CompteFiltreData
 from interfaces_tabs.tabs_operation_view_tree import OperationTree
-
+from interfaces_tabs.tabs_operation_view_button import OperationButton
 
 
 class OperationsView(tk.Frame):
@@ -21,9 +21,8 @@ class OperationsView(tk.Frame):
 
         self.callbacks = self.menu_callback()
 
-        self.helpers.initialise()
         self.build_widgets()
-        self.refresh()
+        self._initialise()
 
     def build_widgets(self):
         self.rowconfigure(2, weight=1)
@@ -37,7 +36,8 @@ class OperationsView(tk.Frame):
         self.filtre_frame = CompteFiltreData(header, callbacks=self.callbacks)
         self.filtre_frame.grid(row=0, column=0, sticky="w")
 
-        ttk.Button(header, text="Actualiser", command=self.refresh).grid(row=0, column=2, sticky="e")
+        action_button = OperationButton(header, callbacks=self.callbacks)
+        action_button.grid(row=0, column=2, sticky="e")
 
         self.graph = TabsGraf(self, title="Evolution du solde", height=160)
         self.graph.grid(row=1, column=0, sticky="ew", padx=10, pady=(0, 8))
@@ -58,16 +58,24 @@ class OperationsView(tk.Frame):
     def menu_callback(self):
         """Aiguille l'action demandée par les boutons vers la bonne méthode interne."""
         return {
-            "on_operation_selected": "self._on_operation_selected",
+            "on_operation_selected": self._on_operation_selected,
             "on_operation_opened": self._on_operation_opened,
             "on_compte_change": self.refresh,
             "on_periode_change": self.refresh,
+            "action_add_operation": self._on_operation_opened,
+            "reload": self.refresh,
         }
 
-    def _on_operation_opened(self, row):
+    def _initialise(self):
+        self.helpers.initialise()
+        self.refresh()
+
+    def _on_operation_opened(self, row=None):
         """Action par défaut au double-clic (ex: ouvrir le document)."""
-        selected_key = row["iid_key"]
-        editor_modal = OperationSaisie(
+        selected_key=None
+        if row:
+            selected_key = row["iid_key"]
+        editor_modal = ModOperationSaisie(
             self,
             self.services,
             selected_key=selected_key,
@@ -140,3 +148,13 @@ class OperationsView(tk.Frame):
 
     def _on_operation_selected(self, row):
         pass
+
+# ── Test standalone ───────────────────────────────────────────────────
+if __name__ == "__main__":
+    from _services._bootstrap_services import build_app_services
+    root = tk.Tk()
+    root.geometry("1100x450")
+    services = build_app_services()
+    app = OperationsView(root, services)
+    app.pack(fill="both", expand=True)
+    root.mainloop()

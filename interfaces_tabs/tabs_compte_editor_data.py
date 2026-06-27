@@ -188,3 +188,9 @@ class BanqueoptionData(BaseFormFrame):
                 result[key] = final_val
 
         return result
+
+class CompteFiltreData(BaseFormFrame):
+    def __init__(self, parent, callbacks=None):
+        super().__init__(parent, callbacks=callbacks)
+
+        self.add_checkbox("filtre_compte", "Voir Comptes Cloturés", row=3)

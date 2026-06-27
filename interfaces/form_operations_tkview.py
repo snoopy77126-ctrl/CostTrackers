@@ -3,7 +3,7 @@ from datetime import date
 from tkinter import ttk
 
 from _helpers.operation_view_helpers import OperationsViewHelpers
-from interfaces_mod.mod_operation_saisie import OperationSaisie
+from interfaces_mod.mod_operation_saisie import ModOperationSaisie
 from interfaces_tabs._tabs_graf import TabsGraf
 from interfaces_tabs.tabs_operation_view_data import CompteFiltreData
 from interfaces_tabs.tabs_operation_view_tksheet import OperationTree
@@ -67,7 +67,7 @@ class OperationsView(tk.Frame):
     def _on_operation_opened(self, row):
         """Action par défaut au double-clic (ex: ouvrir le document)."""
         selected_key = row["iid_key"]
-        editor_modal = OperationSaisie(
+        editor_modal = ModOperationSaisie(
             self,
             self.services,
             selected_key=selected_key,

@@ -78,6 +78,7 @@ class DatabaseManager:
             "models.compte",
             "models.tiers",
             "models.categorie",
+            "models.periodiques",
             # Ajoutez ici tout nouveau module modèle
         ]
         for module_path in _KNOWN_MODEL_MODULES:

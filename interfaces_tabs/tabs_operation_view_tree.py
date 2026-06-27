@@ -5,7 +5,7 @@ class OperationTree(FlatTree):
     def __init__(self, parent, callbacks=None, columns=None, headings=None):
         self.callbacks_ui = callbacks or {}
         columns = columns or ("date_operation", "categorie", "tiers", "debit", "credit", "solde")
-        headings = headings or ("Date", "Categorie", "Tiers", "Débit", "Crédit", "Solde")
+        headings = headings or ("Date", "CategorieParent", "Tiers", "Débit", "Crédit", "Solde")
         super().__init__(
             parent,
             columns=columns,

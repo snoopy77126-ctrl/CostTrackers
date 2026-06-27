@@ -15,7 +15,7 @@ class TiersFusionHelpers(BaseHelper):
         self.champs_a_comparer = self._extraire_champs(objet_vide)
 
     def load_data(self, selected_tiers_data: list):
-        """ Interroge le operation_tracker pour recréer les objets métiers complets. """
+        """ Interroge le ops_trackers pour recréer les objets métiers complets. """
 
         for row in selected_tiers_data:
             t_id = row.get("id") or row.get("id_tiers") or row.get("iid_key")
@@ -131,7 +131,7 @@ class TiersFusionHelpers(BaseHelper):
             print("[DEBUG] Aucun doublon à supprimer.")
             return
 
-        # 3. Migration des opérations vers le compte maître via le operation_tracker
+        # 3. Migration des opérations vers le compte maître via le ops_trackers
         #    (obligatoire avant le DELETE pour respecter les FK)
         ops_tracker = self.services.get("operation")
         if ops_tracker:

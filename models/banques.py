@@ -69,7 +69,7 @@ class CompteBase(ModelBase):
     SQL_FIELDS correspond aux colonnes physiques de la table `comptes`.
     Les sous-classes ajoutent leurs propres champs via to_sql_dict().
     """
-
+    SORT_KEY = "display_name"
     SQL_ID:     ClassVar[str]       = "id_compte"
     SQL_FIELDS: ClassVar[list[str]] = [
         "id_compte", "label", "numero", "description",
@@ -78,6 +78,7 @@ class CompteBase(ModelBase):
         "compte_favori", "cache_le_compte",
         "banque_id", "type_compte_id",
         "date_der_rapprochement",
+        "compte_dest_id",
     ]
 
     # ---- Champs de données ------------------------------------------ #
@@ -95,6 +96,7 @@ class CompteBase(ModelBase):
     date_der_rapprochement:  Optional[date]   = None
     banque:                  Optional[Banque]     = None
     type_compte:             Optional[TypeCompte] = None
+    compte_dest:             Optional[CompteBase] = None
 
     # ---- Affichage -------------------------------------------------- #
 
@@ -109,11 +111,20 @@ class CompteBase(ModelBase):
         return self.nom_du_compte or self.identifiant or f"Compte {self.id_compte or ''}"
 
     @property
-    def est_actif(self) -> bool:
-        if self.cache_le_compte:
-            return False
-        if self.date_cloture and self.date_cloture <= date.today():
-            return False
+    def est_actif(self):
+        from datetime import datetime, date
+        if self.date_cloture:
+            # Si c'est une string, on la convertit
+            if isinstance(self.date_cloture, str):
+                try:
+                    # Adaptez le format selon ce qui est stocké en base (ex: %Y-%m-%d)
+                    date_cloture_obj = datetime.strptime(self.date_cloture, "%Y-%m-%d").date()
+                except ValueError:
+                    return True  # Ou gérez l'erreur selon vos besoins
+            else:
+                date_cloture_obj = self.date_cloture
+
+            return not (date_cloture_obj <= date.today())
         return True
 
     # ---- Sérialisation ---------------------------------------------- #

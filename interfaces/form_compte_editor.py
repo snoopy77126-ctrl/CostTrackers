@@ -4,17 +4,18 @@ from tkinter import ttk
 
 from _helpers.comptes_editor_helpers import CompteEditorHelpers
 from interfaces_mod.mod_banque_editor import BanqueEditor
-from interfaces_tabs.tabs_compte_editor_button import BanqueEditorButton
-from interfaces_tabs.tabs_compte_editor_data import BanqueoptionData, BanquesoldeData, CompteGeneralData
-from interfaces_tabs.tabs_compte_editor_tree import BanqueEditorTree
+from interfaces_tabs.tabs_compte_editor_button import BanqueEditorButton, PaiementEditorButton
+from interfaces_tabs.tabs_compte_editor_data import BanqueoptionData, BanquesoldeData, CompteGeneralData, CompteFiltreData
+from interfaces_tabs.tabs_compte_editor_tree import BanqueEditorTree, MoyenPaiementTree
 
+GRID = dict(sticky="nsew", padx=2, pady=2)
 
-class CompteEditor(tk.Frame):
+class CompteEditorview(tk.Frame):
     def __init__(self, parent, services=None, **context):
         super().__init__(parent)
 
         fenetre_principale = parent.winfo_toplevel()
-        fenetre_principale.title("CompteEditor - Gestion Financière")
+        fenetre_principale.title("CompteEditorview - Gestion Financière")
 
         self.services = services
         self.helpers = CompteEditorHelpers(self.services)
@@ -45,6 +46,8 @@ class CompteEditor(tk.Frame):
         # L'arbre affiche la liste des Comptes et reçoit le dictionnaire de callbacks actif
         self.tree_compte = BanqueEditorTree(left_frame, callbacks=self.callbacks)
         self.tree_compte.grid(row=0, column=0, sticky="nsew")
+        self.data_filtre_frame = CompteFiltreData(left_frame, callbacks=self.callbacks)
+        self.data_filtre_frame.grid(row=1, column=0, sticky="nsew")
         return left_frame
 
     def _build_right_frame(self) -> ttk.Frame:
@@ -62,12 +65,49 @@ class CompteEditor(tk.Frame):
         self.solde_data_frame = BanquesoldeData(self.notebook)
         self.notebook.add(self.solde_data_frame, text="Soldes")
 
+        self.moyen_paiement_frame = self._build_moyen_paiement_tab(self.notebook)
+        self.notebook.add(self.moyen_paiement_frame, text="Moyen de paiement")
+
         self.option_data_frame = BanqueoptionData(self.notebook)
         self.notebook.add(self.option_data_frame, text="Options")
 
         self.button_frame = BanqueEditorButton(right_frame, callbacks=self.callbacks)
         self.button_frame.grid(row=1, column=0, sticky="ew")
         return right_frame
+
+    def _build_moyen_paiement_tab(self, parent):
+        """Construit le contenu de l'onglet Moyen de paiement."""
+        container = ttk.Frame(parent, padding=5)
+
+        # PanedWindow pour diviser l'espace
+        self.main_pane = ttk.PanedWindow(container, orient="horizontal")
+        self.main_pane.grid(row=0, column=0, sticky="nsew")
+
+        # Création du panneau où iront les widgets
+        self.moyen_paiement_panel = ttk.Frame(self.main_pane)
+        self.main_pane.add(self.moyen_paiement_panel)
+
+        # Construction des widgets dans le panneau
+        self.paiement_source_tree = MoyenPaiementTree(
+            self.moyen_paiement_panel,
+            callbacks=self.callbacks
+        )
+        self.paiement_source_tree.grid(row=0, column=0, **GRID)
+
+        self.moyen_paiement_button = PaiementEditorButton(
+            self.moyen_paiement_panel,
+            callbacks=self.callbacks
+        )
+        self.moyen_paiement_button.grid(row=0, column=1, **GRID)
+
+        # Construction des widgets dans le panneau
+        self.paiement_select_tree = MoyenPaiementTree(
+            self.moyen_paiement_panel,
+            callbacks=self.callbacks
+        )
+        self.paiement_select_tree.grid(row=0, column=2, **GRID)
+
+        return container
 
     # ---- Centralisation des appels conforme à vos autres formulaires ----
     def _build_callbacks(self):
@@ -79,9 +119,18 @@ class CompteEditor(tk.Frame):
             "action_delete_account": self.action_delete,
             "add_new_banque": self.add_new_banque,
             "action_fusionner": self._action_fusionner,
+            "action_select": self.action_paiement_type_select,
+            "_on_compte_filtre_change": self._on_compte_filtre_change,
         }
 
     # ---- Actions Métier ----
+    def action_paiement_type_select(self):
+        print(f'[DEBUG]CompteEditorview:action_select')
+        data_list = self.paiement_source_tree._get_all_selected()
+        data_row =self.general_data_frame.get_values()
+        print(f'[DEBUG] data_list: {data_list}')
+        print(f'[DEBUG] data_row: {data_row}')
+
     def add_new_banque(self):
         """ Action par défaut new banque clic. """
         editor_modal = BanqueEditor(
@@ -103,7 +152,7 @@ class CompteEditor(tk.Frame):
 
         if self.helpers.save_compte(data):
             messagebox.showinfo("Compte", "Compte sauvegardé avec succès.")
-            self.refresh_tree()
+            self.refresh_compte_tree()
         else:
             messagebox.showwarning("Compte", "Échec de la sauvegarde.")
 
@@ -131,7 +180,7 @@ class CompteEditor(tk.Frame):
         if self.helpers.delete_compte():
             messagebox.showinfo("Compte", "Compte supprimé.")
             self.action_new()
-            self.refresh_tree()
+            self.refresh_compte_tree()
 
     def _action_fusionner(self):
         data_list = self.tree_compte._get_all_selected()
@@ -153,16 +202,21 @@ class CompteEditor(tk.Frame):
         # On vide la sélection courante car les anciens IDs sont supprimés
         self.selected_compte_id = None
         # On rafraîchit tout
-        self.refresh_tree()
+        self.refresh_compte_tree()
 
     # ---- Événements de l'Arbre ----
     def on_compte_selected(self, row):
         compte_id = row.get("id") or row.get("iid_key")
         data = self.helpers.fetch_data_compte(compte_id)
+        paiement = self.helpers.fetch_row_affected_paiement(compte_id)
         if data:
             self.general_data_frame.set_values(data)
             self.solde_data_frame.set_values(data)
             self.option_data_frame.set_values(data)
+            self.paiement_select_tree.insert_rows(paiement)
+
+    def _on_compte_filtre_change(self):
+        pass
 
     # ---- Initialisation & Synchronisation ----
     def initialise(self):
@@ -178,12 +232,26 @@ class CompteEditor(tk.Frame):
                 "type_compte": liste_type_compte
             })
 
-        self.refresh_tree()
+        self.refresh_compte_tree()
+        self.refresh_moyen_paiement_tree()
 
-    def refresh_tree(self):
+    def refresh_compte_tree(self):
         rows = self.helpers.fetch_row_compte()
         self.tree_compte.insert_rows(rows)
 
+    def refresh_moyen_paiement_tree(self,row = None):
+        try:
+            compte_id = row.get("id")
+        except:
+            compte_id=None
+        source_rows = self.helpers.fetch_row_source_paiement()
+        affected_row = self.helpers.fetch_row_affected_paiement(compte_id)
+
+        self.paiement_source_tree.insert_rows(source_rows)
+        if compte_id is int:
+            self.paiement_select_tree.insert_rows(affected_row)
+        else:
+            self.paiement_select_tree.clear()
 
 # ==========================================================================
 # TEST AUTONOME
@@ -197,7 +265,7 @@ if __name__ == '__main__':
 
     all_services = build_app_services()
 
-    app = CompteEditor(
+    app = CompteEditorview(
         parent=root,
         services=all_services,
         selected_key=3

@@ -1,7 +1,7 @@
 from typing import Optional, Union
 
 from _manager._generique_manager import GenericManager
-from models.categories import Categorie, SSCategorie
+from models.categories import CategorieParent, Categorie
 from databases.database import db
 
 
@@ -11,9 +11,9 @@ class CategorieManager(GenericManager):
     SQL_TABLE = "categories"
     SQL_FIELDS = ["id_categorie", "designation", "parent_id"]
     SQL_ID = "id_categorie"
-    MODEL_CLASS = SSCategorie
+    MODEL_CLASS = Categorie
 
-    def _from_row(self, row, model_class) -> Optional[Union[Categorie, SSCategorie]]:
+    def _from_row(self, row, model_class) -> Optional[Union[CategorieParent, Categorie]]:
         """Transforme une ligne SQL en objet métier selon la classe spécifiée."""
         if row is None:
             return None
@@ -49,7 +49,7 @@ class CategorieManager(GenericManager):
 
             # --- Gestion du Parent ---
             if cat_id not in temp_map:
-                cat_obj = Categorie(id_categorie=cat_id, designation=row_dict["cat_nom"])
+                cat_obj = CategorieParent(id_categorie=cat_id, designation=row_dict["cat_nom"])
                 cat_obj.ss_categories = []
 
                 categories.append(cat_obj)
@@ -59,7 +59,7 @@ class CategorieManager(GenericManager):
 
             # --- Gestion de l'Enfant ---
             if row_dict["sscat_id"] is not None:
-                sscat_obj = SSCategorie(
+                sscat_obj = Categorie(
                     id_categorie=row_dict["sscat_id"],
                     designation=row_dict["sscat_nom"]
                 )
@@ -77,7 +77,7 @@ class CategorieManager(GenericManager):
         categories, ss_categories = self.load_all_sorted()
         return categories + ss_categories
 
-    def load_by_id(self, selected_id: int) -> Optional[Union[Categorie, SSCategorie]]:
+    def load_by_id(self, selected_id: int) -> Optional[Union[CategorieParent, Categorie]]:
         """Charge une catégorie par son ID et détermine dynamiquement son type."""
         if not selected_id:
             return None
@@ -90,18 +90,18 @@ class CategorieManager(GenericManager):
             return None
 
         is_root = row["parent_id"] in (None, "", 0)
-        model_class = Categorie if is_root else SSCategorie
+        model_class = CategorieParent if is_root else Categorie
         return self._from_row(row, model_class)
 
-    def insert(self, obj: Union[Categorie, SSCategorie]) -> Union[int, bool]:
-        """Insère un objet Categorie ou SSCategorie en base de données."""
+    def insert(self, obj: Union[CategorieParent, Categorie]) -> Union[int, bool]:
+        """Insère un objet CategorieParent ou Categorie en base de données."""
         # Préparation des données communes
         designation = obj.designation.strip().upper() if obj.designation else ""
 
         # Détermination du parent_id
         parent_id = None
-        if isinstance(obj, SSCategorie):
-            # On récupère l'ID depuis l'objet Categorie lié
+        if isinstance(obj, Categorie):
+            # On récupère l'ID depuis l'objet CategorieParent lié
             if hasattr(obj, 'categorie') and obj.categorie:
                 parent_id = obj.categorie.id_categorie
 
@@ -121,7 +121,7 @@ class CategorieManager(GenericManager):
             print(f"[ERROR] Erreur lors de l'insertion de la catégorie : {e}")
             return False
 
-    def update(self, obj: Union[Categorie, SSCategorie]) -> bool:
+    def update(self, obj: Union[CategorieParent, Categorie]) -> bool:
         """Met à jour une catégorie ou sous-catégorie existante."""
         if not getattr(obj, self.SQL_ID, None):
             return False
@@ -129,7 +129,7 @@ class CategorieManager(GenericManager):
         designation = obj.designation.strip().upper() if obj.designation else ""
 
         parent_id = None
-        if isinstance(obj, SSCategorie) and hasattr(obj, 'categorie') and obj.categorie:
+        if isinstance(obj, Categorie) and hasattr(obj, 'categorie') and obj.categorie:
             parent_id = obj.categorie.id_categorie
 
         data = {
@@ -147,4 +147,20 @@ class CategorieManager(GenericManager):
             return self._delete(categorie_id)
         # Sinon, implémentation brute ou via exécuteur du GenericManager
         return False
+
+    def migrer_liaisons_categorie(self, ids_doublons: list, id_maitre: int) -> int:
+        """Réaffecte toutes les opérations des catégories doublons vers la catégorie maître."""
+        if not ids_doublons:
+            return 0
+        placeholders = ",".join("?" * len(ids_doublons))
+        sql = f"""
+            UPDATE {self.SQL_TABLE}
+            SET parent_id = ?
+            WHERE parent_id IN ({placeholders})
+        """
+        with db.get_connection() as conn:
+            cur = conn.cursor()
+            cur.execute(sql, [id_maitre] + ids_doublons)
+            conn.commit()
+            return cur.rowcount
 

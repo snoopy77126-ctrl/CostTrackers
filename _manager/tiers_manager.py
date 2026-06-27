@@ -7,7 +7,7 @@ from models.tiers import Tier, Organisation
 
 
 class TiersManager(GenericManager):
-    MODEL = Tier
+    MODEL_CLASS  = Tier
     SQL_TABLE = "tiers"
     SQL_ID = "id_tiers"  # Défini pour GenericManager
 

@@ -59,10 +59,10 @@ def _prochaine_echeance(depuis: date, frequence: str) -> date:
 
 
 class PeriodiqueManager(GenericManager):
-    MODEL      = Periodique
-    SQL_TABLE  = "periodiques"
-    SQL_ID     = "id_periodique"
+    MODEL_CLASS = Periodique
     SQL_FIELDS = Periodique.SQL_FIELDS
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self):
         super().__init__()

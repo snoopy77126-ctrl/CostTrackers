@@ -14,7 +14,7 @@ class ModOperationSaisie(tk.Toplevel):
 
         # 1. Initialisation (Logique métier & Variables Tkinter de contrôle)
         self.helpers = OperationsViewHelpers(services)
-        self.callbacks = self.menu_callbacks()
+        self.callbacks = self._build_callbacks()
         self.on_save_callback = context.get("on_save_callback")
 
         # !! TRÈS IMPORTANT : Initialiser la variable AVANT de construire l'UI !!
@@ -49,7 +49,7 @@ class ModOperationSaisie(tk.Toplevel):
 
         # Calcul du centre
         x = px + (pw // 2) - (w // 2)
-        y = py + (ph // 2) - (h // 2)
+        y = py + (ph // 2) - (h)
 
         self.geometry(f"+{x}+{y}")
 
@@ -75,7 +75,7 @@ class ModOperationSaisie(tk.Toplevel):
 
 
     # ------------------- Callbacks -------------------
-    def menu_callbacks(self):
+    def _build_callbacks(self):
         return {
             "action_save": self._on_save,
             "action_cancel": self._on_cancel,
@@ -113,7 +113,8 @@ class ModOperationSaisie(tk.Toplevel):
         tiers_data = self.helpers.fetch_tiers()
         comptes_data = self.helpers.fetch_comptes()
         categories_data = self.helpers.fetch_categories()
-        self.form_data.load_combobox_data(tiers_data, comptes_data, categories_data)
+        payment_types_data = self.helpers.fetch_payment_types()
+        self.form_data.load_combobox_data(tiers_data, comptes_data, categories_data, payment_types_data)
 
         # Si une clé est sélectionnée, charger les données de l'opération
         if self.selected_key:
@@ -162,7 +163,7 @@ if __name__ == '__main__':
     root = tk.Tk()
     root.title("Application Principale")
     # Taille fixe pour le parent
-    w, h = 200, 200
+    w, h = 10, 10
     # 2. Calcul du centre de l'écran
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()

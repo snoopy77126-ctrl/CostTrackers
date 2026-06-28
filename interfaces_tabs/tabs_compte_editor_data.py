@@ -23,35 +23,16 @@ class CompteGeneralData(BaseFormFrame):
 
     def set_values(self, data: dict):
         self._snapshot = copy.deepcopy(data)
-        data = data.copy()
-
-        banque = data.get("banque")
-
-        # Si 'banque' est un dictionnaire de données du compte (pas la liste d'initialisation)
-        if isinstance(banque, dict):
-            raw_id = self._object_key(banque)
-
-            if raw_id is not None:
-                # On construit proprement l'identifiant attendu ("bank_1", "bank_2"...)
-                banque_id = f"bank_{raw_id}"
-
-                # On stocke la clé sélectionnée pour que le moteur générique la retrouve
-                setattr(self, "_selected_key_banque", banque_id)
-
-            # On retire momentanément 'banque' de data pour éviter que le comportement par
-            # défaut de super().set_values ne vienne casser l'affichage (car pas de clé 'value')
-            del data["banque"]
-
-        # Appel au parent pour remplir tous les autres champs (nom, numéro, etc.)
+        # Le parent gère l'affichage de tous les champs.
+        # banque et type_compte ont maintenant 'value' et 'iid_key' dans to_dict().
         super().set_values(data)
 
-        # Maintenant que les données brutes de la combobox sont en place dans le composant,
-        # on force l'index visuel sur la bonne banque
-        selected_key = getattr(self, "_selected_key_banque", None)
-        if selected_key:
-            self.select_combobox_by_key("banque", selected_key)
+        # Forçage de la sélection combobox banque via l'ID brut
+        banque_id = data.get("banque_id")
+        if banque_id is not None:
+            self.select_combobox_by_key("banque", f"bank_{banque_id}")
 
-        # Synchronisation de la combobox Type de compte
+        # Forçage de la sélection combobox type_compte via l'ID brut
         type_compte_id = data.get("type_compte_id")
         if type_compte_id is not None:
             self.select_combobox_by_key("type_compte", f"type_{type_compte_id}")
@@ -192,5 +173,41 @@ class BanqueoptionData(BaseFormFrame):
 class CompteFiltreData(BaseFormFrame):
     def __init__(self, parent, callbacks=None):
         super().__init__(parent, callbacks=callbacks)
+        self.build_widgets()
 
-        self.add_checkbox("filtre_compte", "Voir Comptes Cloturés", row=3)
+    def build_widgets(self):
+        self.add_checkbox(
+            "filtre_compte",
+            "Voir comptes clôturés",
+            text="",
+            row=0,
+        )
+        # Déclenchement du callback à chaque changement de la case
+        self.vars["filtre_compte"].trace_add(
+            "write",
+            lambda *_: self._on_filtre_change()
+        )
+
+    def _on_filtre_change(self):
+        cb = self.callbacks.get("_on_compte_filtre_change")
+        if cb:
+            cb(self.vars["filtre_compte"].get())
+
+    def get_values(self):
+        return {"filtre_compte": bool(self.vars["filtre_compte"].get())}
+
+class ChequierData(BaseFormFrame):
+    def __init__(self, parent, callbacks=None):
+        super().__init__(parent, title="",callbacks= callbacks)
+
+        # 1. On laisse le générique créer les widgets à la ligne 0
+        combo = self.add_combobox("telephone_type", "", row=0)
+        entry = self.add_entry("telephone_number", "", row=0)
+
+        # 2. CORRECTION : On force la Combobox en colonne 0 et l'Entry en colonne 1
+        combo.grid(row=0, column=0, sticky="ew", padx=(5, 2), pady=2)
+        entry.grid(row=0, column=1, sticky="ew", padx=(2, 5), pady=2)
+
+        # On donne du poids aux colonnes pour équilibrer l'espace (ex: 1/3 pour le type, 2/3 pour le numéro)
+        self.form.columnconfigure(0, weight=1)
+        self.form.columnconfigure(1, weight=2)

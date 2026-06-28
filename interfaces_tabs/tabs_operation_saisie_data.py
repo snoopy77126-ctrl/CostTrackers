@@ -18,47 +18,53 @@ class OperationSaisieData(ttk.Frame):
 
     def build_widgets(self):
         # Ligne 0 : Libellé
-        ttk.Label(self, text="Opération").grid(row=0, column=0, sticky="w", padx=5, pady=2)
-        self.vars["libelle"] = tk.StringVar()
-        self.entries["libelle"] = ttk.Combobox(self, textvariable=self.vars["libelle"])
-        self.entries["libelle"].grid(row=0, column=1, columnspan=3, sticky="ew", padx=5, pady=2)
-
-        # Ligne 1 : Tiers et Banque
-        ttk.Label(self, text="Tiers").grid(row=1, column=0, sticky="w", padx=5, pady=2)
-        self.vars["tiers_id"] = tk.StringVar()
-        self.entries["tiers_id"] = ttk.Combobox(self, textvariable=self.vars["tiers_id"])
-        self.entries["tiers_id"].grid(row=1, column=1, sticky="ew", padx=5, pady=2)
-
-        ttk.Label(self, text="Banque").grid(row=1, column=2, sticky="w", padx=5, pady=2)
+        row=0
+        ttk.Label(self, text="Banque").grid(row=row, column=0, sticky="w", padx=5, pady=2)
         self.vars["compte_id"] = tk.StringVar()
         self.entries["compte_id"] = ttk.Combobox(self, textvariable=self.vars["compte_id"])
-        self.entries["compte_id"].grid(row=1, column=3, sticky="ew", padx=5, pady=2)
+        self.entries["compte_id"].grid(row=row, column=1, sticky="ew", padx=5, pady=2)
+
+        ttk.Label(self, text="Payement Type").grid(row=row, column=2, sticky="w", padx=5, pady=2)
+        self.vars["payement_type"] = tk.StringVar()
+        self.entries["payement_type"] = ttk.Combobox(self, textvariable=self.vars["payement_type"])
+        self.entries["payement_type"].grid(row=row, column=3, sticky="ew", padx=5, pady=2)
+
+        # Ligne 1 : Tiers et Banque
+        row +=1
+        ttk.Label(self, text="Tiers").grid(row=row, column=0, sticky="w", padx=5, pady=2)
+        self.vars["tiers_id"] = tk.StringVar()
+        self.entries["tiers_id"] = ttk.Combobox(self, textvariable=self.vars["tiers_id"])
+        self.entries["tiers_id"].grid(row=row, column=1, sticky="ew", padx=5, pady=2)
 
         # Ligne 2 : Note
-        ttk.Label(self, text="Note").grid(row=2, column=0, sticky="w", padx=5, pady=2)
+        row +=1
+        ttk.Label(self, text="Note").grid(row=row, column=0, sticky="w", padx=5, pady=2)
         self.vars["commentaire"] = tk.StringVar()
         self.entries["commentaire"] = ttk.Entry(self, textvariable=self.vars["commentaire"])
-        self.entries["commentaire"].grid(row=2, column=1, columnspan=3, sticky="ew", padx=5, pady=2)
+        self.entries["commentaire"].grid(row=row, column=1, columnspan=3, sticky="ew", padx=5, pady=2)
 
         # Ligne 3 : Catégorie
-        ttk.Label(self, text="Catégorie").grid(row=3, column=0, sticky="w", padx=5, pady=2)
+        row +=1
+        ttk.Label(self, text="Catégorie").grid(row=row, column=0, sticky="w", padx=5, pady=2)
         self.vars["categorie_id"] = tk.StringVar()
         self.entries["categorie_id"] = ttk.Combobox(self, textvariable=self.vars["categorie_id"])
-        self.entries["categorie_id"].grid(row=3, column=1, columnspan=3, sticky="ew", padx=5, pady=2)
+        self.entries["categorie_id"].grid(row=row, column=1, columnspan=3, sticky="ew", padx=5, pady=2)
 
         # Ligne 4 : Montant et Solde
-        ttk.Label(self, text="Montant").grid(row=4, column=0, sticky="w", padx=5, pady=2)
+        row +=1
+        ttk.Label(self, text="Montant").grid(row=row, column=0, sticky="w", padx=5, pady=2)
         self.vars["montant"] = tk.StringVar()
         self.entries["montant"] = ttk.Entry(self, textvariable=self.vars["montant"])
-        self.entries["montant"].grid(row=4, column=1, sticky="ew", padx=5, pady=2)
+        self.entries["montant"].grid(row=row, column=1, sticky="ew", padx=5, pady=2)
 
-        ttk.Label(self, text="Solde").grid(row=4, column=2, sticky="w", padx=5, pady=2)
+        ttk.Label(self, text="Solde").grid(row=row, column=2, sticky="w", padx=5, pady=2)
         self.vars["solde"] = tk.StringVar()
         self.entries["solde"] = ttk.Entry(self, textvariable=self.vars["solde"])
-        self.entries["solde"].grid(row=4, column=3, sticky="ew", padx=5, pady=2)
+        self.entries["solde"].grid(row=row, column=3, sticky="ew", padx=5, pady=2)
 
         # Ligne 5 : Date et Périodique
-        ttk.Label(self, text="Date").grid(row=5, column=0, sticky="w", padx=5, pady=2)
+        row +=1
+        ttk.Label(self, text="Date").grid(row=row, column=0, sticky="w", padx=5, pady=2)
         self.vars["date_operation"] = tk.StringVar()
         self.entries["date_operation"] = DateEntry(
             self,
@@ -66,15 +72,16 @@ class OperationSaisieData(ttk.Frame):
             date_pattern="dd/MM/yyyy",
             locale="fr_FR"
         )
-        self.entries["date_operation"].grid(row=5, column=1, sticky="ew", padx=5, pady=2)
+        self.entries["date_operation"].grid(row=row, column=1, sticky="ew", padx=5, pady=2)
 
         self.vars["periodique"] = tk.BooleanVar()
         self.entries["periodique"] = ttk.Checkbutton(
             self, text="Opération Périodique", variable=self.vars["periodique"]
         )
-        self.entries["periodique"].grid(row=5, column=2, columnspan=2, sticky="w", padx=5, pady=2)
+        self.entries["periodique"].grid(row=row, column=2, columnspan=2, sticky="w", padx=5, pady=2)
 
         # Ligne 6 : Virement (caché par défaut)
+        row +=1
         self.label_dest = ttk.Label(self, text="Compte Dest.")
         self.vars["compte_dest_id"] = tk.StringVar()
         self.entries["compte_dest_id"] = ttk.Combobox(self, textvariable=self.vars["compte_dest_id"])
@@ -83,17 +90,19 @@ class OperationSaisieData(ttk.Frame):
 
     # ------------------- Combobox -------------------
 
-    def load_combobox_data(self, tiers, comptes, categories):
+    def load_combobox_data(self, tiers, comptes, categories, payment_types=None):
         """Charge les données et stocke les raw data pour select_combobox_by_key."""
         self._raw_data_tiers_id = tiers
         self._raw_data_compte_id = comptes
         self._raw_data_categorie_id = categories
         self._raw_data_compte_dest_id = comptes
+        self._raw_data_payement_type = payment_types or []
 
         self.entries["tiers_id"]["values"] = [t['value'] for t in tiers]
         self.entries["compte_id"]["values"] = [c['value'] for c in comptes]
         self.entries["categorie_id"]["values"] = [cat['value'] for cat in categories]
         self.entries["compte_dest_id"]["values"] = [c['value'] for c in comptes]
+        self.entries["payement_type"]["values"] = [pt['value'] for pt in payment_types] if payment_types else []
 
     def select_combobox_by_key(self, key, selected_key):
         """Sélectionne une ligne de combobox depuis son iid_key."""

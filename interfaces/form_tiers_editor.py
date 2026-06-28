@@ -9,11 +9,11 @@ from interfaces_tabs.tabs_tiers_editor_button import EditorButton
 from interfaces_tabs.tabs_tiers_editor_tree import EmetteurTree
 
 
-class TiersViewEditor(tk.Frame):
+class TiersEditorView(tk.Frame):
     def __init__(self, parent, services):
         super().__init__(parent)
         fenetre_principale = parent.winfo_toplevel()
-        fenetre_principale.title("TiersViewEditor - Gestion Financière")
+        fenetre_principale.title("TiersEditorView - Gestion Financière")
 
         self.services = services
         self.tiers_helpers = TiersEditorHelpers(services)
@@ -99,15 +99,14 @@ class TiersViewEditor(tk.Frame):
     def refresh(self):
         self.tiers_tree.insert_rows(self.tiers_helpers.fetch_row_emetteur())
         self.ops_tree.insert_rows(self.tiers_helpers.fetch_row_operations(self.selected_tiers_id))
-        self.graph_view.set_points(self._operation_points())
+        self.graph_view.set_points(self.tiers_helpers._operation_points(self.selected_tiers_id))
 
     def _on_tiers_selected(self, row):
-        self.selected_tiers_id = row.get("id") if row else None
-        self.ops_tree.insert_rows(self.tiers_helpers.fetch_row_operations(self.selected_tiers_id))
-        self.graph_view.set_points(self._operation_points())
+        selected_tiers_id = row.get("id") if row else None
+        self.ops_tree.insert_rows(self.tiers_helpers.fetch_row_operations(selected_tiers_id))
+        self.graph_view.set_points(self.tiers_helpers._operation_points(selected_tiers_id))
 
     def _open_tiers_editor(self):
-        print(f'[DEBUG]TiersViewEditor:_open_tiers_editor')
         editor = EmetteurEditor(self, services=self.services)
         editor.protocol("WM_DELETE_WINDOW", lambda: self._close_editor(editor))
 
@@ -120,38 +119,6 @@ class TiersViewEditor(tk.Frame):
         from interfaces_mod.mod_categorie_editor import CategorieEditor
         editor = CategorieEditor(self, services=self.services)
         editor.protocol("WM_DELETE_WINDOW", lambda: self._close_editor(editor))
-
-    def _operation_points(self):
-        """
-        Retourne une liste de tuples (mois "MM/YY", depenses, revenus)
-        pour TabsGrafBaton. Les dépenses sont en valeur absolue (>= 0).
-        """
-        if not self.selected_tiers_id:
-            return []
-
-        rows = self.tiers_helpers.fetch_row_operations(self.selected_tiers_id)
-
-        from collections import defaultdict
-
-        monthly_dep = defaultdict(float)
-        monthly_rev = defaultdict(float)
-
-        for row in rows:
-            op = row["objet"]
-            date_obj = op.date_operation
-            if not date_obj:
-                continue
-            month_key = date_obj.strftime("%m/%y")
-            montant = float(op.montant or 0)
-            if montant < 0:
-                monthly_dep[month_key] += abs(montant)   # dépense : valeur absolue
-            else:
-                monthly_rev[month_key] += montant         # revenu  : positif
-
-        all_keys = set(monthly_dep.keys()) | set(monthly_rev.keys())
-        sorted_keys = sorted(all_keys, key=lambda d: (d.split('/')[1], d.split('/')[0]))
-
-        return [(k, monthly_dep[k], monthly_rev[k]) for k in sorted_keys]
 
     def _action_fusionner(self):
         data_list = self.tiers_tree._get_all_selected()
@@ -189,7 +156,7 @@ if __name__ == '__main__':
 
     services = build_app_services()
 
-    app = TiersViewEditor(root, services)
+    app = TiersEditorView(root, services)
     app.pack(fill='both', expand=True)
 
     root.geometry('900x300')

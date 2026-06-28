@@ -9,9 +9,10 @@ class CategorieManager(GenericManager):
     """Manager unique pour gérer les Catégories (Racines) et les Sous-Catégories."""
 
     SQL_TABLE = "categories"
-    SQL_FIELDS = ["id_categorie", "designation", "parent_id"]
-    SQL_ID = "id_categorie"
     MODEL_CLASS = Categorie
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
+
 
     def _from_row(self, row, model_class) -> Optional[Union[CategorieParent, Categorie]]:
         """Transforme une ligne SQL en objet métier selon la classe spécifiée."""

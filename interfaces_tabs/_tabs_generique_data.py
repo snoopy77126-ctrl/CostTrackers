@@ -138,11 +138,14 @@ class BaseFormFrame(ttk.Frame):
 
         return check
 
-    def add_date(self, key, label, row=None, grid_options=None):
+    def add_date(self, key, label, row=None, grid_options=None,date_defaut=False):
         if row is None: row = self.next_row()
         ttk.Label(self.form, text=label).grid(row=row, column=0, sticky="w", padx=5, pady=2)
         var = tk.StringVar()
         date_ent = DateEntry(self.form, textvariable=var, date_pattern="dd/MM/yyyy", locale="fr_FR")
+        # Supprimer la date par défaut (date du jour)
+        if not date_defaut:
+            date_ent.delete(0, "end")
         # Application du grid par défaut ou personnalisé
         default_opts = {"row": row, "column": 1, "sticky": "ew", "padx": 5, "pady": 2}
         if grid_options:
@@ -343,6 +346,8 @@ class BaseFormFrame(ttk.Frame):
                 if isinstance(widget, DateEntry):
                     date_value = self._format_date_for_display(value)
                     if date_value is None:
+                        # Vider la StringVar suffit — delete() sur DateEntry n'efface pas l'affichage
+                        self.vars[key].set("")
                         widget.delete(0, "end")
                     else:
                         widget.set_date(date_value)

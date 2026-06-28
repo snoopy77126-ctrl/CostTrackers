@@ -18,9 +18,9 @@ from models.budget import BudgetLigne
 class BudgetManager(GenericManager):
 
     SQL_TABLE  = "budget_lignes"
-    SQL_ID     = "id_budget"
-    SQL_FIELDS = BudgetLigne.SQL_FIELDS
     MODEL_CLASS = BudgetLigne
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self):
         super().__init__()

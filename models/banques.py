@@ -6,14 +6,7 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Optional, ClassVar
 
-from models._model_base import ModelBase
-
-
-def _to_int_bool(val) -> int:
-    """Convertit proprement un booléen, un entier ou une string vers 0/1."""
-    if isinstance(val, str):
-        return 1 if val.strip().lower() in ('true', '1', 'yes', 'oui') else 0
-    return int(bool(val))
+from models._model_base import ModelBase, _to_int_bool
 
 
 # ══════════════════════════════════════════════════════════════════════ #
@@ -144,8 +137,21 @@ class CompteBase(ModelBase):
             "compte_favori":           self.compte_favori,
             "cache_le_compte":         self.cache_le_compte,
             "date_der_rapprochement":  self.date_der_rapprochement,
-            "banque":                  self.banque.to_dict() if self.banque else None,
-            "type_compte":             self.type_compte.to_dict() if self.type_compte else None,
+            # Objets liés avec 'value' et 'iid_key' pour que BaseFormFrame.set_values puisse
+            # afficher et sélectionner automatiquement la bonne entrée dans les Combobox
+            "banque": {
+                "iid_key":   f"bank_{self.banque.id_banque}" if self.banque else None,
+                "id_banque": self.banque.id_banque if self.banque else None,
+                "value":     self.banque.display_name if self.banque else "",
+            } if self.banque else None,
+            "type_compte": {
+                "iid_key":           f"type_{self.type_compte.id_type_de_compte}" if self.type_compte else None,
+                "id_type_de_compte": self.type_compte.id_type_de_compte if self.type_compte else None,
+                "value":             self.type_compte.display_name if self.type_compte else "",
+            } if self.type_compte else None,
+            # IDs bruts pour forçage de sélection dans CompteGeneralData.set_values
+            "banque_id":      self.banque.id_banque if self.banque else None,
+            "type_compte_id": self.type_compte.id_type_de_compte if self.type_compte else None,
         }
 
     def to_sql_dict(self) -> dict:

@@ -9,12 +9,8 @@ from models.tiers import Tier, Organisation
 class TiersManager(GenericManager):
     MODEL_CLASS  = Tier
     SQL_TABLE = "tiers"
-    SQL_ID = "id_tiers"  # Défini pour GenericManager
-
-    SQL_CHAMPS = [
-        "id_tiers", "titre", "nom", "prenom", "organisation",
-        "description", "montant_max", "montant_min"
-    ]
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self, tiers_tracker=None):
         # On appelle le parent sans argument
@@ -22,7 +18,6 @@ class TiersManager(GenericManager):
         # On stocke l'argument localement dans la classe enfant
         self.tiers_tracker = tiers_tracker
         # Indispensable pour que GenericManager fonctionne
-        self.SQL_FIELDS = self.SQL_CHAMPS
         self.SQL_ID = "id_tiers"
 
     def _from_row(self, row) -> Optional[Tier]:

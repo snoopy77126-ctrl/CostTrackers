@@ -32,7 +32,7 @@ class BanqueEditorTree(TreeView):
 
 class MoyenPaiementTree(FlatTree):
     COLUMNS = ("Moyen de paiement",)
-    HEADING = ("value",)
+    HEADING = ("Moyen de paiement",)
 
     def __init__(self, parent, callbacks=None):
         self.callbacks_ui = callbacks or {}

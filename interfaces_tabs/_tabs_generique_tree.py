@@ -65,9 +65,15 @@ class FlatTree(BaseTree):
         self.clear()
         for row in rows:
             iid = str(row.get("iid_key", row.get("id", "")))
-            values = row.get("values") or [row.get(col, "") for col in self.tree["columns"]]
+            if row.get("values"):
+                # values explicite : forcer liste pour éviter qu'une string soit itérée char par char
+                raw = row["values"]
+                values = raw if isinstance(raw, (list, tuple)) else [raw]
+            else:
+                # Fallback : cherche la clé de colonne dans la row, sinon utilise "value"
+                values = [row.get(col) if row.get(col) is not None else row.get("value", "") for col in self.tree["columns"]]
             self.iid_to_row[iid] = row
-            self.tree.insert("", "end", iid=iid, values=values)
+            self.tree.insert("", "end", iid=iid, values=tuple(values))
 
 
 class TreeView(BaseTree):
@@ -79,4 +85,4 @@ class TreeView(BaseTree):
             parent = nodes.get(str(row.get("parent_id")), "") if row.get("parent_id") else ""
             self.iid_to_row[iid] = row
             nodes[iid] = self.tree.insert(parent, "end", iid=iid, text=row.get("value", ""),
-                                          values=row.get("values", []))
+                                          values=tuple(row.get("values", [])))

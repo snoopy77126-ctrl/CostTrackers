@@ -10,9 +10,9 @@ from models.operations import OperationSaisie
 class OperationManager(GenericManager):
 
     SQL_TABLE = "operations_bancaires_lignes"
-    SQL_ID = "id_import_ligne"
-    SQL_FIELDS = OperationSaisie.SQL_FIELDS
     MODEL_CLASS = OperationSaisie
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self, CategoryTracker, TiersTracker, CompteTracker):
         super().__init__()

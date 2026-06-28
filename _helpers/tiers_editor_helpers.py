@@ -10,9 +10,9 @@ class TiersEditorHelpers:
     def initialise(self):
         """Demande au tiers_trackers de rafraîchir ses données."""
         if self.tiers_trackers:
-            self.tiers_trackers.load_all()
+            self.tiers_trackers.get_all()
         if self.operation_tracker:
-            self.operation_tracker.load_all()
+            self.operation_tracker.get_all()
 
     def fetch_row_emetteur(self):
         """Format pour le TreeView."""
@@ -116,3 +116,35 @@ class TiersEditorHelpers:
         except (TypeError, ValueError):
             amount = 0.0
         return f"{amount:,.2f} EUR".replace(",", " ").replace(".", ",")
+
+    def _operation_points(self,selected_tiers_id):
+        """
+        Retourne une liste de tuples (mois "MM/YY", depenses, revenus)
+        pour TabsGrafBaton. Les dépenses sont en valeur absolue (>= 0).
+        """
+        if not selected_tiers_id:
+            return []
+
+        rows = self.fetch_row_operations(selected_tiers_id)
+
+        from collections import defaultdict
+
+        monthly_dep = defaultdict(float)
+        monthly_rev = defaultdict(float)
+
+        for row in rows:
+            op = row["objet"]
+            date_obj = op.date_operation
+            if not date_obj:
+                continue
+            month_key = date_obj.strftime("%m/%y")
+            montant = float(op.montant or 0)
+            if montant < 0:
+                monthly_dep[month_key] += abs(montant)   # dépense : valeur absolue
+            else:
+                monthly_rev[month_key] += montant         # revenu  : positif
+
+        all_keys = set(monthly_dep.keys()) | set(monthly_rev.keys())
+        sorted_keys = sorted(all_keys, key=lambda d: (d.split('/')[1], d.split('/')[0]))
+
+        return [(k, monthly_dep[k], monthly_rev[k]) for k in sorted_keys]

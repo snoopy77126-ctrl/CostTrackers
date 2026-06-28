@@ -16,16 +16,22 @@ from models.banques import (
 class CompteManager(GenericManager):
     COMPTE_TYPES = {1: CompteCourant, 2: ComptePlacement, 3: CompteCredit, 4: CompteCreditConso}
     SQL_TABLE = "comptes"
-    SQL_ID = "id_compte"
     MODEL_CLASS = CompteBase
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
+
+
 
     def _load_all_rows(self, actif_only=False):
         """Factorisation des requêtes de lecture."""
         where = "WHERE c.date_cloture = ''" if actif_only else ""
         sql = f"""
-            SELECT c.*, b.label AS banque_label, b.identifiant AS banque_identifiant, b.description AS banque_desc
+            SELECT c.*,
+                   b.label AS banque_label, b.identifiant AS banque_identifiant, b.description AS banque_desc,
+                   t.designation AS type_designation
             FROM comptes c
             LEFT JOIN banques b ON c.banque_id = b.id_banque
+            LEFT JOIN type_de_compte t ON c.type_compte_id = t.id_type_de_compte
             {where}
         """
         return self._execute_custom_select(sql)
@@ -49,16 +55,48 @@ class CompteManager(GenericManager):
                 description=data.get("banque_desc")
             )
 
-        # 4. Mapping final
+        # 3b. Construction de l'objet TypeCompte
+        from models.banques import TypeCompte
+        type_compte_obj = None
+        if data.get("type_compte_id"):
+            type_compte_obj = TypeCompte(
+                id_type_de_compte=data.get("type_compte_id"),
+                designation=data.get("type_designation") or "",
+            )
+
+        # 4. Mapping final — tous les champs de la table comptes
         mapped_data = {
-            "id_compte": data.get("id_compte"),
-            "nom_du_compte": data.get("label"),
-            "identifiant": data.get("numero"),
-            "banque": banque_obj,
-            # ... mapper le reste des champs en utilisant .get()
+            "id_compte":              data.get("id_compte"),
+            "nom_du_compte":          data.get("label"),
+            "identifiant":            data.get("numero"),
+            "description":            data.get("description"),
+            "date_ouverture":         data.get("date_ouverture"),
+            "date_cloture":           data.get("date_cloture"),
+            "date_der_rapprochement": data.get("date_der_rapprochement"),
+            "solde_init":             data.get("solde_init"),
+            "solde_min":              data.get("solde_min"),
+            "solde_max":              data.get("solde_max"),
+            "compte_favori":          bool(data.get("compte_favori", False)),
+            "cache_le_compte":        bool(data.get("cache_le_compte", False)),
+            "banque":                 banque_obj,
+            "type_compte":            type_compte_obj,
+            # Champs CompteCourant
+            "object_epargne":         bool(data.get("object_epargne", False)),
+            "decouvert_autorise":     data.get("decouvert_autorise"),
+            # Champs CompteCredit / ComptePlacement
+            "taux_interet":           data.get("taux_interet"),
+            "montant":                data.get("montant"),
+            "montant_max":            data.get("montant_max"),
+            "remboursement_mini":     data.get("remboursement_mini"),
+            "periode_type":           data.get("periode_type"),
+            "periode_value":          data.get("periode_value"),
+            "remboursement_periode":  data.get("remboursement_periode"),
+            "duree_periode":          data.get("duree_periode"),
+            "duree_value":            data.get("duree_value"),
         }
 
-        return compte_class(**{k: v for k, v in mapped_data.items() if v is not None})
+        valid_keys = inspect.signature(compte_class).parameters.keys()
+        return compte_class(**{k: v for k, v in mapped_data.items() if k in valid_keys})
 
     def _to_dict(self, obj):
         """Surcharge pour garantir le type_compte_id en écriture."""
@@ -69,3 +107,17 @@ class CompteManager(GenericManager):
                     data["type_compte_id"] = tid
                     break
         return data
+
+    def load_by_mode_paiement(self, mode_paiement_id: int):
+        """Charge les comptes associés à un mode de paiement spécifique."""
+        sql = f"""
+            SELECT c.*,
+                   b.label AS banque_label, b.identifiant AS banque_identifiant, b.description AS banque_desc,
+                   t.designation AS type_designation
+            FROM comptes c
+            LEFT JOIN banques b ON c.banque_id = b.id_banque
+            LEFT JOIN type_de_compte t ON c.type_compte_id = t.id_type_de_compte
+            JOIN liason_moyen_paiement l ON c.id_compte = l.compte_id
+            WHERE l.moyen_paiement_id = ?
+        """
+        return self._execute_custom_select(sql, (mode_paiement_id,))

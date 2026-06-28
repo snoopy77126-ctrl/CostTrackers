@@ -16,8 +16,8 @@
     },
     "Projet": {},
     "Gestion": {
-        "Comptes": "interfaces.form_compte_editor:CompteEditorview",
-        "Tiers": "interfaces.form_tiers_editor:TiersEditorView",
+        "Comptes": "interfaces.form_compte_editor:CompteEditor",
+        "Tiers": "interfaces.form_tiers_editor:TiersViewEditor",
         "Catégories": "interfaces.form_categories_editor:CategoriesViewEditor"
     },
     "Paramètre": {
@@ -25,7 +25,7 @@
         "Import": "interfaces.form_operations_importe:OperationsImport"
     },
     "Dev": {
-        "Dev. Tools": "_dev_tools._run_dev_tool",
+		"Dev. Tools": "_dev_tools._run_dev_tool",
         "MenuManager": "_dev_tools.ui_menu_editor:UIMenuEditor",
         "Export Complet": null,
         "Project Analyseur": "_dev_tools.ui_analyseur_app:UIProjectAnalyzer"

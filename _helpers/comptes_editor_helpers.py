@@ -108,12 +108,18 @@ class CompteEditorHelpers(BaseHelper):
         ]
 
     def fetch_row_source_paiement(self):
-        """Retourne la liste des banques pour remplir la Combobox de l'UI."""
+        """Retourne la liste des moyens de paiement NON affectés au compte courant."""
         if not self.moyen_paiement_tracker:
             return []
+        
+        compte_id = self._current_compte_id()
+        affected_modes = self.moyen_paiement_tracker.get_affected_paiement(compte_id) if compte_id else []
+        affected_ids = {m.id_mode_paiement for m in affected_modes} if affected_modes else set()
+        
         return [
             {"iid_key": f"_mode_paiement_{b.id_mode_paiement}", "id": b.id_mode_paiement, "values": b.designation}
             for b in self.moyen_paiement_tracker.get_all()
+            if b.id_mode_paiement not in affected_ids
         ]
 
     def fetch_row_affected_paiement(self, compte_id):
@@ -124,3 +130,42 @@ class CompteEditorHelpers(BaseHelper):
             {"iid_key": f"_mode_paiement_{b.id_mode_paiement}", "id": b.id_mode_paiement, "values": b.designation}
             for b in self.moyen_paiement_tracker.get_affected_paiement(compte_id)
         ]
+    def _current_compte_id(self):
+        return self.current_compte.id_compte if self.current_compte else None
+
+    def action_select(self, rows: list) -> bool:
+        """Affecte les modes de paiement sélectionnés au compte courant."""
+        compte_id = self._current_compte_id()
+        if not compte_id or not self.moyen_paiement_tracker:
+            return False
+        for row in rows:
+            self.moyen_paiement_tracker.add_liaison(compte_id, row["id"])
+        return True
+
+    def action_unselect(self, rows: list) -> bool:
+        """Retire les modes de paiement sélectionnés du compte courant."""
+        compte_id = self._current_compte_id()
+        if not compte_id or not self.moyen_paiement_tracker:
+            return False
+        for row in rows:
+            self.moyen_paiement_tracker.remove_liaison(compte_id, row["id"])
+        return True
+
+    def action_select_all(self) -> bool:
+        """Affecte tous les modes de paiement au compte courant."""
+        compte_id = self._current_compte_id()
+        if not compte_id or not self.moyen_paiement_tracker:
+            return False
+        for mode in self.moyen_paiement_tracker.get_all():
+            self.moyen_paiement_tracker.add_liaison(compte_id, mode.id_mode_paiement)
+        return True
+
+    def action_unselect_all(self) -> bool:
+        """Retire tous les modes de paiement du compte courant."""
+        compte_id = self._current_compte_id()
+        if not compte_id or not self.moyen_paiement_tracker:
+            return False
+        return self.moyen_paiement_tracker.remove_all_liaisons(compte_id)
+
+    def fetch_chequiers(self):
+        pass

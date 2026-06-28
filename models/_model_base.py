@@ -64,6 +64,11 @@ def _python_type_to_sql(annotation) -> str:
 
     return _PY_TO_SQL.get(annotation, "TEXT")
 
+def _to_int_bool(val) -> int:
+    """Convertit proprement un booléen, un entier ou une string vers 0/1."""
+    if isinstance(val, str):
+        return 1 if val.strip().lower() in ('true', '1', 'yes', 'oui') else 0
+    return int(bool(val))
 
 # ══════════════════════════════════════════════════════════════════════ #
 #  MODEL BASE

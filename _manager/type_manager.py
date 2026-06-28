@@ -7,8 +7,9 @@ from models.banques import TypeCompte
 
 class TypeCompteManager(GenericManager):
     SQL_TABLE = "type_de_compte"
-    SQL_FIELDS = ["id_type_de_compte", "designation"]
-    SQL_ID = "id_type_de_compte"
+    MODEL_CLASS = TypeCompte
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def _from_row(self, row) -> Optional[TypeCompte]:
         if row is None:

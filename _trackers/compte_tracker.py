@@ -225,6 +225,17 @@ class CompteTracker(GenericTracker):
 
         return tous_les_comptes
 
+    def get_comptes_by_type_paiement(self, type_paiement: int) -> list:
+        """Retourne la liste des comptes filtrée par type de compte (type_compte_id)."""
+        type_paiement_id = self._extract_type_compte_id(type_paiement)
+        if type_paiement_id is None:
+            return []
+        
+        return [
+            compte for compte in self.get_all() 
+            if self._extract_type_compte_id(compte.type_compte) == type_paiement_id
+        ]
+
     def create(self, name: str, number: str):
         """Crée un nouveau compte en base de données via le manager et l'ajoute au tiers_trackers."""
         # On prépare le dictionnaire attendu par from_dict / le manager

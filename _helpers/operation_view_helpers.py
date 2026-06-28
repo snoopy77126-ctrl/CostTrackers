@@ -31,7 +31,7 @@ class OperationsViewHelpers(BaseHelper):
         """Récupère la liste des comptes pour la combobox."""
         if not self.compte_tracker:
             return []
-        comptes = self.compte_tracker.get_all()
+        comptes = self.compte_tracker.get_all_filtered()
         return [{"iid_key": c.id_compte, "value": c.display_name if hasattr(c, 'display_name') else str(c)} for c in comptes]
 
     def fetch_categories(self) -> List[Dict[str, Any]]:
@@ -40,6 +40,11 @@ class OperationsViewHelpers(BaseHelper):
             return []
         categories = self.categorie_tracker.get_all()
         return [{"iid_key": c.id_categorie, "value": c.designation if hasattr(c, 'designation') else str(c)} for c in categories]
+
+    def fetch_payment_types(self) -> List[Dict[str, Any]]:
+        """Récupère la liste des types de paiement pour la combobox."""
+        payment_types = ["CB", "Virement", "Espèces", "Chèque", "Prélèvement"]
+        return [{"iid_key": i, "value": pt} for i, pt in enumerate(payment_types)]
 
     def fetch_data_by_iid(self, operation_id: int) -> Optional[Dict[str, Any]]:
         """Récupère les données d'une opération par son ID."""
@@ -137,7 +142,7 @@ class OperationsViewHelpers(BaseHelper):
         return rows
 
     def comptes(self):
-        comptes = self.compte_tracker.get_all() if self.compte_tracker else []
+        comptes = self.compte_tracker.get_all_filtered() if self.compte_tracker else []
         if comptes:
             return comptes
 

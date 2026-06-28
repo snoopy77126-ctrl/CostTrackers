@@ -10,9 +10,9 @@ class PrevisionManager(GenericManager):
     """Manager unique pour gérer les Catégories (Racines) et les Sous-Catégories."""
 
     SQL_TABLE = "previsions"
-    SQL_FIELDS = ["id_prevision", "libelle", "date_debut", "date_fin", "type_periode"]
-    SQL_ID = "id_prevision"
     MODEL_CLASS = Prevision
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def _from_row(self, row) -> Optional[Prevision]:
         if row is None:

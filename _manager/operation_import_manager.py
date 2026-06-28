@@ -7,12 +7,9 @@ class FileImportManager(GenericManager):
     """Gère la table imports_bancaires (métadonnées fichier)."""
 
     SQL_TABLE = "imports_bancaires"
-    SQL_ID    = "id_import"
-    SQL_FIELDS = [
-        "id_import", "fichier", "chemin", "format_fichier",
-        "checksum", "nb_lignes", "statut", "message",
-    ]
     MODEL_CLASS = ImportBancaire
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self):
         super().__init__()
@@ -31,38 +28,9 @@ class OperationImportManager(GenericManager):
     """
 
     SQL_TABLE = "operations_bancaires_lignes"
-    SQL_ID    = "id_import_ligne"
-    SQL_FIELDS = [
-        "id_import_ligne",
-        "id_import",
-        "numero_ligne",
-        "date_operation",
-        "date_valeur",
-        "libelle",
-        "montant",
-        "type_operation",
-        "commentaire",
-        "source",
-        # Textes bruts issus du fichier
-        "compte_num",
-        "compte_label",
-        "solde_compte",
-        "tiers",
-        "categorie",
-        "categorie_parent",
-        # OFX
-        "fitid",
-        "trntype",
-        # Divers
-        "raw_json",
-        "import_key",
-        "created_at",
-        # IDs résolus
-        "compte_id",
-        "tiers_id",
-        "categorie_id",
-    ]
     MODEL_CLASS = OperationImport
+    SQL_ID     = MODEL_CLASS.SQL_ID
+    SQL_FIELDS = MODEL_CLASS.SQL_FIELDS
 
     def __init__(self):
         super().__init__()

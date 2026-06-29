@@ -14,6 +14,7 @@ class CompteEditorHelpers(BaseHelper):
         self.banque_tracker = self.trackers.get('banque')
         self.type_compte_tracker = self.trackers.get('type_compte')
         self.moyen_paiement_tracker = self.trackers.get('mode_de_paiement')
+        self.chequier_tracker = self.trackers.get('chequier')
 
         # Injection des dépendances croisées nécessaires au CompteTracker
         # pour résoudre les objets Banque / TypeCompte complets lors du from_dict.
@@ -168,4 +169,48 @@ class CompteEditorHelpers(BaseHelper):
         return self.moyen_paiement_tracker.remove_all_liaisons(compte_id)
 
     def fetch_chequiers(self):
-        pass
+        """Retourne la liste des chéquiers du compte courant sous forme de dicts pour l'UI."""
+        compte_id = self._current_compte_id()
+        if not compte_id or not self.chequier_tracker:
+            return [{}]
+        chequiers = self.chequier_tracker.get_by_compte(compte_id)
+        if not chequiers:
+            return [{}]
+        return [
+            {
+                "id_carnet_cheque": c.id_carnet_cheque,
+                "chequier_num":     c.chequier_num,
+                "nbr_cheque":       c.nbr_cheque,
+                "premier_cheque":   c.premier_cheque,
+                "date_reception":   c.date_reception,
+                "dernier_emis":     c.dernier_emis,
+            }
+            for c in chequiers
+        ]
+
+    def save_chequier(self, data: dict) -> bool:
+        """Sauvegarde (insert ou update) un chéquier."""
+        if not self.chequier_tracker:
+            return False
+        from models.mode_de_paiement import ChequierEdition
+        compte_id = self._current_compte_id()
+        if not compte_id:
+            return False
+        obj = ChequierEdition(
+            id_carnet_cheque=data.get("id_carnet_cheque"),
+            compte_id=compte_id,
+            chequier_num=data.get("chequier_num"),
+            nbr_cheque=data.get("nbr_cheque"),
+            premier_cheque=data.get("premier_cheque"),
+            date_reception=data.get("date_reception"),
+            dernier_emis=data.get("dernier_emis"),
+        )
+        return self.chequier_tracker.save(obj)
+
+    def delete_chequier(self, chequier_id: int) -> bool:
+        """Supprime un chéquier par son id."""
+        if not self.chequier_tracker or not chequier_id:
+            return False
+        from models.mode_de_paiement import ChequierEdition
+        obj = ChequierEdition(id_carnet_cheque=chequier_id)
+        return self.chequier_tracker.delete(obj)

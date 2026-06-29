@@ -22,7 +22,7 @@ class ChequierEditorButtons(EditeurActions):
         self._build_widgets()
 
     def _build_widgets(self):
-        self._add_btn_left("➕ Nouveau", "action_add_emetteur")
-        self._add_btn_left("🗑️ Supprimer", "action_delete_emetteur")
-        self._add_btn_end("💾 Sauvegarder", "action_save_emetteur")
+        self._add_btn_left("➕ Nouveau", "action_chequier_add")
+        self._add_btn_left("🗑️ Supprimer", "action_chequier_delete")
+        self._add_btn_end("💾 Sauvegarder", "action_chequier_save")
 

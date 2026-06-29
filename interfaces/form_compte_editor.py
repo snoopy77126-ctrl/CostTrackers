@@ -116,17 +116,21 @@ class CompteEditorview(tk.Frame):
         return container
 
     def _build_chequier_panel(self, parent):
-        """Construit le contenu de l'onglet Chequiers."""
+        """Construit le contenu de l'onglet Chéquiers."""
         container = ttk.Frame(parent, padding=5)
+        container.columnconfigure(0, weight=1)
+        container.rowconfigure(0, weight=1)
 
-        # Ajout d'un canvas si vous avez beaucoup de chéquiers pour permettre le scroll
+        # Zone de données (lignes de chéquiers) — scrollable si besoin
         self.chk_container = ttk.Frame(container)
-        self.chk_container.pack(fill="both", expand=True)
+        self.chk_container.grid(row=0, column=0, sticky="nsew")
+        self.chk_container.columnconfigure(0, weight=1)
+
+        # Barre de boutons en bas du panneau, EN DEHORS du chk_container
+        chk_buttons = ChequierEditorButtons(container, callbacks=self.callbacks)
+        chk_buttons.grid(row=1, column=0, sticky="e", pady=(4, 0))
 
         self._refresh_chequiers_content()
-        # Ligne de boutons associés
-        chk_buttons = ChequierEditorButtons(self.chk_container, callbacks=self.callbacks)
-        chk_buttons.grid(sticky="e", pady=2)
         return container
 
     # ---- Centralisation des appels conforme à vos autres formulaires ----
@@ -144,6 +148,10 @@ class CompteEditorview(tk.Frame):
             "action_select_all": self._action_paiement_select_all,
             "action_unselect_all": self._action_paiement_unselect_all,
             "_on_compte_filtre_change": self._on_compte_filtre_change,
+            # --- Chéquiers ---
+            "action_chequier_add":    self._action_chequier_add,
+            "action_chequier_delete": self._action_chequier_delete,
+            "action_chequier_save":   self._action_chequier_save,
         }
 
     # ---- Actions Métier ----
@@ -301,20 +309,51 @@ class CompteEditorview(tk.Frame):
         self.tree_compte.insert_rows(rows)
 
     def _refresh_chequiers_content(self):
-        """Méthode pour peupler dynamiquement les lignes."""
+        """Recharge et affiche dynamiquement les lignes de chéquiers du compte courant."""
         # 1. Nettoyage
         for child in self.chk_container.winfo_children():
             child.destroy()
 
-        # 2. Simulation de données (à remplacer par self.helpers.fetch_chequiers())
+        # 2. Données depuis le helpers (retourne [{}] si aucun chéquier)
         chequiers_liste = self.helpers.fetch_chequiers() or [{}]
 
         # 3. Création des lignes
         for i, data in enumerate(chequiers_liste):
-            # Ligne de données
             chk_widget = ChequierEditorData(self.chk_container, callbacks=self.callbacks)
             chk_widget.grid(row=i, column=0, sticky="ew", pady=2)
-            chk_widget.set_values(data)  # Utilise la méthode de BaseFormFrame
+            chk_widget.set_values(data)
+
+    # --- Actions chéquier ---
+
+    def _action_chequier_add(self):
+        """Ajoute une ligne vide de chéquier dans l'interface."""
+        i = len(self.chk_container.winfo_children())
+        chk_widget = ChequierEditorData(self.chk_container, callbacks=self.callbacks)
+        chk_widget.grid(row=i, column=0, sticky="ew", pady=2)
+
+    def _action_chequier_save(self):
+        """Sauvegarde tous les chéquiers affichés."""
+        for child in self.chk_container.winfo_children():
+            if isinstance(child, ChequierEditorData):
+                data = child.get_values()
+                self.helpers.save_chequier(data)
+        self._refresh_chequiers_content()
+
+    def _action_chequier_delete(self):
+        """Supprime le dernier chéquier affiché (celui sans id = ligne vide) ou le premier sélectionné."""
+        children = [c for c in self.chk_container.winfo_children() if isinstance(c, ChequierEditorData)]
+        if not children:
+            return
+        # Suppression de la dernière ligne : si elle a un id, suppression en DB
+        last = children[-1]
+        data = last.get_values()
+        chequier_id = data.get("id_carnet_cheque")
+        if chequier_id:
+            self.helpers.delete_chequier(chequier_id)
+            self._refresh_chequiers_content()
+        else:
+            # Ligne vide non sauvegardée : retrait visuel uniquement
+            last.destroy()
 
     def refresh_moyen_paiement_tree(self, row=None):
         # Gestion sécurisée de l'ID

@@ -13,7 +13,8 @@ from _trackers.operation_tracker import FileImportTracker
 from _trackers.tiers_tracker import TiersTracker
 from _trackers.periodique_tracker import PeriodiqueTracker
 from _trackers.type_compte_tracker import TypeCompteTracker
-from _trackers.mode_de_paiement_tracker import ModeDePaiementTracker																
+from _trackers.mode_de_paiement_tracker import ModeDePaiementTracker
+from _trackers.chequier_tracker import ChequierTracker
 from config.config import cfg
 from _manager.budget_manager import BudgetManager
 from _trackers.budget_tracker import BudgetTracker
@@ -28,6 +29,7 @@ def build_app_services(database=db, config=cfg):
     tiers_tracker = TiersTracker()
     type_compte_tracker = TypeCompteTracker()
     mode_paiement_tracker = ModeDePaiementTracker()
+    chequier_tracker = ChequierTracker()
     budget_tracker = BudgetTracker(cat_tracker=cat_tracker)
 
     periodique_tracker = PeriodiqueTracker(
@@ -63,6 +65,7 @@ def build_app_services(database=db, config=cfg):
         "tiers": tiers_tracker,
         "type_compte": type_compte_tracker,
 		"mode_de_paiement": mode_paiement_tracker,
+        "chequier": chequier_tracker,
         "budget": budget_tracker,
         "bank_import": bank_import_service,
         "db": database,
